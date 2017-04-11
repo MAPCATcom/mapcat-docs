@@ -31,6 +31,9 @@
 
 (3) MapCat tiles can be rendered either with OpenLayers or Leaflet.
 
+## About MapCat
+
+[MapCat](https://mapcat.com) is a ...
 
 ## Start your project with MapCat
 

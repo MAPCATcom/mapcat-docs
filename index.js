@@ -11,7 +11,6 @@ const folders = [{
 folders.forEach (dir => {
   const convertDir = spawn( 'node_modules/markdown-styles/bin/generate-md', [
     '--layout', dir.template,
-    //'--layout github',
     '--input', dir.in,
     '--output', dir.out
     ] );

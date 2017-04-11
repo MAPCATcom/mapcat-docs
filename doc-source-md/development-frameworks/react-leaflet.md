@@ -13,7 +13,7 @@ For limited trial use ``` ``` as your token.
 
 To purchase, ...
 
-## Rendering a map with MapCat and Angular JS
+## Rendering a map with MapCat and React JS
 
 
 Currently raster tiles is the format served by MapCat that's supported by Leaflet out of the box.

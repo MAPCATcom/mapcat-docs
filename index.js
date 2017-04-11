@@ -4,12 +4,14 @@ const spawn = require( 'child_process' ).spawn;
 
 const folders = [{
   in: './doc-source-md',
-  out: './doc-build-html'
+  out: './doc-build-html',
+  template: './doc-template-html'
 }];
 
 folders.forEach (dir => {
   const convertDir = spawn( 'node_modules/markdown-styles/bin/generate-md', [
-    '--layout github',
+    '--layout', dir.template,
+    //'--layout github',
     '--input', dir.in,
     '--output', dir.out
     ] );

@@ -4,7 +4,7 @@ const spawn = require( 'child_process' ).spawn;
 
 const folders = [{
   in: './doc-source-md',
-  out: './doc-build-html',
+  out: './dist',
   template: './doc-template-html'
 }];
 

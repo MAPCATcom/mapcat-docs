@@ -4,7 +4,8 @@
   "description": "Converts markdown files to html with a template",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "build": "node index.js"
   },
   "author": "GLI Solutions",
   "license": "MIT",

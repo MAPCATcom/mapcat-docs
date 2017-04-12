@@ -1,3 +1,5 @@
+# -- Work in progress, not ready for use yet. --
+
 # Build documentation for MapCat
 
 ## Folders:

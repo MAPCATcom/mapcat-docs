@@ -124,7 +124,7 @@ For more complex use, refer to the documentation of [Leaflet JS](http://leafletj
 
 ## Putting it together
 
-Your file should look something similar
+Your file should look something similar:
 
 `index.html`
 

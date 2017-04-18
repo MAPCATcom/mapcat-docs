@@ -33,12 +33,12 @@ MAPCAT vs Google Maps vs OpenStreetMap vs Apple Maps vs Mapbox vs OpenLayers vs 
 
 |                                              | Web | Mobile app | Desktop app | Map data editing | Embed HTML iframe |
 |----------------------------------------------|-----|------------|-------------|------------------|-------------------|
-| [MAPCAT](https://mapcat.com)                 | Yes | No         | No          | Yes, on web      | No |
+| [MAPCAT](https://mapcat.com)                 | Yes | No         | No          | Yes, on web      | No                |
 | [Google Maps](https://maps.google.com)       | Yes | Yes        | No          | Limited, only reporting issues | Yes |
 | [Bing Maps](https://www.bing.com/maps)       | Yes | Yes        | No          | User contributions as additional data | Yes |
-| [Apple Maps](https://www.apple.com/ios/maps/)| No  | IOs only   | OS X only   | Limited, only reporting issues | No |
-| [OpenStreetMap](http://openstreetmap.org)    | Yes | No         | No          | Yes, on web | Yes |
-| [Mapbox](https://mapbox.com)                 | No  | No         | No          | No          | ? |
+| [Apple Maps](https://www.apple.com/ios/maps/)| No  | IOs only   | OS X only   | Limited, only reporting issues | No  |
+| [OpenStreetMap](http://openstreetmap.org)    | Yes | No         | No          | Yes, on web      | Yes               |
+| [Mapbox](https://mapbox.com)                 | No  | No         | No          | No               | ?                 |
 
 [OpenLayers](http://openlayers.org/) and [Leaflet](http://leafletjs.com/) provide no user interfaces as a service.
 
@@ -59,16 +59,16 @@ MAPCAT vs Google Maps vs OpenStreetMap vs Apple Maps vs Mapbox vs OpenLayers vs 
 
 ## Map rendering support for programming languages
 
-|                                              | Javascript        | Swift         | Objective-C   | Java          | C#             | C++ |
-|----------------------------------------------|-------------------|---------------|---------------|---------------|----------------|-----|
-| [MAPCAT](https://mapcat.com)                 | 3rd party library | 3rd party lib | 3rd party lib | 3rd party lib |                |     |
-| [Google Maps](https://maps.google.com)       | Yes               | Yes           | Yes           | Yes           | Yes            | Yes |
-| [Bing Maps](https://www.bing.com/maps)       | Yes               | 3rd party lib | 3rd party lib | No            | Yes            | Yes |
-| [Apple Maps](https://www.apple.com/ios/maps/)| No                | Yes           | Yes           | No            | No             | No  |
-| [OpenStreetMap](http://openstreetmap.org)    | 3rd party lib     | No            | No            | No            | No             | No  |
-| [Mapbox](https://mapbox.com)                 | Yes               | Yes           | Yes           | Yes           | 3rd party lib  | Yes |
-| [OpenLayers](http://openlayers.org/)         | Yes               | No            | No            | No            | No             | No  |
-| [Leaflet](http://leafletjs.com/)             | Yes               | No            | No            | No            | No             | No  |
+|                                              | Javascript        | Swift             | Objective-C       | Java              | C#                | C++ |
+|----------------------------------------------|-------------------|-------------------|-------------------|-------------------|-------------------|-----|
+| [MAPCAT](https://mapcat.com)                 | 3rd party library | No                | No                | No                |                   |     |
+| [Google Maps](https://maps.google.com)       | Yes               | Yes               | Yes               | Yes               | Yes               | Yes |
+| [Bing Maps](https://www.bing.com/maps)       | Yes               | 3rd party library | 3rd party library | No                | Yes               | Yes |
+| [Apple Maps](https://www.apple.com/ios/maps/)| No                | Yes               | Yes               | No                | No                | No  |
+| [OpenStreetMap](http://openstreetmap.org)    | 3rd party library | No                | No                | No                | No                | No  |
+| [Mapbox](https://mapbox.com)                 | Yes               | Yes               | Yes               | Yes               | 3rd party library | Yes |
+| [OpenLayers](http://openlayers.org/)         | Yes               | No                | No                | No                | No                | No  |
+| [Leaflet](http://leafletjs.com/)             | Yes               | No                | No                | No                | No                | No  |
 
 
 ## Services provided via API

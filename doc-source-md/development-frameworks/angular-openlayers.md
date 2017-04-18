@@ -1,24 +1,25 @@
 # Using MAPCAT with Angular JS
 
-The easiest way to use [MapCat](https://mapcat.com) with Angular JS and [OpenLayers](http://openlayers.org) library is with the help of the [mangol](https://github.com/fegyi001/mangol) module.
+The easiest way to use [MAPCAT](https://mapcat.com) with Angular JS and [OpenLayers](http://openlayers.org) library is with the help of the [mangol](https://github.com/fegyi001/mangol) module.
 
 Openlayers is a JavaScript library that renders interactive maps from raster tiles using WebGL. 
-MapCat provides various services built upon [OpenStreetMap](http://openstreetmap.org)
+
+[MAPCAT](https://mapcat.com) is an [OpenStreetMap](http://openstreetmap.org-based) world map service offering routing for cars, bicycles and pedestrians, plus real-time map editing and business services.
 
 ## Get started
 
-First get your MapCat access token.
+First get your MAPCAT access token.
 
 For limited trial use ``` ``` as your token.
 
 To purchase, ...
 
-## Rendering a map with MapCat and Angular JS with OpenLayers
+## Rendering a map with MAPCAT and Angular JS with OpenLayers
 
-Currently raster tiles is the format served by MapCat that's supported by Leaflet out of the box.
+Currently raster tiles is the format served by MAPCAT that's supported by Leaflet out of the box.
 
-You can use this snippet to create a leaflet map using MapCat.
-You can simply configure mangol to use MapCat as its tile provider
+You can use this snippet to create a leaflet map using MAPCAT.
+You can simply configure mangol to use MAPCAT as its tile provider
 
 ```js
 @Component({
@@ -57,7 +58,7 @@ this.config = {
 
 ## Sample project
 
-For a full code example or as a quick start check out our [MapCat-Angular2-OpenLayers Sample](https://github.com/MapCat-Com/mapcat-angular2-openlayers) project.
+For a full code example or as a quick start check out our [MAPCAT-Angular2-OpenLayers Sample](https://github.com/MAPCATcom/mapcat-angular2-openlayers) project.
 
 
 

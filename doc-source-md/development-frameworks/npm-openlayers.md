@@ -3,7 +3,8 @@
 You can use [OpenLayers](http://openlayers.org) to use [MapCat](http://mapcat.com) services on your website.
 
 Openlayers is a JavaScript library that renders interactive maps from raster tiles using WebGL. 
-MapCat provides various services built upon [OpenStreetMap](http://openstreetmap.org)
+
+[MAPCAT](https://mapcat.com) is an [OpenStreetMap](http://openstreetmap.org-based) world map service offering routing for cars, bicycles and pedestrians, plus real-time map editing and business services.
 
 ## Get started
 

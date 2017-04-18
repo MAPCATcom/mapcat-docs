@@ -1,13 +1,14 @@
-# Using MapCat from CDN
+# Using MAPCAT from CDN
 
-You can use [OpenLayers](http://openlayers.org) to use [MapCat](http://mapcat.com) services on your website.
+You can use [OpenLayers](http://openlayers.org) to use [MAPCAT](http://mapcat.com) services on your website.
 
 Openlayers is a JavaScript library that renders interactive maps from raster tiles using WebGL. 
-MapCat provides various services built upon [OpenStreetMap](http://openstreetmap.org)
+
+[MAPCAT](https://mapcat.com) is an [OpenStreetMap](http://openstreetmap.org-based) world map service offering routing for cars, bicycles and pedestrians, plus real-time map editing and business services.
 
 ## Quick start
 
-First >get your MapCat access token< .
+First >get your MAPCAT access token< .
 
 To use OpenLayers in your webste, copy these lines into the ```<head>``` part of your HTML page.
 
@@ -19,7 +20,7 @@ To use OpenLayers in your webste, copy these lines into the ```<head>``` part of
 <script src="https://openlayers.org/en/v4.0.1/build/ol.js" type="text/javascript"></script>
 ```
 
-Then you can embed Mapcat in the ```<body>``` part of your page in a div that has its size specified.
+Then you can embed MAPCAT in the ```<body>``` part of your page in a div that has its size specified.
 
 ```html
 <div id='map' style='width: 400px; height: 300px;'></div>
@@ -30,7 +31,7 @@ Then you can embed Mapcat in the ```<body>``` part of your page in a div that ha
     layers: [
       {
         type: 'layer',
-        name: 'MapCat layer',
+        name: 'MAPCAT layer',
         layer: new ol.layer.Tile({
           source: new ol.source.XYZ({
             url: 'https://terkepem.hu/tile/{z}/{x}/{y}.png',

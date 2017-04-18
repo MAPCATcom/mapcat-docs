@@ -1,13 +1,14 @@
-# Using MapCat and Leaflet with npm, yarn or browserify
+# Using MAPCAT and Leaflet with npm, yarn or browserify
 
-You can use [OpenLayers](http://openlayers.org) to use [MapCat](http://mapcat.com) services on your website.
+You can use [OpenLayers](http://openlayers.org) to use [MAPCAT](http://mapcat.com) services on your website.
 
 Leaflet JS is a JavaScript library that renders interactive maps from raster tiles using WebGL. 
-MapCat provides various services built upon [OpenStreetMap](http://openstreetmap.org)
+
+[MAPCAT](https://mapcat.com) is an [OpenStreetMap](http://openstreetmap.org-based) world map service offering routing for cars, bicycles and pedestrians, plus real-time map editing and business services.
 
 ## Get started
 
-First get your MapCat access token.
+First get your MAPCAT access token.
 
 For limited trial use ``` ``` as your token.
 
@@ -43,7 +44,7 @@ To use Leaflet JS in your webste, copy these lines into the ```<head>``` part of
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
 ```
 
-Then you can embed MapCat in the ```<body>``` part of your page in a div that has its size specified.
+Then you can embed MAPCAT in the ```<body>``` part of your page in a div that has its size specified.
 
 ```html
 <div id='map' style='width: 400px; height: 300px;'></div>
@@ -63,7 +64,7 @@ let map = L.map('map', {
 });
 
 L.tileLayer('https://terkepem.hu/tile/{z}/{x}/{y}.png', {
-  attribution: 'Imagery &copy; 2017 <a href="http://mapcat.com">MapCat</a>, Map data &copy; <a href="http://osm.org/copyright">OpenStreetMap</a contributors',
+  attribution: 'Imagery &copy; 2017 <a href="http://mapcat.com">MAPCAT</a>, Map data &copy; <a href="http://osm.org/copyright">OpenStreetMap</a contributors',
   maxZoom: 18
 }).addTo(map);
 ```

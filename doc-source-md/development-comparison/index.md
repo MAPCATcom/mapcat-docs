@@ -77,6 +77,7 @@ MAPCAT vs Google Maps vs OpenStreetMap vs Apple Maps vs Mapbox vs OpenLayers vs 
 |----------------------------------------------|-----|-----|-----|-----|-----|-----|
 | [MAPCAT](https://mapcat.com)                 | Yes | Yes | Yes | Yes | No  | Yes |
 | [Google Maps](https://maps.google.com)       | Yes | Yes | Limited to some countries | No  | Yes | Yes |
+| [Bing Maps](https://www.bing.com/maps)       | Yes | ?   | No  | No  | Yes | Yes |
 | [Apple Maps](https://www.apple.com/ios/maps/)| Yes | Yes | No  | No  | Yes | Yes |
 | [OpenStreetMap](http://openstreetmap.org)    | No  | No  | Yes | No? | No  | Yes |
 | [Mapbox](https://mapbox.com)                 | Yes | Yes? | No? | No? | Yes? | Yes? |

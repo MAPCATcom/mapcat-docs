@@ -2,7 +2,7 @@
 
 Use MAPCAT APIs in your websites and applications to power location services for your users.
 
-[View pricing and plans](https://mapcat.com)
+[View pricing and plans](https://pricing.mapcat.com)
 
 ## About MAPCAT
 

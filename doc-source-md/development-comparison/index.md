@@ -33,7 +33,7 @@ MAPCAT vs Google Maps vs OpenStreetMap vs Apple Maps vs Mapbox vs OpenLayers vs 
 
 |                                              | Web | Mobile app | Desktop app | Map data editing | Embed HTML iframe |
 |----------------------------------------------|-----|------------|-------------|------------------|-------------------|
-| [MAPCAT](https://mapcat.com)                 | Yes | No         | No          | Yes, on web      | Yes |
+| [MAPCAT](https://mapcat.com)                 | Yes | No         | No          | Yes, on web      | No |
 | [Google Maps](https://maps.google.com)       | Yes | Yes        | No          | Limited, only reporting issues | Yes |
 | [Bing Maps](https://www.bing.com/maps)       | Yes | Yes        | No          | User contributions as additional data | Yes |
 | [Apple Maps](https://www.apple.com/ios/maps/)| No  | IOs only   | OS X only   | Limited, only reporting issues | No |

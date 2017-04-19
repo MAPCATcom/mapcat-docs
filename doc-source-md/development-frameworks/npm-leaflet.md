@@ -79,10 +79,7 @@ For more complex use, refer to the documentation of [Leaflet JS](http://leafletj
 
 ## Step 2. Query directions via API
 
-We're going to use jQuery to access the MAPCAT API, so copy these lines into the ```<head>``` part of your HTML page.
-
-
-To query the server, add the following script in the ```<body>``` part of your page, below the previous one, to the comment saying "continue here".
+To query the server, continue the script above:
 
 ```javascript
 var headers = new Headers();

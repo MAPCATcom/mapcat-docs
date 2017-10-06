@@ -46,7 +46,7 @@ this.config = {
         name: 'OpenStreetMap layer',
         layer: new ol.layer.Tile({
           source: new ol.source.XYZ({
-            url: 'https://terkepem.hu/tile/{z}/{x}/{y}.png',
+            url: 'https://rt-dev.mapcat.com/tile/{z}/{x}/{y}.png?base&landcover&ocean&relief&labels=en&scale=1&styleId=default',
             projection: 'EPSG:23700'
           })
         })

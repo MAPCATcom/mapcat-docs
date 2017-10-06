@@ -58,7 +58,7 @@ var map = new ol.Map({
       name: 'MapCat layer',
       layer: new ol.layer.Tile({
         source: new ol.source.XYZ({
-          url: 'https://terkepem.hu/tile/{z}/{x}/{y}.png',
+          url: 'https://rt-dev.mapcat.com/tile/{z}/{x}/{y}.png?base&landcover&ocean&relief&labels=en&scale=1&styleId=default',
           projection: 'EPSG:23700'
         })
       })
@@ -71,8 +71,6 @@ var map = new ol.Map({
 });
 ```
 
-Substitute ```< YOUR MAPCAT ACCESS TOKEN >``` with your acceess token.
-
 For more complex use, refer to the documentation of [OpenLayers](http://openlayers.org)
 
 
@@ -82,7 +80,6 @@ To query the server, continue the script above:
 
 ```javascript
 var headers = new Headers();
-headers.append("Ocp-Apim-Subscription-Key","");
 headers.append("Content-Type","application/json");
 headers.append("Ocp-Apim-Subscription-Key","< YOUR MAPCAT ACCESS TOKEN >");
 
@@ -105,7 +102,7 @@ var init = { method: 'POST',
               headers,
               body };
 
-var request = fetch("https://api.mapcat.com/routing/route?subscription-key=" + "< YOUR MAPCAT ACCESS TOKEN >", init)
+var request = fetch("https://api.mapcat.com/routing/route", init)
 .then(function(response) {
   return response.json()
 })
@@ -168,7 +165,7 @@ var map = new ol.Map({
       name: 'MapCat layer',
       layer: new ol.layer.Tile({
         source: new ol.source.XYZ({
-          url: 'https://terkepem.hu/tile/{z}/{x}/{y}.png',
+          url: 'https://rt-dev.mapcat.com/tile/{z}/{x}/{y}.png?base&landcover&ocean&relief&labels=en&scale=1&styleId=default',
           projection: 'EPSG:23700'
         })
       })
@@ -181,7 +178,6 @@ var map = new ol.Map({
 });
 
 var headers = new Headers();
-headers.append("Ocp-Apim-Subscription-Key","");
 headers.append("Content-Type","application/json");
 headers.append("Ocp-Apim-Subscription-Key","< YOUR MAPCAT ACCESS TOKEN >");
 
@@ -204,7 +200,7 @@ var init = { method: 'POST',
               headers,
               body };
 
-var request = fetch("https://api.mapcat.com/routing/route?subscription-key=" + "< YOUR MAPCAT ACCESS TOKEN >", init)
+var request = fetch("https://api.mapcat.com/routing/route", init)
 .then(function(response) {
   return response.json()
 })
@@ -230,6 +226,6 @@ var request = fetch("https://api.mapcat.com/routing/route?subscription-key=" + "
     })
   });
 
-  map.addLayer (vector)
+  map.addLayer(vector);
 });
 ```

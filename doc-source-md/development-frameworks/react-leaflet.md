@@ -27,7 +27,7 @@ import { Map, Marker, Popup, TileLayer } from 'react-leaflet';
 let map = (
   <Map center={position} zoom={13}>
     <TileLayer
-      url='https://terkepem.hu/tile/{z}/{x}/{y}.png'
+      url='https://rt-dev.mapcat.com/tile/{z}/{x}/{y}.png?base&landcover&ocean&relief&labels=en&scale=1&styleId=default'
       attribution='Imagery &copy; 2017 <a href="http://mapcat.com">MAPCAT</a>, Map data &copy; <a href="http://osm.org/copyright">OpenStreetMap</a contributors'
     />
     <Marker position={position}>

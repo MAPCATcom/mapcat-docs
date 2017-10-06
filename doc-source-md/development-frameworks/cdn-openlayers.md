@@ -42,7 +42,7 @@ Then you can embed MAPCAT in the ```<body>``` part of your page in a div that ha
         name: 'MAPCAT layer',
         layer: new ol.layer.Tile({
           source: new ol.source.XYZ({
-            url: 'https://terkepem.hu/tile/{z}/{x}/{y}.png',
+            url: 'https://rt-dev.mapcat.com/tile/{z}/{x}/{y}.png?base&landcover&ocean&relief&labels=en&scale=1&styleId=default',
             projection: 'EPSG:23700'
           })
         })
@@ -74,10 +74,6 @@ We're going to use jQuery to access the MAPCAT API, so copy these lines into the
 To query the server, add the following script in the ```<body>``` part of your page, below the previous one, to the comment saying "continue here".
 
 ```javascript
-  var params = {
-      // Request parameters
-      "subscription-key": "< YOUR MAPCAT ACCESS TOKEN >",
-  };
 
   var body = {
     "waypoints": [
@@ -95,14 +91,14 @@ To query the server, add the following script in the ```<body>``` part of your p
   };
 
   $.ajax({
-      url: "https://api.mapcat.com/routing/route?" + $.param(params),
+      url: "https://api.mapcat.com/routing/route",
       beforeSend: function(xhrObj){
           // Request headers
-          xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key","");
           xhrObj.setRequestHeader("Content-Type","application/json");
           xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key","< YOUR MAPCAT ACCESS TOKEN >");
       },
       type: "POST",
+      dataType: 'json',
       // Request body
       data: JSON.stringify(body),
   })
@@ -180,16 +176,11 @@ Your file should look something similar
     <script>
 
       var map = L.map('map').setView([51.505, -0.09], 13);
-      L.tileLayer('https://terkepem.hu/tile/{z}/{x}/{y}.png', {
+      L.tileLayer('https://rt-dev.mapcat.com/tile/{z}/{x}/{y}.png?base&landcover&ocean&relief&labels=en&scale=1&styleId=default', {
         attribution: 'Imagery &copy; 2017 <a href="http://mapcat.com">MAPCAT</a>, Map data &copy; <a href="http://osm.org/copyright">OpenStreetMap</a contributors',
         maxZoom: 18,
         accessToken: '< YOUR MAPCAT ACCESS TOKEN >'
-      }).addTo(mymap);
-
-      var params = {
-        // Request parameters
-        "subscription-key": "< YOUR MAPCAT ACCESS TOKEN >",
-      };
+      }).addTo(map);
 
       var body = {
         "waypoints": [
@@ -207,14 +198,14 @@ Your file should look something similar
       };
 
       $.ajax({
-        url: "https://api.mapcat.com/routing/route?" + $.param(params),
+        url: "https://api.mapcat.com/routing/route",
         beforeSend: function(xhrObj){
           // Request headers
-          xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key","");
           xhrObj.setRequestHeader("Content-Type","application/json");
           xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key","< YOUR MAPCAT ACCESS TOKEN >");
         },
         type: "POST",
+        dataType: 'json',
         // Request body
         data: JSON.stringify(body),
       })

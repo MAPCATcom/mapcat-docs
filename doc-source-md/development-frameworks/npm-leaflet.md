@@ -55,7 +55,7 @@ Then you can embed MAPCAT in the ```<body>``` part of your page in a div that ha
 
 Render a map like the following:
 
-```js
+```javascript
 import * as L from 'leaflet';
 
 let map = L.map('map', {
@@ -66,13 +66,11 @@ let map = L.map('map', {
   maxZoom: 19
 });
 
-L.tileLayer('https://terkepem.hu/tile/{z}/{x}/{y}.png', {
-  attribution: 'Imagery &copy; 2017 <a href="http://mapcat.com">MAPCAT</a>, Map data &copy; <a href="http://osm.org/copyright">OpenStreetMap</a contributors',
+L.tileLayer('https://rt-dev.mapcat.com/tile/{z}/{x}/{y}.png?base&landcover&ocean&relief&labels=en&scale=1&styleId=default', {
+  attribution: 'Imagery &copy; 2017 <a href="https://mapcat.com">MAPCAT</a>, Map data &copy; <a href="http://osm.org/copyright">OpenStreetMap</a contributors',
   maxZoom: 18
 }).addTo(map);
 ```
-
-Substitute ```< YOUR MAPCAT ACCESS TOKEN >``` with your acceess token.
 
 For more complex use, refer to the documentation of [Leaflet JS](http://leafletjs.org)
 
@@ -83,7 +81,6 @@ To query the server, continue the script above:
 
 ```javascript
 var headers = new Headers();
-headers.append("Ocp-Apim-Subscription-Key","");
 headers.append("Content-Type","application/json");
 headers.append("Ocp-Apim-Subscription-Key","< YOUR MAPCAT ACCESS TOKEN >");
 
@@ -106,7 +103,7 @@ var init = { method: 'POST',
               headers,
               body };
 
-var request = fetch("https://api.mapcat.com/routing/route?subscription-key=" + "< YOUR MAPCAT ACCESS TOKEN >", init)
+var request = fetch("https://api.mapcat.com/routing/route", init)
 .then(function(response) {
   return response.json()
 })
@@ -128,10 +125,10 @@ Change the parameter of the method in the above script to the following:
 .then(function(json) {
   var coordinates = [];
   var index, len;
-  for (index = 0, len = json.results.features..length; index < len; ++index) {
-    coordinates.push(json.results.features[index].geometry.coordinates)
+  for (index = 0, len = json.results.features.length; index < len; ++index) {
+    coordinates.push(json.results.features[index].geometry.coordinates.map(function(a){return [a[1],a[0]]}))
   }
-  var polygon = L.polygon(coordinates).addTo(mymap);
+  var polyline = L.polyline(coordinates).addTo(map);
 });
 
 ```
@@ -155,13 +152,12 @@ let map = L.map('map', {
   maxZoom: 19
 });
 
-L.tileLayer('https://terkepem.hu/tile/{z}/{x}/{y}.png', {
+L.tileLayer('https://rt-dev.mapcat.com/tile/{z}/{x}/{y}.png?base&landcover&ocean&relief&labels=en&scale=1&styleId=default', {
   attribution: 'Imagery &copy; 2017 <a href="http://mapcat.com">MAPCAT</a>, Map data &copy; <a href="http://osm.org/copyright">OpenStreetMap</a contributors',
   maxZoom: 18
 }).addTo(map);
 
 var headers = new Headers();
-headers.append("Ocp-Apim-Subscription-Key","");
 headers.append("Content-Type","application/json");
 headers.append("Ocp-Apim-Subscription-Key","< YOUR MAPCAT ACCESS TOKEN >");
 
@@ -184,17 +180,17 @@ var init = { method: 'POST',
               headers,
               body };
 
-var request = fetch("https://api.mapcat.com/routing/route?subscription-key=" + "< YOUR MAPCAT ACCESS TOKEN >", init)
+var request = fetch("https://api.mapcat.com/routing/route", init)
 .then(function(response) {
   return response.json()
 })
 .then(function(json) {
   var coordinates = [];
   var index, len;
-  for (index = 0, len = json.results.features..length; index < len; ++index) {
-    coordinates.push(json.results.features[index].geometry.coordinates)
+  for (index = 0, len = json.results.features.length; index < len; ++index) {
+    coordinates.push(json.results.features[index].geometry.coordinates.map(function(a){return [a[1],a[0]]}))
   }
-  var polygon = L.polygon(coordinates).addTo(mymap);
+  var polyline = L.polyline(coordinates).addTo(map);
 });
 
 ```

@@ -31,7 +31,7 @@ let map = L.map('map', {
   maxZoom: 19
 });
 
-L.tileLayer('https://terkepem.hu/tile/{z}/{x}/{y}.png', {
+L.tileLayer('https://rt-dev.mapcat.com/tile/{z}/{x}/{y}.png?base&landcover&ocean&relief&labels=en&scale=1&styleId=default', {
   attribution: 'Imagery &copy; 2017 <a href="http://mapcat.com">MAPCAT</a>, Map data &copy; <a href="http://osm.org/copyright">OpenStreetMap</a contributors',
   maxZoom: 18
 }).addTo(map);

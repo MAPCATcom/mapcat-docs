@@ -35,17 +35,14 @@ Then you can embed a MAPCAT cat in the ```<body>``` part of your page in a div t
 <script>
 
   var map = L.map('map').setView([51.505, -0.09], 13);
-  L.tileLayer('https://terkepem.hu/tile/{z}/{x}/{y}.png', {
+  L.tileLayer('https://rt-dev.mapcat.com/tile/{z}/{x}/{y}.png?base&landcover&ocean&relief&labels=en&scale=1&styleId=default', {
     attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery &copy; <a href="http://mapcat.com">MAPCAT</a>',
-    maxZoom: 18,
-    accessToken: '< YOUR MAPCAT ACCESS TOKEN >'
-  }).addTo(mymap);
+    maxZoom: 18
+  }).addTo(map);
 
   // continue here
 </script>
 ```
-
-Substitute ```< YOUR MAPCAT ACCESS TOKEN >``` with your acceess token.
 
 For more complex use, refer to the documentation of [Leaflet JS](http://leafletjs.org)
 
@@ -61,14 +58,9 @@ We're going to use jQuery to access the MAPCAT API, so copy these lines into the
 To query the server, add the following script in the ```<body>``` part of your page, below the previous one, to the comment saying "continue here".
 
 ```javascript
-  var params = {
-      // Request parameters
-      "subscription-key": "< YOUR MAPCAT ACCESS TOKEN >",
-  };
 
   var body = {
     "waypoints": [
-      [
         {
           "lat": 51.509,
           "lon": -0.08
@@ -77,19 +69,18 @@ To query the server, add the following script in the ```<body>``` part of your p
           "lat": 51.51,
           "lon": -0.047
         }
-      ]
     ],
   };
 
   $.ajax({
-      url: "https://api.mapcat.com/routing/route?" + $.param(params),
+      url: "https://api.mapcat.com/routing/route",
       beforeSend: function(xhrObj){
           // Request headers
-          xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key","");
           xhrObj.setRequestHeader("Content-Type","application/json");
           xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key","< YOUR MAPCAT ACCESS TOKEN >");
       },
       type: "POST",
+      dataType: 'json',
       // Request body
       data: JSON.stringify(body),
   })
@@ -113,10 +104,10 @@ Change the parameter of the method in the above script to the following:
   .done(function(data) {
       var coordinates = [];
       var index, len;
-      for (index = 0, len = data.results.features..length; index < len; ++index) {
-        coordinates.push(data.results.features[index].geometry.coordinates)
+      for (index = 0, len = data.results.features.length; index < len; ++index) {
+        coordinates.push(data.results.features[index].geometry.coordinates.map(function(a){return [a[1],a[0]]}));
       }
-      var polygon = L.polygon(coordinates).addTo(mymap);
+      var polyline = L.polyline(coordinates).addTo(map);
   })
 ```
 
@@ -151,20 +142,13 @@ Your file should look something similar:
     <script>
 
       var map = L.map('map').setView([51.505, -0.09], 13);
-      L.tileLayer('https://terkepem.hu/tile/{z}/{x}/{y}.png', {
+      L.tileLayer('https://rt-dev.mapcat.com/tile/{z}/{x}/{y}.png?base&landcover&ocean&relief&labels=en&scale=1&styleId=default', {
         attribution: 'Imagery &copy; 2017 <a href="http://mapcat.com">MAPCAT</a>, Map data &copy; <a href="http://osm.org/copyright">OpenStreetMap</a contributors',
-        maxZoom: 18,
-        accessToken: '< YOUR MAPCAT ACCESS TOKEN >'
-      }).addTo(mymap);
-
-      var params = {
-        // Request parameters
-        "subscription-key": "< YOUR MAPCAT ACCESS TOKEN >",
-      };
+        maxZoom: 18
+      }).addTo(map);
 
       var body = {
         "waypoints": [
-          [
             {
               "lat": 51.509,
               "lon": -0.08
@@ -173,12 +157,11 @@ Your file should look something similar:
               "lat": 51.51,
               "lon": -0.047
             }
-          ]
         ],
       };
 
       $.ajax({
-        url: "https://api.mapcat.com/routing/route?" + $.param(params),
+        url: "https://api.mapcat.com/routing/route",
         beforeSend: function(xhrObj){
           // Request headers
           xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key","");
@@ -193,9 +176,9 @@ Your file should look something similar:
         var coordinates = [];
         var index, len;
         for (index = 0, len = data.results.features.length; index < len; ++index) {
-          coordinates.push(data.results.features[index].geometry.coordinates)
+          coordinates.push(data.results[0].features[index].geometry.coordinates.map(function(a){return [a[1],a[0]]}));
         }
-        var polygon = L.polygon(coordinates).addTo(map);
+        var polyline = L.polyline(coordinates).addTo(map);
       })
       .fail(function() {
         alert("error");

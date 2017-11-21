@@ -5,7 +5,7 @@ const spawn = require( 'child_process' ).spawn;
 const folders = [{
   in: './doc-source-md',
   out: './dist',
-  template: './doc-template-html'
+  template: './mapcat-gray'
 }];
 
 folders.forEach (dir => {

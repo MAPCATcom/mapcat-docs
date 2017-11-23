@@ -830,7 +830,6 @@ ol ul {
 
 li {
   line-height: 20px;
-  color: #37b34a;
   padding-bottom: 5px;
 }
 
@@ -6181,4 +6180,8 @@ a.badge:focus {
 p.logo{
   text-align: center;
   margin-bottom: 20px;
+}
+
+a:-webkit-any-link {
+  color:#37b34a;
 }

@@ -10,6 +10,7 @@
   "author": "GLI Solutions",
   "license": "MIT",
   "dependencies": {
+    "@mapcat/mapview-init": "^0.0.1",
     "markdown-styles": "^3.1.9"
   }
 }

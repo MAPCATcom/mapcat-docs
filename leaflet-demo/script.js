@@ -16,7 +16,12 @@ function load(token) {
         if (error) {
             map = undefined;
             $('#map').empty();
-            $('#warningMessage').html('Invalid access token. Please try again...');
+            if (typeof(error) === 'object') {
+                $('#warningMessage').html(error.message);
+            } else {
+                $('#warningMessage').html(error);
+            }
+            console.log(error);
         } else {
             init();
             $('#apikeyModal').modal('hide');

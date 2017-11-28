@@ -22,39 +22,46 @@ To use OpenLayers in your webste, copy these lines into the ```<head>``` part of
 
 ```html
 <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://openlayers.org/en/v4.0.1/css/ol.css" type="text/css">
+<link rel="stylesheet" href="https://openlayers.org/en/v4.5.0/css/ol.css" type="text/css">
 
 <!-- Latest compiled and minified JavaScript -->
-<script src="https://openlayers.org/en/v4.0.1/build/ol.js" type="text/javascript"></script>
+<script src="https://openlayers.org/en/v4.5.0/build/ol.js" type="text/javascript"></script>
+```
+
+Include [@mapcat/mapview-init](https://www.npmjs.com/package/@mapcat/mapview-init) in ```<head>``` part too.
+```html
+<!-- MAPCAT mapview init -->
+<script type="text/javascript" src="mapcatview-min.js"></script>
 ```
 
 Then you can embed MAPCAT in the ```<body>``` part of your page in a div that has its size specified.
 
 ```html
-<div id='map' style='width: 400px; height: 300px;'></div>
+<div id='map' style='width: 100%; height: 400px;'></div>
 
 <script type="text/javascript">
-  var map = new ol.Map({
-    target: 'map',
-    layers: [
-      {
-        type: 'layer',
-        name: 'MAPCAT layer',
-        layer: new ol.layer.Tile({
-          source: new ol.source.XYZ({
-            url: 'https://rt-dev.mapcat.com/tile/{z}/{x}/{y}.png?base&landcover&ocean&relief&labels=en&scale=1&styleId=default',
-            projection: 'EPSG:23700'
+  mapcatview.initRasterView("< YOUR MAPCAT ACCESS TOKEN >", null, null, function(error, response) {
+    if (error) {
+      console.log(error);
+    } else {
+      var map = new ol.Map({
+        target: 'map',
+        layers: [
+          new ol.layer.Tile({
+            source: new ol.source.XYZ({
+              url: response,
+              projection: 'EPSG:3857'
+            })
           })
+        ],
+        view: new ol.View({
+          center: ol.proj.fromLonLat([-0.0595, 51.5095]),
+          zoom: 13
         })
-      }
-    ],
-    view: new ol.View({
-      center: ol.proj.fromLonLat([37.41, 8.82]),
-      zoom: 4
-    })
-  });
-
+      });
+    }
   // continue here
+  });
 </script>
 ```
 
@@ -77,7 +84,6 @@ To query the server, add the following script in the ```<body>``` part of your p
 
   var body = {
     "waypoints": [
-      [
         {
           "lat": 51.509,
           "lon": -0.08
@@ -86,21 +92,20 @@ To query the server, add the following script in the ```<body>``` part of your p
           "lat": 51.51,
           "lon": -0.047
         }
-      ]
-    ],
+    ]
   };
 
   $.ajax({
-      url: "https://api.mapcat.com/routing/route",
-      beforeSend: function(xhrObj){
+      url: "https://api-dev.mapcat.com/routing/route",
+      beforeSend: function(xhrObj) {
           // Request headers
-          xhrObj.setRequestHeader("Content-Type","application/json");
-          xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key","< YOUR MAPCAT ACCESS TOKEN >");
+          xhrObj.setRequestHeader("Content-Type", "application/json");
+          xhrObj.setRequestHeader("X-Api-Key", "< YOUR MAPCAT ACCESS TOKEN >");
       },
       type: "POST",
       dataType: 'json',
       // Request body
-      data: JSON.stringify(body),
+      data: JSON.stringify(body)
   })
   .done(function(data) {
       alert("success");
@@ -122,12 +127,16 @@ Change the parameter of the method in the above script to the following:
   .done(function(data) {
     var features = [];
     var index, len;
-    for (index = 0, len = data.results.features.length; index < len; ++index) {
-      features[i] = new ol.Feature({
-        'geometry': new ol.geom.LineString(data.results.features[index].geometry.coordinates)
+    for (index = 0, len = data.results[0].features.length; index < len; index++) {
+      var i;
+      var coordinates = [];
+      for (i=0; i<data.results[0].features[index].geometry.coordinates.length; i++) {
+        coordinates.push(ol.proj.fromLonLat(data.results[0].features[index].geometry.coordinates[i]));
+      }
+      features[index] = new ol.Feature({
+        'geometry': new ol.geom.LineString(coordinates)
       });
     }
-
     var vector = new ol.layer.Vector({
       source: new ol.source.Vector({
         features: features,
@@ -135,19 +144,19 @@ Change the parameter of the method in the above script to the following:
       }),
       style: new ol.style.Style({
         stroke: new ol.style.Stroke({
-          color: '#666666',
-          width: 1
+          color: '#ff0000',
+          width: 2
         })
       })
     });
-
-    map.addLayer (vector)
-
+    map.addLayer(vector);
   })
 ```
 
 
 ## Putting it together
+
+<div id='map' style='width: 100%; height: 400px;'></div>
 
 Your file should look something similar
 
@@ -159,86 +168,175 @@ Your file should look something similar
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>MapCat with Leaflet</title>
+    <title>MapCat with OpenLayers</title>
     <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://openlayers.org/en/v4.0.1/css/ol.css" type="text/css">
+    <link rel="stylesheet" href="https://openlayers.org/en/v4.5.0/css/ol.css" type="text/css">
 
     <!-- Latest compiled and minified JavaScript -->
-    <script src="https://openlayers.org/en/v4.0.1/build/ol.js" type="text/javascript"></script>
+    <script src="https://openlayers.org/en/v4.5.0/build/ol.js" type="text/javascript"></script>
 
     <!-- jQuery -->
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+
+    <!-- MAPCAT mapview init -->
+    <script type="text/javascript" src="mapcatview-min.js"></script>
   </head>
 
   <body style="margin: 0; background-color: #efefef;">
     
     <div id='map' style='width: 400px; height: 300px;'></div>
     <script>
-
-      var map = L.map('map').setView([51.505, -0.09], 13);
-      L.tileLayer('https://rt-dev.mapcat.com/tile/{z}/{x}/{y}.png?base&landcover&ocean&relief&labels=en&scale=1&styleId=default', {
-        attribution: 'Imagery &copy; 2017 <a href="http://mapcat.com">MAPCAT</a>, Map data &copy; <a href="http://osm.org/copyright">OpenStreetMap</a contributors',
-        maxZoom: 18,
-        accessToken: '< YOUR MAPCAT ACCESS TOKEN >'
-      }).addTo(map);
-
-      var body = {
-        "waypoints": [
-          [
-            {
-              "lat": 51.509,
-              "lon": -0.08
-            },
-            {
-              "lat": 51.51,
-              "lon": -0.047
-            }
-          ]
-        ],
-      };
-
-      $.ajax({
-        url: "https://api.mapcat.com/routing/route",
-        beforeSend: function(xhrObj){
-          // Request headers
-          xhrObj.setRequestHeader("Content-Type","application/json");
-          xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key","< YOUR MAPCAT ACCESS TOKEN >");
-        },
-        type: "POST",
-        dataType: 'json',
-        // Request body
-        data: JSON.stringify(body),
-      })
-      .done(function(data) {
-        var features = [];
-        var index, len;
-        for (index = 0, len = data.results.features.length; index < len; ++index) {
-          features[i] = new ol.Feature({
-            'geometry': new ol.geom.LineString(data.results.features[index].geometry.coordinates)
+      mapcatview.initRasterView("< YOUR MAPCAT ACCESS TOKEN >", null, null, function(error, response) {
+        if (error) {
+          console.log(error);
+        } else {
+          var map = new ol.Map({
+            target: 'map',
+            layers: [
+              new ol.layer.Tile({
+                source: new ol.source.XYZ({
+                  url: response,
+                  projection: 'EPSG:3857'
+                })
+              })
+            ],
+            view: new ol.View({
+              center: ol.proj.fromLonLat([-0.0595, 51.5095]),
+              zoom: 13
+            })
           });
         }
-
-        var vector = new ol.layer.Vector({
-          source: new ol.source.Vector({
-            features: features,
-            wrapX: false
-          }),
-          style: new ol.style.Style({
-            stroke: new ol.style.Stroke({
-              color: '#666666',
-              width: 1
+        var body = {
+          "waypoints": [
+              {
+                "lat": 51.509,
+                "lon": -0.08
+              },
+              {
+                "lat": 51.51,
+                "lon": -0.047
+              }
+          ]
+        };
+        $.ajax({
+          url: "https://api-dev.mapcat.com/routing/route",
+          beforeSend: function(xhrObj) {
+            xhrObj.setRequestHeader("Content-Type", "application/json");
+            xhrObj.setRequestHeader("X-Api-Key", "< YOUR MAPCAT ACCESS TOKEN >");
+          },
+          type: "POST",
+          dataType: 'json',
+          data: JSON.stringify(body)
+        })
+        .done(function(data) {
+          var features = [];
+          var index, len;
+          for (index = 0, len = data.results[0].features.length; index < len; index++) {
+            var i;
+            var coordinates = [];
+            for (i=0; i<data.results[0].features[index].geometry.coordinates.length; i++) {
+              coordinates.push(ol.proj.fromLonLat(data.results[0].features[index].geometry.coordinates[i]));
+            }
+            features[index] = new ol.Feature({
+              'geometry': new ol.geom.LineString(coordinates)
+            });
+          }
+          var vector = new ol.layer.Vector({
+            source: new ol.source.Vector({
+              features: features,
+              wrapX: false
+            }),
+            style: new ol.style.Style({
+              stroke: new ol.style.Stroke({
+                color: '#ff0000',
+                width: 2
+              })
             })
-          })
+          });
+          map.addLayer(vector);
+        })
+        .fail(function() {
+          alert("error");
         });
-
-        map.addLayer (vector)
-      })
-      .fail(function() {
-        alert("error");
       });
-
     </script>
-
   </body>
 </html>
 ```
+
+
+<script>
+mapcatview.initRasterView(token, null, null, function(error, response) {
+  if (error) {
+    console.log(error);
+  } else {
+    var map = new ol.Map({
+      target: 'map',
+      layers: [
+        new ol.layer.Tile({
+          source: new ol.source.XYZ({
+            url: response,
+            projection: 'EPSG:3857'
+          })
+        })
+      ],
+      view: new ol.View({
+        center: ol.proj.fromLonLat([-0.0595, 51.5095]),
+        zoom: 13
+      })
+    });
+  }
+  var body = {
+    "waypoints": [
+        {
+          "lat": 51.509,
+          "lon": -0.08
+        },
+        {
+          "lat": 51.51,
+          "lon": -0.047
+        }
+    ]
+  };
+  $.ajax({
+    url: "https://api-dev.mapcat.com/routing/route",
+    beforeSend: function(xhrObj) {
+      xhrObj.setRequestHeader("Content-Type", "application/json");
+      xhrObj.setRequestHeader("X-Api-Key", token);
+    },
+    type: "POST",
+    dataType: 'json',
+    data: JSON.stringify(body),
+  })
+  .done(function(data) {
+    var features = [];
+    var index, len;
+    for (index = 0, len = data.results[0].features.length; index < len; index++) {
+      var i;
+      var coordinates = [];
+      for (i=0; i<data.results[0].features[index].geometry.coordinates.length; i++) {
+        coordinates.push(ol.proj.fromLonLat(data.results[0].features[index].geometry.coordinates[i]));
+      }
+      features[index] = new ol.Feature({
+        'geometry': new ol.geom.LineString(coordinates)
+      });
+    }
+    var vector = new ol.layer.Vector({
+      source: new ol.source.Vector({
+        features: features,
+        wrapX: false
+      }),
+      style: new ol.style.Style({
+        stroke: new ol.style.Stroke({
+          color: '#ff0000',
+          width: 2
+        })
+      })
+    });
+    map.addLayer(vector);
+  })
+  .fail(function() {
+    alert("error");
+  });
+});
+</script>

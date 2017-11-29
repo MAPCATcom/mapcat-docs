@@ -1,24 +1,25 @@
 # MAPCAT for Developers
 
-Use MAPCAT APIs in your websites and applications to power location services for your users.
+Custom-made, easy-to-integrate OpenStreetMap-based worldwide map API for public websites, internal systems or mobile apps to let your location-based info come to life.
+- Overly simple integration
+- Works with your current systems, easy to install or switch to
 
-[View pricing and plans](https://pricing.mapcat.com)
+[More about our services](https://pro.mapcat.com/services/)  
+[See pricing](https://pro.mapcat.com/planpricing/)
 
-## About MAPCAT
+## About us
 
 [MAPCAT](https://mapcat.com) is an [OpenStreetMap](http://openstreetmap.org) world map service offering routing for cars, bicycles and pedestrians, plus real-time map editing and business services.
 
-## Features and Comparison with other services
+## Why to choose MAPCAT?
 
-Read our comparison of MAPCAT, Google Maps, Bing Maps, Apple Maps, OpenStreetMaps and Mapbox [here](./development-comparison/index.html). 
+Compare the MAPCAT services with that of the biggest competitors. [Click here to read more](./development-comparison/index.html). 
 
 ## Web development with MAPCAT
 
-Currently the easiest way to start rendering map tiles provided by [MAPCAT](https://mapcat.com) is by either using [Leaflet JS](http://leafletjs.org) or [OpenLayers](http://openlayers.org).
+Currently the easiest way to start rendering map tiles provided by [MAPCAT](https://mapcat.com) is by either using [Leaflet JS](http://leafletjs.com) or [OpenLayers](http://openlayers.org).
 
-[MAPCAT](https://mapcat.com) is an [OpenStreetMap](http://openstreetmap.org-based) world map service offering routing for cars, bicycles and pedestrians, plus real-time map editing and business services.
-
-Both [Leaflet JS](http://leafletjs.org) and [OpenLayers](http://openlayers.org) are open source libraries for embedding interactive maps into webpages.
+Both [Leaflet JS](http://leafletjs.com) and [OpenLayers](http://openlayers.org) are open source libraries for embedding interactive maps into webpages.
 
 ## Get started with MAPCAT and Leaflet
 

@@ -1,7 +1,5 @@
 # Comparison of online map services for developers
 
-MAPCAT vs Google Maps vs OpenStreetMap vs Apple Maps vs Mapbox vs OpenLayers vs Leaflet
-
 ## General description
 
 |               | Description |
@@ -19,7 +17,7 @@ MAPCAT vs Google Maps vs OpenStreetMap vs Apple Maps vs Mapbox vs OpenLayers vs 
 
 |               | Map Database |
 |---------------|--------------|
-| [MAPCAT](https://mapcat.com) | Uses OpenStreetMap for providing its services. Optionally can be used with custom map databases too. |
+| [MAPCAT](https://mapcat.com) | Uses OpenStreetMap for providing its services. |
 | [Google Maps](https://maps.google.com) | Has its own proprietary map database. |
 | [Bing Maps](https://www.bing.com/maps) | Has its own proprietary map database. |
 | [Apple Maps](https://www.apple.com/ios/maps/)| Has its own proprietary map database. |
@@ -87,10 +85,6 @@ MAPCAT vs Google Maps vs OpenStreetMap vs Apple Maps vs Mapbox vs OpenLayers vs 
 
 For further information see also [Comparison of web map services](https://en.wikipedia.org/wiki/Comparison_of_web_map_services) on Wikipedia.
  
-## About MAPCAT
-
-[MAPCAT](https://mapcat.com) is an [OpenStreetMap](http://openstreetmap.org) world map service offering routing for cars, bicycles and pedestrians, plus real-time map editing and business services.
-
 ## Start your project with MAPCAT
 
 You can render MAPCAT maps either in Angular2, React or simply JavaScript. MAPCAT's raster tiles are compatible both with Leaflet and OpenLayers.

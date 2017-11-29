@@ -72,7 +72,7 @@ L.tileLayer('https://rt-dev.mapcat.com/tile/{z}/{x}/{y}.png?base&landcover&ocean
 }).addTo(map);
 ```
 
-For more complex use, refer to the documentation of [Leaflet JS](http://leafletjs.org)
+For more complex use, refer to the documentation of [Leaflet JS](http://leafletjs.com)
 
 
 ## Step 2. Query directions via API
@@ -133,7 +133,7 @@ Change the parameter of the method in the above script to the following:
 
 ```
 
-For more complex use, refer to the documentation of [Leaflet JS](http://leafletjs.org)
+For more complex use, refer to the documentation of [Leaflet JS](http://leafletjs.com)
 
 ## Putting it together
 

@@ -1,6 +1,6 @@
 # Using MAPCAT from CDN
 
-You can use [Leaflet JS](http://leafletjs.org) to use [MAPCAT](http://mapcat.com) services on your website.
+You can use [Leaflet JS](http://leafletjs.com) to use [MAPCAT](http://mapcat.com) services on your website.
 
 Leaflet JS is a JavaScript library that renders interactive maps from raster tiles using WebGL. 
 
@@ -22,29 +22,42 @@ To use Leaflet JS in your webste, copy these lines into the ```<head>``` part of
 
 ```html
 <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css" />
 
 <!-- Latest compiled and minified JavaScript -->
-<script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
+<script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js"></script>
+```
+
+Include [@mapcat/mapview-init](https://www.npmjs.com/package/@mapcat/mapview-init) in ```<head>``` part too.
+```html
+<!-- MAPCAT mapview init -->
+<script type="text/javascript" src="mapcatview-min.js"></script>
 ```
 
 Then you can embed a MAPCAT cat in the ```<body>``` part of your page in a div that has its size specified.
 
 ```html
-<div id='map' style='width: 400px; height: 300px;'></div>
+<div id='map' style='width: 100%; height: 400px;'></div>
 <script>
-
-  var map = L.map('map').setView([51.505, -0.09], 13);
-  L.tileLayer('https://rt-dev.mapcat.com/tile/{z}/{x}/{y}.png?base&landcover&ocean&relief&labels=en&scale=1&styleId=default', {
-    attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery &copy; <a href="http://mapcat.com">MAPCAT</a>',
-    maxZoom: 18
-  }).addTo(map);
-
+  mapcatview.initRasterView("< YOUR MAPCAT ACCESS TOKEN >", null, null, function(error, response) {
+    if (error) {
+      console.log(error);
+    } else {
+      var map = L.map('map').setView([51.5095, -0.0595], 13);
+      L.tileLayer(response, {
+        attribution: 'Map data &copy; ' +
+                     '<a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
+                     '<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+                     'Imagery &copy; <a href="http://mapcat.com">MAPCAT</a>',
+        maxZoom: 18
+      }).addTo(map);
+    }
   // continue here
+  });
 </script>
 ```
 
-For more complex use, refer to the documentation of [Leaflet JS](http://leafletjs.org)
+For more complex use, refer to the documentation of [Leaflet JS](http://leafletjs.com)
 
 ## Step 2. Query directions via API
 
@@ -69,20 +82,20 @@ To query the server, add the following script in the ```<body>``` part of your p
           "lat": 51.51,
           "lon": -0.047
         }
-    ],
+    ]
   };
 
   $.ajax({
-      url: "https://api.mapcat.com/routing/route",
-      beforeSend: function(xhrObj){
+      url: "https://api-dev.mapcat.com/routing/route",
+      beforeSend: function(xhrObj) {
           // Request headers
-          xhrObj.setRequestHeader("Content-Type","application/json");
-          xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key","< YOUR MAPCAT ACCESS TOKEN >");
+          xhrObj.setRequestHeader("Content-Type", "application/json");
+          xhrObj.setRequestHeader("X-Api-Key", "< YOUR MAPCAT ACCESS TOKEN >");
       },
       type: "POST",
       dataType: 'json',
       // Request body
-      data: JSON.stringify(body),
+      data: JSON.stringify(body)
   })
   .done(function(data) {
       alert("success");
@@ -104,16 +117,18 @@ Change the parameter of the method in the above script to the following:
   .done(function(data) {
       var coordinates = [];
       var index, len;
-      for (index = 0, len = data.results.features.length; index < len; ++index) {
-        coordinates.push(data.results.features[index].geometry.coordinates.map(function(a){return [a[1],a[0]]}));
+      for (index = 0, len = data.results[0].features.length; index < len; ++index) {
+        coordinates.push(data.results[0].features[index].geometry.coordinates.map(function(a){return [a[1],a[0]]}));
       }
       var polyline = L.polyline(coordinates).addTo(map);
   })
 ```
 
-For more complex use, refer to the documentation of [Leaflet JS](http://leafletjs.org)
+For more complex use, refer to the documentation of [Leaflet JS](http://leafletjs.com)
 
 ## Putting it together
+
+<div id='map' style='width: 100%; height: 400px;'></div>
 
 Your file should look something similar:
 
@@ -127,61 +142,73 @@ Your file should look something similar:
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>MapCat with Leaflet</title>
     <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css" />
 
     <!-- Latest compiled and minified JavaScript -->
-    <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js"></script>
 
     <!-- jQuery -->
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+
+    <!-- MAPCAT mapview init -->
+    <script type="text/javascript" src="mapcatview-min.js"></script>
   </head>
 
   <body style="margin: 0; background-color: #efefef;">
     
-    <div id='map' style='width: 400px; height: 300px;'></div>
+    <div id='map' style='width: 100%; height: 400px;'></div>
     <script>
 
-      var map = L.map('map').setView([51.505, -0.09], 13);
-      L.tileLayer('https://rt-dev.mapcat.com/tile/{z}/{x}/{y}.png?base&landcover&ocean&relief&labels=en&scale=1&styleId=default', {
-        attribution: 'Imagery &copy; 2017 <a href="http://mapcat.com">MAPCAT</a>, Map data &copy; <a href="http://osm.org/copyright">OpenStreetMap</a contributors',
-        maxZoom: 18
-      }).addTo(map);
-
-      var body = {
-        "waypoints": [
-            {
-              "lat": 51.509,
-              "lon": -0.08
-            },
-            {
-              "lat": 51.51,
-              "lon": -0.047
-            }
-        ],
-      };
-
-      $.ajax({
-        url: "https://api.mapcat.com/routing/route",
-        beforeSend: function(xhrObj){
-          // Request headers
-          xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key","");
-          xhrObj.setRequestHeader("Content-Type","application/json");
-          xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key","< YOUR MAPCAT ACCESS TOKEN >");
-        },
-        type: "POST",
-        // Request body
-        data: JSON.stringify(body),
-      })
-      .done(function(data) {
-        var coordinates = [];
-        var index, len;
-        for (index = 0, len = data.results.features.length; index < len; ++index) {
-          coordinates.push(data.results[0].features[index].geometry.coordinates.map(function(a){return [a[1],a[0]]}));
+      mapcatview.initRasterView("< YOUR MAPCAT ACCESS TOKEN >", null, null, function(error, response) {
+        if (error) {
+          console.log(error);
+        } else {
+          var map = L.map('map').setView([51.5095, -0.0595], 13);
+          L.tileLayer(response, {
+            attribution: 'Map data &copy; ' +
+                         '<a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
+                         '<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+                         'Imagery &copy; <a href="http://mapcat.com">MAPCAT</a>',
+            maxZoom: 18
+          }).addTo(map);
         }
-        var polyline = L.polyline(coordinates).addTo(map);
-      })
-      .fail(function() {
-        alert("error");
+
+        var body = {
+          "waypoints": [
+              {
+                "lat": 51.509,
+                "lon": -0.08
+              },
+              {
+                "lat": 51.510,
+                "lon": -0.047
+              }
+          ]
+        };
+
+        $.ajax({
+          url: "https://api-dev.mapcat.com/routing/route",
+          beforeSend: function(xhrObj) {
+            // Request headers
+            xhrObj.setRequestHeader("Content-Type", "application/json");
+            xhrObj.setRequestHeader("X-Api-Key", "< YOUR MAPCAT ACCESS TOKEN >");
+          },
+          type: "POST",
+          // Request body
+          data: JSON.stringify(body),
+        })
+        .done(function(data) {
+          var coordinates = [];
+          var index, len;
+          for (index = 0, len = data.results[0].features.length; index < len; index++) {
+            coordinates.push(data.results[0].features[index].geometry.coordinates.map(function(a){return [a[1],a[0]]}));
+          }
+          var polyline = L.polyline(coordinates).addTo(map);
+        })
+        .fail(function() {
+          alert("error");
+        });
+
       });
 
     </script>
@@ -189,3 +216,52 @@ Your file should look something similar:
   </body>
 </html>
 ```
+
+<script>
+mapcatview.initRasterView(token, null, null, function(error, response) {
+  if (error) {
+    console.log(error);
+  } else {
+    var map = L.map('map').setView([51.5095, -0.0595], 13);
+    L.tileLayer(response, {
+      attribution: 'Map data &copy; ' +
+                   '<a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
+                   '<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+                   'Imagery &copy; <a href="http://mapcat.com">MAPCAT</a>',
+      maxZoom: 18
+    }).addTo(map);
+  }
+  var body = {
+    "waypoints": [
+        {
+          "lat": 51.509,
+          "lon": -0.08
+        },
+        {
+          "lat": 51.51,
+          "lon": -0.047
+        }
+    ],
+  };
+  $.ajax({
+    url: "https://api-dev.mapcat.com/routing/route",
+    beforeSend: function(xhrObj) {
+      xhrObj.setRequestHeader("Content-Type", "application/json");
+      xhrObj.setRequestHeader("X-Api-Key", token);
+    },
+    type: "POST",
+    data: JSON.stringify(body)
+  })
+  .done(function(data) {
+    var coordinates = [];
+    var index, len;
+    for (index = 0, len = data.results[0].features.length; index < len; index++) {
+      coordinates.push(data.results[0].features[index].geometry.coordinates.map(function(a){return [a[1],a[0]]}));
+    }
+    var polyline = L.polyline(coordinates).addTo(map);
+  })
+  .fail(function() {
+    alert("error");
+  });
+});
+</script>

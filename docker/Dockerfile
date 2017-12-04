@@ -15,6 +15,7 @@ ADD node_modules/@mapcat/mapview-init/dist/mapcatview-min.js /opt/docs/dist/asse
 ADD docker/docker-entrypoint.ash /opt/docs/dist/
 ADD swagger /opt/docs/dist/swagger/
 ADD leaflet-demo /opt/docs/dist/demo/leaflet/
+ADD mapbox-demo /opt/docs/dist/demo/mapbox/
 
 EXPOSE 8080
 

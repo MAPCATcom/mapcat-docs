@@ -13,7 +13,7 @@
         "composite" :
         {
             "maxzoom" : 16,
-            "tiles" : [ "https://vt-dev.mapcat.com/vector/mb_compose/{z}/{x}/{y}.pbf?base&ocean" ],
+            "tiles" : [ "__TILE_URL__" ],
             "type" : "vector",
             "attribution": "© <a href=\"http://mapcat.com\">MAPCAT</a>"
         },
@@ -8759,7 +8759,7 @@
             "minzoom": 12,
             "interactive": true,
             "layout": {
-                "text-field": "{name_en}",
+                "text-field": "{name}",
                 "visibility": "visible",
                 "text-font": [                   
                     "Noto Sans Regular All"
@@ -8795,7 +8795,7 @@
             "minzoom": 16,
             "interactive": true,
             "layout": {
-                "text-field": "{name_en}",
+                "text-field": "{name}",
                 "visibility": "visible",
                 "text-font": [                   
                     "Noto Sans Regular All"
@@ -8878,7 +8878,7 @@
                 "icon-optional": false,
                 "text-rotation-alignment": "viewport",
                 "text-anchor": "top",
-                "text-field": "{name_en}",
+                "text-field": "{name}",
                 "text-letter-spacing": 0.02,
                 "text-max-width": 8
             },
@@ -8966,7 +8966,7 @@
                 "icon-optional": false,
                 "text-rotation-alignment": "viewport",
                 "text-anchor": "top",
-                "text-field": "{name_en}",
+                "text-field": "{name}",
                 "text-letter-spacing": 0.02,
                 "text-max-width": 8
             },
@@ -9034,7 +9034,7 @@
                 "text-padding": 1,
                 "visibility": "visible",
                 "text-rotation-alignment": "map",
-                "text-field": "{name_en}",
+                "text-field": "{name}",
                 "text-letter-spacing": 0.01
             },
             "paint": {
@@ -9096,7 +9096,7 @@
                 "text-padding": 1,
                 "visibility": "visible",
                 "text-rotation-alignment": "map",
-                "text-field": "{name_en}",
+                "text-field": "{name}",
                 "text-letter-spacing": 0.01
             },
             "paint": {
@@ -9146,7 +9146,7 @@
                 "visibility": "visible",
                 "text-rotation-alignment": "map",
                 "text-keep-upright": true,
-                "text-field": "{name_en}",
+                "text-field": "{name}",
                 "text-letter-spacing": 0.01
             },
             "paint": {
@@ -9737,7 +9737,7 @@
                         ],
                         [
                             13,
-                            "{name_en}"
+                            "{name}"
                         ]
                     ]
                 },
@@ -9781,7 +9781,7 @@
                 7
             ],
             "layout": {
-                "text-field": "{name_en}",
+                "text-field": "{name}",
                 "visibility": "visible",
                 "text-max-width": {
                     "base": 1,
@@ -9844,7 +9844,7 @@
                 100
             ],
             "layout": {
-                "text-field": "{name_en}",
+                "text-field": "{name}",
                 "visibility": "visible",
                 "text-font": [                   
                     "Noto Sans Regular All"
@@ -9884,7 +9884,7 @@
                 100
             ],
             "layout": {
-                "text-field": "{name_en}",
+                "text-field": "{name}",
                 "visibility": "visible",
                 "text-font": [                   
                     "Noto Sans Regular All"
@@ -10007,7 +10007,7 @@
                         ],
                         [
                             13,
-                            "{name_en}"
+                            "{name}"
                         ]
                     ]
                 },
@@ -10035,7 +10035,7 @@
             ],
             "layout": {
                 "visibility": "visible",
-                "text-field": "{name_en}",
+                "text-field": "{name}",
                 "text-transform": "uppercase",
                 "text-letter-spacing": 0.1,
                 "text-max-width": 7,
@@ -10079,7 +10079,7 @@
             ],
             "layout": {
                 "visibility": "visible",
-                "text-field": "{name_en}",
+                "text-field": "{name}",
                 "text-transform": "uppercase",
                 "text-font": [                   
                     "Noto Sans Regular All"
@@ -10122,7 +10122,7 @@
             ],
             "layout": {
                 "visibility": "visible",
-                "text-field": "{name_en}",
+                "text-field": "{name}",
                 "text-font": [                   
                     "Noto Sans Regular All"
                 ],
@@ -10161,7 +10161,7 @@
             ],
             "layout": {
                 "visibility": "visible",
-                "text-field": "{name_en}",
+                "text-field": "{name}",
                 "text-font": [                   
                     "Noto Sans Regular All"
                 ],
@@ -10251,7 +10251,7 @@
                         ]
                     ]
                 },
-                "text-field": "{name_en}",
+                "text-field": "{name}",
                 "text-max-width": 7,
                 "text-size": {
                     "base": 1,
@@ -10299,7 +10299,7 @@
                 1
             ],
             "layout": {
-                "text-field": "{name_en}",
+                "text-field": "{name}",
                 "visibility": "visible",
                 "text-max-width": {
                     "base": 1,
@@ -10362,7 +10362,7 @@
                 2
             ],
             "layout": {
-                "text-field": "{name_en}",
+                "text-field": "{name}",
                 "visibility": "visible",
                 "text-max-width": {
                     "base": 1,
@@ -10425,7 +10425,7 @@
                 4
             ],
             "layout": {
-                "text-field": "{name_en}",
+                "text-field": "{name}",
                 "visibility": "visible",
                 "text-max-width": {
                     "base": 1,
@@ -10488,7 +10488,7 @@
                 10
             ],
             "layout": {
-                "text-field": "{name_en}",
+                "text-field": "{name}",
                 "visibility": "visible",
                 "text-max-width": {
                     "base": 1,
@@ -10551,7 +10551,7 @@
                 3
             ],
             "layout": {
-                "text-field": "{name_en}",
+                "text-field": "{name}",
                 "visibility": "visible",
                 "text-max-width": {
                     "base": 1,
@@ -10614,7 +10614,7 @@
                 9
             ],
             "layout": {
-                "text-field": "{name_en}",
+                "text-field": "{name}",
                 "visibility": "visible",
                 "text-max-width": {
                     "base": 1,
@@ -10677,7 +10677,7 @@
                 8
             ],
             "layout": {
-                "text-field": "{name_en}",
+                "text-field": "{name}",
                 "visibility": "visible",
                 "text-max-width": {
                     "base": 1,
@@ -10818,7 +10818,7 @@
                         ]
                     ]
                 },
-                "text-field": "{name_en}",
+                "text-field": "{name}",
                 "text-max-width": 7
             },
             "paint": {
@@ -10914,7 +10914,7 @@
                         ]
                     ]
                 },
-                "text-field": "{name_en}",
+                "text-field": "{name}",
                 "text-max-width": 7,
                 "text-size": {
                     "base": 0.9,
@@ -11023,7 +11023,7 @@
                         ]
                     ]
                 },
-                "text-field": "{name_en}",
+                "text-field": "{name}",
                 "text-max-width": 7,
                 "text-size": {
                     "base": 0.9,
@@ -11111,7 +11111,7 @@
                         ],
                         [
                             6,
-                            "{name_en}"
+                            "{name}"
                         ]
                     ]
                 },
@@ -11181,7 +11181,7 @@
                         ],
                         [
                             5,
-                            "{name_en}"
+                            "{name}"
                         ]
                     ]
                 },
@@ -11247,7 +11247,7 @@
                         ],
                         [
                             4,
-                            "{name_en}"
+                            "{name}"
                         ]
                     ]
                 },
@@ -11283,7 +11283,7 @@
                 ]
             ],
             "layout": {
-                "text-field": "{name_en}",
+                "text-field": "{name}",
                 "visibility": "visible",
                 "text-max-width": 6,
                 "text-font": [                  
@@ -11353,7 +11353,7 @@
                         ],
                         [
                             2,
-                            "{name_en}"
+                            "{name}"
                         ]
                     ]
                 },
@@ -11426,7 +11426,7 @@
                         ],
                         [
                             2,
-                            "{name_en}"
+                            "{name}"
                         ]
                     ]
                 },

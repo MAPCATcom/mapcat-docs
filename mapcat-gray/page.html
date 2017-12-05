@@ -65,14 +65,14 @@
   </script>
 
   <div class="container-fluid">
-    <div class="row-fluid">
-      <div class="span3">
-          <img class="logo" src="{{asset 'img/mapcat_logo.png'}}">
-          <p class="logo" ></p>
-      </img>
-        {{~> toc }}
+    <div class="row">
+      <div id="sidebar-menu" class="col-xs-4 col-md-3" role="complementary">
+        <div class="col-xs-4 col-md-3" data-spy="affix">
+          <a href="/#home"><img class="logo img-responsive" src="{{asset 'img/mapcat_logo.png'}}"></img>
+          {{~> toc }}
+        </div>
       </div>
-      <div class="span9 main">
+      <div class="col-xs-8 col-md-9 main" role="main">
         {{~> content}}
       </div>
     </div>

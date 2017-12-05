@@ -10,6 +10,13 @@
 }
 .nav-list {
   font-size: 17px;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
+  -ms-word-break: break-all;
+  word-break: break-all;
+  word-break: break-word;
 }
 .nav-header {
   font-size: 17px;

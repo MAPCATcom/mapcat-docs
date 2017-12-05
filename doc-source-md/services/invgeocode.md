@@ -34,7 +34,7 @@ The response is a json object. It contains `meta` and `result` fields.
 The _meta_ field has `version`, `status_code` and `message` values. Field _version_ represents the version of the Inverse Geocode API engine, the _status\_code_ is equal to the http status code of the response, and the _message_ string field contains a detailed error message if any.
 
 When there was no error during the inverse geocode request, field _result_ is specified. It is an object having the following fields:
-* `address` is an object. It contains the full address at the result as a formed text field, as well as the address parts of the found address in a categorized way (e.g.: country, state, city, district...). For a full list of address parts, look up our swagger documentation.
+* `address` is an object. It contains the full address at the result as a formed text field, as well as the address parts of the found address in a categorized way (e.g.: country, state, city, district...). For a full list of address parts, look up our [swagger documentation](../swagger/#/Search_APIs/get_location_invgeocode).
 * `poi` in case there is a POI close to the geo-location of the inverse geocode, then the name, OSM id (_osmidx_) and geolocation (_pos_) of the POI are given in this field.
 * `pois`: this field is an array, holding information about the POIs nearby in the same way as the _poi_ field does. POIs closer to the inverse geocode point comes earlier in the list.
 * `shapes` is an array containing the names of the shapes at the inverse geocode location. It can contain the name of parks, woods, lakes, etc.

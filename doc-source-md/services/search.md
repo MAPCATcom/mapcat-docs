@@ -47,6 +47,6 @@ When there was no error during the search request, field _result_ is specified. 
     - "SHP" (shape)
     - "COS" (center-of-structure)
     - "ADR" (address)
-* `address` is an object. It contains the full address of the search result as a formed text field, and the address parts of the search hit in a categorized way (e.g.: country, state, city, district...). For a full list of address parts, look up our swagger documentation.
+* `address` is an object. It contains the full address of the search result as a formed text field, and the address parts of the search hit in a categorized way (e.g.: country, state, city, district...). For a full list of address parts, look up our [swagger documentation](../swagger/#/Search_APIs/get_location_search).
 * `poi` in case the found item is of type _POI_, the name, OSM id (_osmidx_) and geolocation (_pos_) are given in this object.
 * `geometry`: this object field contains the geometry information of the search hit. It has the following fields: _geometry_, _position_, _tl_ and _br_. Geometry is specified for street ("STR") results only. It contains the geometry of the street in GeoJSON format. Position is the center point of the object. Fields _tl_ and _br_ are representing the top left and bottom right coordinates of the bounding box of the search hit, respectively. This bounding box can be used for e.g. moving the view over the specified area.

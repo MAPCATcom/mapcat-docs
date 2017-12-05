@@ -2,7 +2,7 @@
 
 Mapcat Search API is used to run full text search queries on our map database.  
 
-You can find a detailed description of the request parameters and the response scheme of the API point at our [swagger documentation](./swagger#/SIGIS_API/get_location_search).  
+You can find a detailed description of the request parameters and the response scheme of the API point at our [swagger documentation](../swagger#/SIGIS_API/get_location_search).  
 
 ## Example
 Here is a simple javascript example below showing how to use our Search API from browser:

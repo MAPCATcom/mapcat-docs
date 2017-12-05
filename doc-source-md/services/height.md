@@ -1,6 +1,6 @@
 # Height API
 
-Mapcat Height API is used to query elevation values at specific geo-coordinates. Height API is extremely useful for creating elevation profiles for routes.
+MAPCAT Height API is used to query elevation values at specific geo-coordinates. Height API is extremely useful for creating elevation profiles for routes.
 
 ![alt text](elevation_profile.png "Elevation profile")
 
@@ -16,7 +16,7 @@ var reqListener = function(e) {
     console.log(req.response); // logging the elevation response to the console
 };
 req.addEventListener('load', reqListener);
-req.open('POST', 'https://api-dev.mapcat.com/relief/heights', true);
+req.open('POST', 'https://api.mapcat.com/relief/heights', true);
 req.setRequestHeader('X-Api-Key', '<YOUR MAPCAT ACCESS TOKEN>');
 req.send('[[4.898089,52.372513],[4.898175,52.37259],[4.898445,52.372838],[4.898681,52.373061],[4.899111,52.372921],[4.899191,52.372905]]');
 ```

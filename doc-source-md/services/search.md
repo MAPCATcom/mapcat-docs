@@ -1,6 +1,6 @@
 # Search API
 
-Mapcat Search API is used to run full text search queries on our map database.  
+MAPCAT Search API is used to run full text search queries on our map database.  
 
 You can find a detailed description of the request parameters and the response scheme of the API point in our [swagger documentation](../swagger/#/Search_APIs/get_location_search).  
 

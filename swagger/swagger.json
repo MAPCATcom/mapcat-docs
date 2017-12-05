@@ -273,8 +273,8 @@
     },
     "/poi/search_layer_by_category": {
       "get": {
-        "description": "API point for POI layer config",
-        "summary": "The Poi layer search API point returns the layer configs, that statisfy the maincat, subcat strings.",
+        "summary": "API point for POI layer config",
+        "description": "The Poi layer search API point returns the layer configs, that statisfy the maincat, subcat strings.",
         "parameters": [
           {
             "name": "maincat",
@@ -322,7 +322,7 @@
     },
     "/relief/elevation_weights": {
       "post": {
-        "summary": "Calculate elevation",
+        "summary": "API point for elevation weight calculation",
         "description": "Calculate elevation values for the segments in the post data. Both the request and the response is in a straightforward, binarily serialized format, with separator safeguards.\n",
         "consumes": [
           "application/octet-stream"
@@ -364,7 +364,7 @@
     },
     "/relief/heights": {
       "post": {
-        "summary": "Heights along path.",
+        "summary": "API point for heights along a path",
         "description": "Returns the heights in meters for a sequence of input geo coordinates.\n",
         "consumes": [
           "application/json"

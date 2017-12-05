@@ -34,5 +34,8 @@ Both [Leaflet JS](http://leafletjs.com) and [OpenLayers](http://openlayers.org) 
 * [Start using MAPCAT with OpenLayers using npm, yarn or browserify](development-frameworks/npm-openlayers.md)
 * [Start using MAPCAT with OpenLayers using Angular JS](development-frameworks/angular-openlayers.md)
 
+## MAPCAT Service APIs
+
+* [Search API](./services/search.md)
 
 

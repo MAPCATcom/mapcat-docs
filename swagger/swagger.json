@@ -25,287 +25,9 @@
     }
   ],
   "paths": {
-    "/poi/layers": {
-      "get": {
-        "summary": "The Poi layer search by poi osmid API point returns the layer configs, that contain the given poi.",
-        "description": "Returns layer configs as json object",
-        "parameters": [
-          {
-            "name": "lng",
-            "in": "query",
-            "description": "poi longitude",
-            "required": true,
-            "type": "number",
-            "format": "double"
-          },
-          {
-            "name": "lat",
-            "in": "query",
-            "description": "poi latitude",
-            "required": true,
-            "type": "number",
-            "format": "double"
-          },
-          {
-            "name": "osmidx",
-            "in": "query",
-            "description": "poi osmid",
-            "required": true,
-            "type": "number",
-            "format": "long"
-          },
-          {
-            "name": "lang",
-            "in": "query",
-            "description": "two-letter language code (ISO 639-1)",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "produces": [
-          "application/json"
-        ],
-        "tags": [
-          "VIS API"
-        ],
-        "responses": {
-          "200": {
-            "description": "Array of layer config objects.",
-            "schema": {
-              "$ref": "#/definitions/LayerConfigResponse"
-            }
-          },
-          "400": {
-            "description": "Bad request.",
-            "schema": {
-              "$ref": "#/definitions/ResponseMeta"
-            }
-          }
-        }
-      }
-    },
-    "/poi/search_layer": {
-      "get": {
-        "summary": "The Poi layer search API point returns the layer configs, that statisfy the query string.",
-        "description": "Returns layer configs as json object",
-        "parameters": [
-          {
-            "name": "query",
-            "in": "query",
-            "description": "query string",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "lang",
-            "in": "query",
-            "description": "two-letter language code (ISO 639-1)",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "produces": [
-          "application/json"
-        ],
-        "tags": [
-          "VIS API"
-        ],
-        "responses": {
-          "200": {
-            "description": "Array of layer config objects.",
-            "schema": {
-              "$ref": "#/definitions/LayerConfigResponse"
-            }
-          },
-          "400": {
-            "description": "Bad request.",
-            "schema": {
-              "$ref": "#/definitions/ResponseMeta"
-            }
-          }
-        }
-      }
-    },
-    "/poi/search_layer_by_category": {
-      "get": {
-        "summary": "The Poi layer search API point returns the layer configs, that statisfy the maincat, subcat strings.",
-        "description": "Returns layer configs as json object",
-        "parameters": [
-          {
-            "name": "maincat",
-            "in": "query",
-            "description": "maincat name",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "subcat",
-            "in": "query",
-            "description": "subcat name",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "lang",
-            "in": "query",
-            "description": "two-letter language code (ISO 639-1)",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "produces": [
-          "application/json"
-        ],
-        "tags": [
-          "VIS API"
-        ],
-        "responses": {
-          "200": {
-            "description": "Array of layer config objects.",
-            "schema": {
-              "$ref": "#/definitions/LayerConfigResponse"
-            }
-          },
-          "400": {
-            "description": "Bad request.",
-            "schema": {
-              "$ref": "#/definitions/ResponseMeta"
-            }
-          }
-        }
-      }
-    },
-    "/relief/elevation_weights": {
-      "post": {
-        "summary": "Calculate elevation",
-        "description": "Calculate elevation values for the segments in the post data. Both the request and the response is in a straightforward, binarily serialized format, with separator safeguards.\n",
-        "consumes": [
-          "application/octet-stream"
-        ],
-        "produces": [
-          "application/octet-stream"
-        ],
-        "parameters": [
-          {
-            "name": "segments",
-            "in": "body",
-            "description": "geometry of segments",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/ElevationInput"
-            }
-          }
-        ],
-        "tags": [
-          "VIS API"
-        ],
-        "responses": {
-          "200": {
-            "description": "If everything goes well forward / backward elevation weights are returned for each segment.",
-            "schema": {
-              "$ref": "#/definitions/ElevationOutput"
-            }
-          },
-          "default": {
-            "description": "In every other case an empty response is returned.",
-            "schema": {
-              "$ref": "#/definitions/ElevationOutput"
-            }
-          }
-        }
-      }
-    },
-    "/relief/heights": {
-      "post": {
-        "summary": "Heights along path.",
-        "description": "Returns the heights in meters for a sequence of input geo coordinates.\n",
-        "consumes": [
-          "application/json"
-        ],
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [
-          {
-            "name": "locations",
-            "in": "body",
-            "description": "input geo coordinate sequence",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/HeightQuery"
-            }
-          }
-        ],
-        "tags": [
-          "VIS API"
-        ],
-        "responses": {
-          "200": {
-            "description": "Array of altitudes corresponding to the input geo coordinates.",
-            "schema": {
-              "$ref": "#/definitions/HeightResponse"
-            }
-          },
-          "400": {
-            "description": "In case of bad parameters: response member *meta* has 400 as *status_code*.\n",
-            "schema": {
-              "$ref": "#/definitions/HeightResponse"
-            }
-          }
-        }
-      }
-    },
-    "/location/invgeocode": {
-      "get": {
-        "summary": "Inverse geocoding",
-        "description": "Returns what map elements are at a given location and their properties.\n",
-        "parameters": [
-          {
-            "name": "lat",
-            "in": "query",
-            "description": "Latitude component of location.",
-            "required": true,
-            "type": "number",
-            "format": "double"
-          },
-          {
-            "name": "lng",
-            "in": "query",
-            "description": "Longitude component of location.",
-            "required": true,
-            "type": "number",
-            "format": "double"
-          },
-          {
-            "name": "lang",
-            "in": "query",
-            "type": "string",
-            "description": "Two-letter language code (ISO 639-1). If not present, returns value in the default language of the found map elements."
-          },
-          {
-            "name": "osmidx",
-            "in": "query",
-            "type": "number",
-            "format": "long",
-            "description": "OSM identifier of the clicked poi. If present, will return additional attributes for the clicked poi."
-          }
-        ],
-        "tags": [
-          "SIGIS API"
-        ],
-        "responses": {
-          "default": {
-            "description": "Metadata and response values.",
-            "schema": {
-              "$ref": "#/definitions/InvgeoResponse"
-            }
-          }
-        }
-      }
-    },
     "/location/search": {
       "get": {
-        "summary": "Search",
+        "summary": "API point for searching",
         "description": "Performs a text and georelevance search.\n",
         "parameters": [
           {
@@ -343,7 +65,7 @@
           }
         ],
         "tags": [
-          "SIGIS API"
+          "Search APIs"
         ],
         "responses": {
           "default": {
@@ -355,9 +77,57 @@
         }
       }
     },
+    "/location/invgeocode": {
+      "get": {
+        "summary": "API point for inverse geocoding",
+        "description": "Returns what map elements are at a given location and their properties.\n",
+        "parameters": [
+          {
+            "name": "lat",
+            "in": "query",
+            "description": "Latitude component of location.",
+            "required": true,
+            "type": "number",
+            "format": "double"
+          },
+          {
+            "name": "lng",
+            "in": "query",
+            "description": "Longitude component of location.",
+            "required": true,
+            "type": "number",
+            "format": "double"
+          },
+          {
+            "name": "lang",
+            "in": "query",
+            "type": "string",
+            "description": "Two-letter language code (ISO 639-1). If not present, returns value in the default language of the found map elements."
+          },
+          {
+            "name": "osmidx",
+            "in": "query",
+            "type": "number",
+            "format": "long",
+            "description": "OSM identifier of the clicked poi. If present, will return additional attributes for the clicked poi."
+          }
+        ],
+        "tags": [
+          "Search APIs"
+        ],
+        "responses": {
+          "default": {
+            "description": "Metadata and response values.",
+            "schema": {
+              "$ref": "#/definitions/InvgeoResponse"
+            }
+          }
+        }
+      }
+    },
     "/routing/route": {
       "post": {
-        "summary": "General routing API point",
+        "summary": "API point for general routing",
         "description": "The routing API returns one or several routing results to the routing request, which is defined by two or more waypoints and an optional vehicle type and an optional setting value.\n",
         "consumes": [
           "application/json"
@@ -377,7 +147,7 @@
           }
         ],
         "tags": [
-          "RIS API"
+          "Routing APIs"
         ],
         "responses": {
           "200": {
@@ -389,7 +159,257 @@
           "default": {
             "description": "If the request could not be processed, response member *meta* has a *status_code* and *message* to help identify the error, results are missing.",
             "schema": {
-              "$ref": "#/definitions/ResponseRouting"
+              "type": "object",
+              "properties": {
+                "meta": {
+                  "$ref": "#/definitions/ResponseMeta"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/poi/layers": {
+      "get": {
+        "summary": "API point for POI layer config",
+        "description": "The Poi layer search by poi osmid API point returns the layer configs, that contain the given poi.",
+        "parameters": [
+          {
+            "name": "lng",
+            "in": "query",
+            "description": "poi longitude",
+            "required": true,
+            "type": "number",
+            "format": "double"
+          },
+          {
+            "name": "lat",
+            "in": "query",
+            "description": "poi latitude",
+            "required": true,
+            "type": "number",
+            "format": "double"
+          },
+          {
+            "name": "osmidx",
+            "in": "query",
+            "description": "poi osmid",
+            "required": true,
+            "type": "number",
+            "format": "long"
+          },
+          {
+            "name": "lang",
+            "in": "query",
+            "description": "two-letter language code (ISO 639-1)",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "POI Layer APIs"
+        ],
+        "responses": {
+          "200": {
+            "description": "Array of layer config objects.",
+            "schema": {
+              "$ref": "#/definitions/LayerConfigResponse"
+            }
+          },
+          "400": {
+            "description": "Bad request.",
+            "schema": {
+              "$ref": "#/definitions/ResponseMeta"
+            }
+          }
+        }
+      }
+    },
+    "/poi/search_layer": {
+      "get": {
+        "summary": "API point for POI layer config",
+        "description": "The Poi layer search API point returns the layer configs, that statisfy the query string.",
+        "parameters": [
+          {
+            "name": "query",
+            "in": "query",
+            "description": "query string",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "lang",
+            "in": "query",
+            "description": "two-letter language code (ISO 639-1)",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "POI Layer APIs"
+        ],
+        "responses": {
+          "200": {
+            "description": "Array of layer config objects.",
+            "schema": {
+              "$ref": "#/definitions/LayerConfigResponse"
+            }
+          },
+          "400": {
+            "description": "Bad request.",
+            "schema": {
+              "$ref": "#/definitions/ResponseMeta"
+            }
+          }
+        }
+      }
+    },
+    "/poi/search_layer_by_category": {
+      "get": {
+        "summary": "API point for POI layer config",
+        "description": "The Poi layer search API point returns the layer configs, that statisfy the maincat, subcat strings.",
+        "parameters": [
+          {
+            "name": "maincat",
+            "in": "query",
+            "description": "maincat name",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "subcat",
+            "in": "query",
+            "description": "subcat name",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "lang",
+            "in": "query",
+            "description": "two-letter language code (ISO 639-1)",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "POI Layer APIs"
+        ],
+        "responses": {
+          "200": {
+            "description": "Array of layer config objects.",
+            "schema": {
+              "$ref": "#/definitions/LayerConfigResponse"
+            }
+          },
+          "400": {
+            "description": "Bad request.",
+            "schema": {
+              "$ref": "#/definitions/ResponseMeta"
+            }
+          }
+        }
+      }
+    },
+    "/relief/elevation_weights": {
+      "post": {
+        "summary": "API point for elevation weight calculation",
+        "description": "Calculate elevation values for the segments in the post data. Both the request and the response is in a straightforward, binarily serialized format, with separator safeguards.\n",
+        "consumes": [
+          "application/octet-stream"
+        ],
+        "produces": [
+          "application/octet-stream"
+        ],
+        "parameters": [
+          {
+            "name": "segments",
+            "in": "body",
+            "description": "geometry of segments",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/ElevationInput"
+            }
+          }
+        ],
+        "tags": [
+          "Height APIs"
+        ],
+        "responses": {
+          "200": {
+            "description": "If everything goes well forward / backward elevation weights are returned for each segment.",
+            "schema": {
+              "$ref": "#/definitions/ElevationOutput"
+            }
+          },
+          "default": {
+            "description": "In every other case an empty response is returned.",
+            "schema": {
+              "example": {
+                "size": 0
+              }
+            }
+          }
+        }
+      }
+    },
+    "/relief/heights": {
+      "post": {
+        "summary": "API point for heights along a path",
+        "description": "Returns the heights in meters for a sequence of input geo coordinates.\n",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "locations",
+            "in": "body",
+            "description": "input geo coordinate sequence",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/HeightQuery"
+            }
+          }
+        ],
+        "tags": [
+          "Height APIs"
+        ],
+        "responses": {
+          "200": {
+            "description": "Array of altitudes corresponding to the input geo coordinates.",
+            "schema": {
+              "$ref": "#/definitions/HeightResponse"
+            }
+          },
+          "400": {
+            "description": "In case of bad parameters: response member *meta* has 400 as *status_code*.\n",
+            "schema": {
+              "example": {
+                "meta": {
+                  "version": 1,
+                  "status_code": 400,
+                  "message": "string"
+                },
+                "result": []
+              },
+              "type": "object",
+              "properties": {
+                "meta": {
+                  "$ref": "#/definitions/ResponseMeta"
+                }
+              }
             }
           }
         }
@@ -397,23 +417,6 @@
     }
   },
   "definitions": {
-    "HeightQueryItem": {
-      "type": "array",
-      "description": "longitude, latitude",
-      "minItems": 2,
-      "maxItems": 2,
-      "items": {
-        "type": "number",
-        "format": "double or integer",
-      },
-      "example" : [2.1, 3.1]
-    },
-    "HeightQuery": {
-      "type": "array",
-      "items": {
-        "$ref": "#/definitions/HeightQueryItem"
-      }
-    },
     "ResponseMeta": {
       "type": "object",
       "properties": {
@@ -426,204 +429,6 @@
         },
         "message": {
           "type": "string"
-        }
-      }
-    },
-    "HeightResponse": {
-      "type": "object",
-      "properties": {
-        "meta": {
-          "$ref": "#/definitions/ResponseMeta"
-        },
-        "result": {
-          "type": "array",
-          "items": {
-            "type": "number",
-            "format": "double"
-          }
-        }
-      }
-    },
-    "LayerConfigItem": {
-      "type": "object",
-      "required": [
-        "color",
-        "icon",
-        "main",
-        "name"
-      ],
-      "properties": {
-        "color": {
-          "type": "string",
-          "description": "color hexa code"
-        },
-        "icon": {
-          "type": "string",
-          "description": "icon name"
-        },
-        "main": {
-          "type": "string",
-          "description": "main category name"
-        },
-        "sub": {
-          "type": "string",
-          "description": "sub category name"
-        },
-        "name": {
-          "type": "string",
-          "description": "main category localized name"
-        },
-        "subname": {
-          "type": "string",
-          "description": "sub category localized name"
-        }
-      }
-    },
-    "LayerConfigResponse": {
-      "type": "object",
-      "properties": {
-        "meta": {
-          "$ref": "#/definitions/ResponseMeta"
-        },
-        "result": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/LayerConfigItem"
-          }
-        }
-      }
-    },
-    "ElevationInput": {
-      "type": "object",
-      "properties": {
-        "size": {
-          "type": "integer",
-          "description": "number of segments contained in the input",
-          "maximum": 100000,
-	  "example" : 1
-        },
-        "segments": {
-          "type": "array",
-          "description": "a vector of segments",
-          "items": {
-            "type": "array",
-            "description": "a vector of geometry points",
-            "items": {
-              "type": "array",
-              "items": {
-                "type": "number",
-                "format": "double"
-              },
-              "maxItems": 100000
-            }
-          },
-	  "example" : [[[[19.049656, 47.467163],[19.049446, 47.466502],[19.049402, 47.466367],[19.04948, 47.466349]]]]
-        }
-      }
-    },
-    "ElevationOutput": {
-      "type": "object",
-      "properties": {
-        "size": {
-          "type": "integer",
-          "description": "number of elevation weight pairs contained in the output"
-        },
-        "weights": {
-          "type": "array",
-          "description": "a vector of elevation weight pairs",
-          "items": {
-            "type": "object",
-            "description": "elevation weight pair",
-            "properties": {
-              "forward": {
-                "type": "number",
-                "description": "forward elevation weight",
-                "format": "double"
-              },
-              "backward": {
-                "type": "number",
-                "description": "backward elevation weight",
-                "format": "double"
-              }
-            }
-          }
-        }
-      }
-    },
-    "InvgeoResponse": {
-      "type": "object",
-      "properties": {
-        "meta": {
-          "$ref": "#/definitions/Meta"
-        },
-        "result": {
-          "$ref": "#/definitions/InvgeocodeResult"
-        }
-      }
-    },
-    "SearchResponse": {
-      "type": "object",
-      "properties": {
-        "meta": {
-          "$ref": "#/definitions/Meta"
-        },
-        "result": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/SearchResult"
-          }
-        }
-      }
-    },
-    "SearchResult": {
-      "type": "object",
-      "properties": {
-        "type": {
-          "type": "string",
-          "description": "Can be STR, POI, SHP, COS or ADR"
-        },
-        "address": {
-          "$ref": "#/definitions/Address"
-        },
-        "poi": {
-          "$ref": "#/definitions/POI",
-          "description": "Only present if the result type is POI"
-        },
-        "geometry": {
-          "$ref": "#/definitions/Geometries"
-        }
-      }
-    },
-    "InvgeocodeResult": {
-      "type": "object",
-      "properties": {
-        "address": {
-          "$ref": "#/definitions/Address"
-        },
-        "poi": {
-          "$ref": "#/definitions/POI"
-        },
-        "pois": {
-          "type": "array",
-          "description": "Array of nearby POIs",
-          "items": {
-            "$ref": "#/definitions/POI"
-          }
-        },
-        "shapes": {
-          "type": "array",
-          "description": "list of the names of the non-admin shapes under the clicked point",
-          "items": {
-            "type": "string"
-          }
-        },
-        "position": {
-          "type": "object",
-          "description": "GeoJSON point coordinate of the request"
-        },
-        "poiattr": {
-          "type": "object",
-          "description": "Only present if osmidx parameter is present. Contains every available attribute of the clicked POI from maincat, subcat, name, stname, hnum, postcode, telnum, email, url"
         }
       }
     },
@@ -722,18 +527,84 @@
         }
       }
     },
-    "Meta": {
+    "SearchResult": {
       "type": "object",
       "properties": {
-        "status_code": {
-          "type": "integer",
-          "format": "int32"
+        "type": {
+          "type": "string",
+          "description": "Can be STR, POI, SHP, COS or ADR"
         },
-        "message": {
-          "type": "string"
+        "address": {
+          "$ref": "#/definitions/Address"
         },
-        "version": {
-          "type": "string"
+        "poi": {
+          "$ref": "#/definitions/POI"
+        },
+        "geometry": {
+          "$ref": "#/definitions/Geometries"
+        }
+      }
+    },
+    "InvgeocodeResult": {
+      "type": "object",
+      "properties": {
+        "address": {
+          "$ref": "#/definitions/Address"
+        },
+        "poi": {
+          "$ref": "#/definitions/POI"
+        },
+        "pois": {
+          "type": "array",
+          "description": "Array of nearby POIs",
+          "items": {
+            "$ref": "#/definitions/POI"
+          }
+        },
+        "shapes": {
+          "type": "array",
+          "description": "list of the names of the non-admin shapes under the clicked point",
+          "items": {
+            "type": "string"
+          }
+        },
+        "position": {
+          "type": "object",
+          "description": "GeoJSON point coordinate of the request"
+        },
+        "poiattr": {
+          "type": "object",
+          "description": "Only present if osmidx parameter is present. Contains every available attribute of the clicked POI from maincat, subcat, name, stname, hnum, postcode, telnum, email, url"
+        }
+      }
+    },
+    "InvgeoResponse": {
+      "type": "object",
+      "properties": {
+        "meta": {
+          "$ref": "#/definitions/ResponseMeta"
+        },
+        "result": {
+          "$ref": "#/definitions/InvgeocodeResult"
+        }
+      }
+    },
+    "SearchResponse": {
+      "type": "object",
+      "properties": {
+        "meta": {
+          "$ref": "#/definitions/ResponseMeta"
+        },
+        "result": {
+          "type": "object",
+          "properties": {
+            "results": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/SearchResult"
+              }
+            }
+          }
         }
       }
     },
@@ -769,22 +640,34 @@
       "properties": {
         "waypoints": {
           "type": "array",
+          "minItems": 2,
+          "maxItems": 5,
           "description": "an array of GeoJSON coordinates which will be used as waypoints in routing",
           "items": {
             "$ref": "#/definitions/WayPoint"
           },
-          "minItems": 2,
-          "maxItems": 5
+          "example": [
+            {
+              "lat": 47.498247,
+              "lon": 19.039803
+            },
+            {
+              "lat": 47.498262,
+              "lon": 19.039679
+            }
+          ]
         },
         "vtp": {
           "type": "integer",
-          "description": "(optional) Vehicle type used in routing [ 0: car, 1: truck, 2: bus, 3: taxi, 5: bicycle, 6: foot, 7: emergency ], when not defined 1 is used\n",
-          "default": 1
+          "default": 1,
+          "example": 6,
+          "description": "(optional) Vehicle type used in routing [ 0: car, 5: bicycle, 6: foot ], when not defined 0 is used\n"
         },
         "set": {
           "type": "integer",
-          "description": "(optional) Vehicle settings used in car routing, selects the profile that has the appropriate setting (motorway / ferry usage), if available, when not defined 2 is used.\n",
-          "default": 2
+          "default": 2,
+          "example": 3,
+          "description": "(optional) Vehicle settings used in car routing, selects the profile that has the appropriate setting (motorway / ferry usage), if available, when not defined 2 is used.\n"
         }
       }
     },
@@ -804,6 +687,20 @@
                 "properties": {
                   "coordinates": {
                     "type": "array",
+                    "example": [
+                      [
+                        19.039696,
+                        47.498267
+                      ],
+                      [
+                        19.03974,
+                        47.49821
+                      ],
+                      [
+                        19.03981,
+                        47.498237
+                      ]
+                    ],
                     "description": "array of GeoJSON coordinates",
                     "items": {
                       "$ref": "#/definitions/CoordGeoJSON"
@@ -821,6 +718,7 @@
                 "properties": {
                   "bicycle-types": {
                     "type": "array",
+                    "example": null,
                     "description": "a grouping of different bicycle meta types, only returned when the vehicle type is set to bicycle",
                     "items": {
                       "type": "array",
@@ -832,8 +730,9 @@
                       "maxItems": 3
                     }
                   },
-                  "join-point": {
+                  "join-points": {
                     "type": "array",
+                    "example": [],
                     "description": "an array of indeces, where the subresults between pairs of waypoints are joined",
                     "items": {
                       "type": "integer"
@@ -841,6 +740,32 @@
                   },
                   "maneuvers": {
                     "type": "array",
+                    "example": [
+                      {
+                        "exit": 0,
+                        "index": 0,
+                        "mode": "walking",
+                        "modifier": "",
+                        "name": "Hunyadi János út",
+                        "type": "depart"
+                      },
+                      {
+                        "exit": 0,
+                        "index": 1,
+                        "mode": "walking",
+                        "modifier": "left",
+                        "name": "Clark Ádám tér",
+                        "type": "turn"
+                      },
+                      {
+                        "exit": 0,
+                        "index": 1,
+                        "mode": "walking",
+                        "modifier": "",
+                        "name": "Clark Ádám Tér",
+                        "type": "arrive"
+                      }
+                    ],
                     "description": "an array of maneuvers, making up the whole route uninterrupted",
                     "items": {
                       "type": "object",
@@ -875,24 +800,29 @@
                   },
                   "profile": {
                     "type": "string",
+                    "example": "$BASELINE",
                     "description": "unique identifier(s) of the profile(s) used in generating this result"
                   },
                   "summary": {
                     "type": "string",
+                    "example": "Hunyadi János út, Clark Ádám tér",
                     "description": "summary of most significant roads traversed in this result"
                   },
                   "length": {
                     "type": "number",
+                    "example": 13.2,
                     "description": "length of the routing result, measured along the network only",
                     "format": "double"
                   },
                   "time": {
                     "type": "number",
+                    "example": 15.84,
                     "description": "recalculated time of the routing result, using the meta speeds, if available",
                     "format": "double"
                   },
                   "weight": {
                     "type": "number",
+                    "example": 19.2,
                     "description": "original weight of the routing result",
                     "format": "double"
                   }
@@ -900,7 +830,8 @@
               },
               "type": {
                 "type": "string",
-                "default": "Feature"
+                "default": "Feature",
+                "example": "Feature"
               }
             }
           }
@@ -915,11 +846,26 @@
             "goal": {
               "$ref": "#/definitions/CoordGeoJSON"
             }
-          }
+          },
+          "example": [
+            {
+              "goal": [
+                19.039696,
+                47.498267
+              ]
+            },
+            {
+              "start": [
+                19.03981,
+                47.498237
+              ]
+            }
+          ]
         },
         "type": {
           "type": "string",
-          "default": "FeatureCollection"
+          "default": "FeatureCollection",
+          "example": "FeatureCollection"
         }
       }
     },
@@ -933,6 +879,183 @@
           "type": "array",
           "items": {
             "$ref": "#/definitions/ResultRouting"
+          }
+        }
+      }
+    },
+    "LayerConfigItem": {
+      "type": "object",
+      "required": [
+        "color",
+        "icon",
+        "main",
+        "name"
+      ],
+      "properties": {
+        "color": {
+          "type": "string",
+          "description": "color hexa code"
+        },
+        "icon": {
+          "type": "string",
+          "description": "icon name"
+        },
+        "main": {
+          "type": "string",
+          "description": "main category name"
+        },
+        "sub": {
+          "type": "string",
+          "description": "sub category name"
+        },
+        "name": {
+          "type": "string",
+          "description": "main category localized name"
+        },
+        "subname": {
+          "type": "string",
+          "description": "sub category localized name"
+        }
+      }
+    },
+    "LayerConfigResponse": {
+      "type": "object",
+      "properties": {
+        "meta": {
+          "$ref": "#/definitions/ResponseMeta"
+        },
+        "result": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/LayerConfigItem"
+          }
+        }
+      }
+    },
+    "ElevationInput": {
+      "type": "object",
+      "properties": {
+        "size": {
+          "type": "integer",
+          "description": "number of segments contained in the input",
+          "maximum": 100000,
+          "example": 1
+        },
+        "segments": {
+          "type": "array",
+          "description": "a vector of segments",
+          "items": {
+            "type": "array",
+            "description": "a vector of geometry points",
+            "items": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "format": "double"
+              },
+              "maxItems": 100000
+            }
+          },
+          "example": [
+            [
+              [
+                19.049656,
+                47.467163
+              ],
+              [
+                19.049446,
+                47.466502
+              ],
+              [
+                19.049402,
+                47.466367
+              ],
+              [
+                19.04948,
+                47.466349
+              ]
+            ]
+          ]
+        }
+      }
+    },
+    "ElevationOutput": {
+      "type": "object",
+      "properties": {
+        "size": {
+          "type": "integer",
+          "example": 1,
+          "description": "number of elevation weight pairs contained in the output"
+        },
+        "weights": {
+          "type": "array",
+          "example": [
+            {
+              "forward": 1.12,
+              "backward": 0.95
+            }
+          ],
+          "description": "a vector of elevation weight pairs",
+          "items": {
+            "type": "object",
+            "description": "elevation weight pair",
+            "properties": {
+              "forward": {
+                "type": "number",
+                "description": "forward elevation weight",
+                "format": "double"
+              },
+              "backward": {
+                "type": "number",
+                "description": "backward elevation weight",
+                "format": "double"
+              }
+            }
+          }
+        }
+      }
+    },
+    "HeightQueryItem": {
+      "type": "array",
+      "description": "longitude, latitude",
+      "minItems": 2,
+      "maxItems": 2,
+      "items": {
+        "type": "number",
+        "format": "double or integer"
+      }
+    },
+    "HeightQuery": {
+      "example": [
+        [
+          22.1,
+          33.1
+        ],
+        [
+          19.040833,
+          47.498333
+        ]
+      ],
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/HeightQueryItem"
+      }
+    },
+    "HeightResponse": {
+      "type": "object",
+      "properties": {
+        "meta": {
+          "$ref": "#/definitions/ResponseMeta"
+        },
+        "result": {
+          "type": "array",
+          "example": [
+            0,
+            123
+          ],
+          "items": {
+            "type": "number",
+            "format": "double"
           }
         }
       }

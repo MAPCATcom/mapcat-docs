@@ -511,19 +511,19 @@
       "properties": {
         "geometry": {
           "type": "object",
-          "description": "Full geometry of street objects in GEOJson format"
+          "description": "Full geometry of street objects in GeoJSON format"
         },
         "position": {
           "type": "object",
-          "description": "Position of the objects in GEOJson format"
+          "description": "Position of the objects in GeoJSON format"
         },
         "tl": {
           "type": "object",
-          "description": "Top left of the object's bounding box in GEOJson format"
+          "description": "Top left of the object's bounding box in GeoJSON format"
         },
         "br": {
           "type": "object",
-          "description": "Bottom right of the object's bounding box in GEOJson format"
+          "description": "Bottom right of the object's bounding box in GeoJSON format"
         }
       }
     },
@@ -734,7 +734,7 @@
                   "join-points": {
                     "type": "array",
                     "example": [],
-                    "description": "an array of indeces, where the subresults between pairs of waypoints are joined",
+                    "description": "an array of indices, where the subresults between pairs of waypoints are joined",
                     "items": {
                       "type": "integer"
                     }
@@ -1063,4 +1063,3 @@
     }
   }
 }
-

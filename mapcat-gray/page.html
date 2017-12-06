@@ -23,8 +23,8 @@
     <meta name="twitter:title" content="{{title}}" />
     <meta name="twitter:image" content="{{asset 'img/final-thumbnail-1.png'}}" />
     <!-- / End SEO -->
-    <link type="text/css" rel="stylesheet" href="{{asset 'css/bootstrap.css'}}"/>
-    <link type="text/css" rel="stylesheet" href="{{asset 'css/bootstrap-responsive.css'}}"/>
+    <link type="text/css" rel="stylesheet" href="{{asset 'css/bootstrap.min.css'}}"/>
+    <link type="text/css" rel="stylesheet" href="{{asset 'css/bootstrap-responsive.min.css'}}"/>
     <link type="text/css" rel="stylesheet" href="{{asset 'css/pilcrow.css'}}"/>
     <link type="text/css" rel="stylesheet" href="{{asset 'css/hljs-github.min.css'}}"/>
     <link type="text/css" rel="stylesheet" href="{{asset 'css/style.css'}}"/>
@@ -66,13 +66,14 @@
 
   <div class="container-fluid">
     <div class="row">
-      <div id="sidebar-menu" class="col-xs-4 col-md-3" role="complementary">
-        <div class="col-xs-4 col-md-3" data-spy="affix">
+      <div id="sidebar-menu" class="col-xs-12 col-sm-3 col-md-3" role="complementary">
+        <div class="navbar col-xs-12 col-sm-3 col-md-3" data-spy="affix">
           <a href="/#home"><img class="logo img-responsive" src="{{asset 'img/mapcat_logo.png'}}"></img>
+          <p/>
           {{~> toc }}
         </div>
       </div>
-      <div class="col-xs-8 col-md-9 main" role="main">
+      <div class="col-xs-12 col-sm-9 col-md-9 main" role="main">
         {{~> content}}
       </div>
     </div>

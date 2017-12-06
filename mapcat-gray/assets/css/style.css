@@ -1,3 +1,60 @@
+/* bootstrap overrides */
+body {
+    font-family: 'Roboto',"Helvetica Neue",sans-serif;
+}
+a {
+    color: #37b34a;
+}
+a:hover,
+a:focus {
+    color: #37b34a;
+}
+h1,
+h2,
+h3 {
+    line-height: 42px;
+}
+h1 {
+    text-align: center;
+    font-size: 36px;
+    line-height: 60px;
+}
+h2 {
+    font-size: 30px;
+    padding-left: 20px;
+}
+li {
+    padding-bottom: 5px;
+}
+textarea {
+    font-family: 'Roboto',"Helvetica Neue",sans-serif;
+}
+.navbar {
+    padding-right: 30px;
+}
+.nav-list > li {
+    line-height: 20px;
+}
+.nav-list > li > a {
+    padding: unset;
+}
+.navbar-search .search-query {
+    font-family: 'Roboto',"Helvetica Neue",sans-serif;
+}
+.logo {
+    margin: auto;
+    display: block;
+    max-height: 150px;
+    max-width:100%;
+}
+p.logo {
+    text-align: center;
+    margin-bottom: 20px;
+}
+a:-webkit-any-link {
+    color: #37b34a;
+}
+/* bootstrap overrides end */
 .main {
   padding: 0px 40px;
   background: rgba(255,255,255,0.4);
@@ -10,13 +67,6 @@
 }
 .nav-list {
   font-size: 17px;
-  -webkit-hyphens: auto;
-  -moz-hyphens: auto;
-  -ms-hyphens: auto;
-  hyphens: auto;
-  -ms-word-break: break-all;
-  word-break: break-all;
-  word-break: break-word;
 }
 .nav-header {
   font-size: 17px;
@@ -39,3 +89,11 @@
 .sidebar-header-3 { margin-left: 20px; }
 .sidebar-header-4 { margin-left: 30px; }
 .sidebar-header-5 { margin-left: 40px; }
+
+@media(max-width:767px){
+   .affix {
+     position: unset;
+     width: auto;
+     top: 0;
+    }
+}

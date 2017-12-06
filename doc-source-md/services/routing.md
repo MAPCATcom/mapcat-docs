@@ -50,7 +50,7 @@ Here is an example for POST data:
 ```
 
 ## Response
-The response is a json object. It contains `meta` and `result` fields.
+The response is a json object. It contains `meta` and `results` fields.
 
 The `meta` field has the following fields in it:
 
@@ -71,11 +71,11 @@ The object is always a GeoJSON FeatureCollection, which has the following fields
 
 The GeoJSON Feature has the following fields:
 
-- `geometry` is a GeoJSON Linestring describing the route taken
+- `geometry` is a GeoJSON LineString describing the route taken
 - `properties` is an object, that has several fields:
     - `bicycle-types` is an array, which can contain array when vehicle is set to 5 = BICYCLE
         - each array describing some part of the route, which might require some special attention, the array's first element is the index in the geometry where it starts, the second is the index where it ends, the third marks the type [1: this is a bicycle track, 2: this is a bicycle lane, 3: push the bike, 4: this is a dirt road]
-    - `join-points` is an array, this contains the geometry indeces where the subroutes meet when the original request contained more than two waypoints
+    - `join-points` is an array, this contains the geometry indices where the subroutes meet, when the original request contained more than two waypoints
     - `maneuvers` is an array, that describes the whole route step-by-step
         - `index` is a number, geometry index marking the location of the maneuver
         - `name` is a string, name of the next road traversed

@@ -99,3 +99,19 @@ a:-webkit-any-link {
      top: 0;
     }
 }
+/* footer */
+footer {
+    color: #757575;
+    background-color: #111111;
+    padding: 15px 0;
+    font-size: 15px;
+    line-height: 25px;
+    font-weight: 400;
+}
+footer a {
+    color: #757575;
+}
+footer p:first-child a {
+    padding: 10px;
+}
+/* footer end */

@@ -29,5 +29,5 @@ The geo-coordinates for which you want to retrieve the elevation values should b
 
 ## Response
 The response is a json object. It contains `meta` and `result` fields.
-The _meta_ field has `version`, `status_code` and `message` values. Field _version_ represents the version of the Height API engine, the _status_code_ is equal to the http status code of the response, and the _message_ string field contains a detailed error message if any.
+The _meta_ field has `version`, `status_code` and `message` values. Field _version_ represents the version of the Height API engine, the _status\_code_ is equal to the http status code of the response, and the _message_ string field contains a detailed error message if any.
 When there was no error during processing the request, the `result` array field gives us the elevations (in meters) at the requested points. The size of the _result_ array is always equal to the size of the request array specified in the POST data.

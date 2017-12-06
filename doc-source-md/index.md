@@ -21,21 +21,14 @@ Currently the easiest way to start rendering map tiles provided by [MAPCAT](http
 
 Both [Leaflet JS](http://leafletjs.com) and [OpenLayers](http://openlayers.org) are open source libraries for embedding interactive maps into webpages.
 
-## Get started with MAPCAT and Leaflet
+## Get started with MAPCAT
 
-* [Start using MAPCAT with Leaflet from CDN](development-frameworks/cdn-leaflet.md)
-* [Start using MAPCAT with Leaflet using npm, yarn or browserify](development-frameworks/npm-leaflet.md)
-* [Start using MAPCAT with Leaflet using Angular JS](development-frameworks/angular-leaflet.md)
-* [Start using MAPCAT with Leaflet using React JS](development-frameworks/react-leaflet.md)
-
-## Get started with MAPCAT and OpenLayers
-
-* [Start using MAPCAT with OpenLayers from CDN](development-frameworks/cdn-openlayers.md)
-* [Start using MAPCAT with OpenLayers using npm, yarn or browserify](development-frameworks/npm-openlayers.md)
-* [Start using MAPCAT with OpenLayers using Angular JS](development-frameworks/angular-openlayers.md)
+* [Start using MAPCAT with Leaflet](development-frameworks/leaflet.md)
+* [Start using MAPCAT with OpenLayers](development-frameworks/openlayers.md)
 
 ## MAPCAT Service APIs
 
 * [Search API](./services/search.md)
+* [Inverse Geocode API](./services/invgeocode.md)
 * [Height API](./services/height.md)
 

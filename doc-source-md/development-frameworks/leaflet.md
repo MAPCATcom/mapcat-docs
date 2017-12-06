@@ -1,24 +1,24 @@
-# Using MAPCAT from CDN
+# Using MAPCAT with Leaflet
 
-You can use [Leaflet JS](http://leafletjs.com) to use [MAPCAT](http://mapcat.com) services on your website.
+You can use [MAPCAT](http://mapcat.com) services on your website with [Leaflet](http://leafletjs.com) which offers you a JavaScript library that renders interactive maps from raster tiles using WebGL.
 
-Leaflet JS is a JavaScript library that renders interactive maps from raster tiles using WebGL. 
+With Leaflet you can use MAPCAT in your browser with javascript or you can easily integrate it in your own [Angular](#using-mapcat-in-angular-5-application-with-leaflet) or [React](#using-mapcat-in-react-application-with-leaflet) application.
 
-[MAPCAT](https://mapcat.com) is an [OpenStreetMap](http://openstreetmap.org-based) world map service offering routing for cars, bicycles and pedestrians, plus real-time map editing and business services.
+The following example gives you a quick start how to use MAPCAT in a single page HTML with [Leaflet](http://leafletjs.com).
 
-The following example gives you a quick start:
+The steps are the following:
 
-1. how to render raster based map tiles fetched from the MAPCAT API
-2. how to query directions from the MAPCAT API
-3. how to render the vector based route on the top of the map
+1. How to render raster based map tiles fetched from the MAPCAT API
+2. How to query directions from the MAPCAT API
+3. How to render the vector based route on the top of the map
 
 ## Get started
 
-First >get your MAPCAT access token< .
+First get your [MAPCAT access token](https://pro.mapcat.com/planpricing/).
 
 ## Step 1. Render a map
 
-To use Leaflet JS in your webste, copy these lines into the ```<head>``` part of your HTML page.
+To use Leaflet JS in your website, copy these lines into the ```<head>``` part of your HTML page.
 
 ```html
 <!-- Latest compiled and minified CSS -->
@@ -34,7 +34,7 @@ Include [@mapcat/mapview-init](https://www.npmjs.com/package/@mapcat/mapview-ini
 <script type="text/javascript" src="mapcatview-min.js"></script>
 ```
 
-Then you can embed a MAPCAT cat in the ```<body>``` part of your page in a div that has its size specified.
+Then you can embed a MAPCAT map in the ```<body>``` part of your page in a div that has its size specified.
 
 ```html
 <div id='map' style='width: 100%; height: 400px;'></div>
@@ -107,7 +107,7 @@ To query the server, add the following script in the ```<body>``` part of your p
 
 Substitute ```< YOUR MAPCAT ACCESS TOKEN >``` with your acceess token.
 
-For more complex use, refer to the documentation of the [MAPCAT API](https://portal.mapcat.com)
+For more complex use, refer to the documentation of the [MAPCAT API](../index.md#mapcat-service-apis)
 
 ## Step 3. Render the route on the map
 
@@ -128,11 +128,9 @@ For more complex use, refer to the documentation of [Leaflet JS](http://leafletj
 
 ## Putting it together
 
-<div id='map' style='width: 100%; height: 400px;'></div>
+<div id='map' style='width: 100%; height: 400px; margin-bottom: 16px'></div>
 
-Your file should look something similar:
-
-`index.html`
+Your `index.html` file should look something similar:
 
 ```html
 <!doctype html>
@@ -216,6 +214,16 @@ Your file should look something similar:
   </body>
 </html>
 ```
+## Using MAPCAT in Angular 5 application with Leaflet
+It is easy to use [MAPCAT](https://mapcat.com) in Angular 5 with [Leaflet](http://leafletjs.com/) library.
+
+To get started, check out our [mapcat-angular-leaflet](https://github.com/MAPCATcom/mapcat-angular-leaflet) example on GitHub.
+
+## Using MAPCAT in React application with Leaflet
+
+An easy way to use [MAPCAT](https://mapcat.com) with [React](https://reactjs.org) is using the [Leaflet](http://leafletjs.com/) library via the [react-leaflet](https://github.com/PaulLeCam/react-leaflet) module.
+
+To get started, check out our [mapcat-react-leaflet](https://github.com/MAPCATcom/mapcat-react-leaflet) example on GitHub.
 
 <script>
 mapcatview.initRasterView(token, null, null, function(error, response) {

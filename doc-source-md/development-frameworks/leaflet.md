@@ -1,6 +1,6 @@
 # Using MAPCAT with Leaflet
 
-You can use [MAPCAT](http://mapcat.com) services on your website with [Leaflet](http://leafletjs.com) which offers you a JavaScript library that renders interactive maps from raster tiles using WebGL.
+You can use [MAPCAT](http://mapcat.com) services on your website with [Leaflet](http://leafletjs.com) which offers you a JavaScript library that renders interactive maps from raster tiles.
 
 With Leaflet you can use MAPCAT in your browser with javascript or you can easily integrate it in your own [Angular](#using-mapcat-in-angular-5-application-with-leaflet) or [React](#using-mapcat-in-react-application-with-leaflet) application.
 

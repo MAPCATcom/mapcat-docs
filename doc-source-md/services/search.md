@@ -45,7 +45,7 @@ When there was no error during the search request, field _result_ is specified. 
     - "STR" (street)
     - "POI" (point-of-interest)
     - "SHP" (shape)
-    - "COS" (center-of-structure)
+    - "COS" (center-of-settlement or center-of-structure)
     - "ADR" (address)
 * `address` is an object. It contains the full address of the search result as a formed text field, and the address parts of the search hit in a categorized way (e.g.: country, state, city, district...). For a full list of address parts, look up our [swagger documentation](../swagger/#/Search_APIs/get_location_search).
 * `poi` in case the found item is of type _POI_, the name, OSM id (_osmidx_) and geolocation (_pos_) are given in this object.

@@ -87,6 +87,6 @@ For further information see also [Comparison of web map services](https://en.wik
  
 ## Start your project with MAPCAT
 
-You can render MAPCAT maps either in Angular2, React or simply JavaScript. MAPCAT's raster tiles are compatible both with Leaflet and OpenLayers.
+You can render MAPCAT maps either in Angular, React or simply JavaScript. MAPCAT's raster tiles are compatible both with Leaflet and OpenLayers.
 
-[Choose your developmentframework](../development-frameworks/index.md) to start.
+[Choose your developmentframework](../index.md#get-started-with-mapcat) to start.

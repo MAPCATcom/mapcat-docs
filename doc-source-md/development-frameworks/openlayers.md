@@ -1,24 +1,24 @@
-# Using MAPCAT from CDN
+# Using MAPCAT with OpenLayers
 
-You can use [OpenLayers](http://openlayers.org) to use [MAPCAT](http://mapcat.com) services on your website.
+You can use [MAPCAT](http://mapcat.com) services on your website with [OpenLayers](http://openlayers.org) which offers you a JavaScript library that renders interactive maps from raster tiles using WebGL.
 
-Openlayers is a JavaScript library that renders interactive maps from raster tiles using WebGL. 
+With OpenLayers you can use MAPCAT in your browser with javascript or you can easily integrate it in your own [Angular](#using-mapcat-in-angular-5-application-with-openlayers) application.
 
-[MAPCAT](https://mapcat.com) is an [OpenStreetMap](http://openstreetmap.org-based) world map service offering routing for cars, bicycles and pedestrians, plus real-time map editing and business services.
+The following example gives you a quick start how to use MAPCAT in a single page HTML with [OpenLayers](http://openlayers.org).
 
-The following example gives you a quick start:
+The steps are the following:
 
-1. how to render raster based map tiles fetched from the MAPCAT API
-2. how to query directions from the MAPCAT API
-3. how to render the vector based route on the top of the map
+1. How to render raster based map tiles fetched from the MAPCAT API
+2. How to query directions from the MAPCAT API
+3. How to render the vector based route on the top of the map
 
 ## Get started
 
-First >get your MAPCAT access token< .
+First get your [MAPCAT access token](https://pro.mapcat.com/planpricing/).
 
 ## Step 1. Render a map
 
-To use OpenLayers in your webste, copy these lines into the ```<head>``` part of your HTML page.
+To use OpenLayers in your website, copy these lines into the ```<head>``` part of your HTML page.
 
 ```html
 <!-- Latest compiled and minified CSS -->
@@ -50,7 +50,15 @@ Then you can embed MAPCAT in the ```<body>``` part of your page in a div that ha
           new ol.layer.Tile({
             source: new ol.source.XYZ({
               url: response,
-              projection: 'EPSG:3857'
+              projection: 'EPSG:3857',
+              attributions: [
+                new ol.Attribution({
+                  html: 'Map data &copy; ' +
+                        '<a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
+                        '<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+                        'Imagery &copy; <a href="http://mapcat.com">MAPCAT</a>'
+                })
+              ]
             })
           })
         ],
@@ -117,7 +125,7 @@ To query the server, add the following script in the ```<body>``` part of your p
 
 Substitute ```< YOUR MAPCAT ACCESS TOKEN >``` with your acceess token.
 
-For more complex use, refer to the documentation of the [MAPCAT API](https://portal.mapcat.com)
+For more complex use, refer to the documentation of the [MAPCAT API](../index.md#mapcat-service-apis)
 
 ## Step 3. Render the route on the map
 
@@ -156,11 +164,9 @@ Change the parameter of the method in the above script to the following:
 
 ## Putting it together
 
-<div id='map' style='width: 100%; height: 400px;'></div>
+<div id='map' style='width: 100%; height: 400px; margin-bottom: 16px'></div>
 
-Your file should look something similar
-
-`index.html`
+Your `index.html` file should look something similar
 
 ```html
 <!doctype html>
@@ -185,6 +191,7 @@ Your file should look something similar
   <body style="margin: 0; background-color: #efefef;">
     
     <div id='map' style='width: 400px; height: 300px;'></div>
+
     <script>
       mapcatview.initRasterView("< YOUR MAPCAT ACCESS TOKEN >", null, null, function(error, response) {
         if (error) {
@@ -196,7 +203,15 @@ Your file should look something similar
               new ol.layer.Tile({
                 source: new ol.source.XYZ({
                   url: response,
-                  projection: 'EPSG:3857'
+                  projection: 'EPSG:3857',
+                    attributions: [
+                      new ol.Attribution({
+                        html: 'Map data &copy; ' +
+                              '<a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
+                              '<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+                              'Imagery &copy; <a href="http://mapcat.com">MAPCAT</a>'
+                      })
+                    ]
                 })
               })
             ],
@@ -264,6 +279,10 @@ Your file should look something similar
 </html>
 ```
 
+## Using MAPCAT in Angular 5 application with OpenLayers
+There is an easy way to use [MAPCAT](https://mapcat.com) in Angular 5 with [OpenLayers](http://openlayers.org) library and [mangol](https://github.com/fegyi001/mangol) module.
+
+To get started, check out our [mapcat-angular-openlayers](https://github.com/MAPCATcom/mapcat-angular-openlayers) example on GitHub.
 
 <script>
 mapcatview.initRasterView(token, null, null, function(error, response) {
@@ -276,7 +295,15 @@ mapcatview.initRasterView(token, null, null, function(error, response) {
         new ol.layer.Tile({
           source: new ol.source.XYZ({
             url: response,
-            projection: 'EPSG:3857'
+            projection: 'EPSG:3857',
+            attributions: [
+              new ol.Attribution({
+                html: 'Map data &copy; ' +
+                      '<a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
+                      '<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+                      'Imagery &copy; <a href="http://mapcat.com">MAPCAT</a>'
+              })
+            ]
           })
         })
       ],

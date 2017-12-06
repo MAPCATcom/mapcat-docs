@@ -37,5 +37,6 @@ Both [Leaflet JS](http://leafletjs.com) and [OpenLayers](http://openlayers.org) 
 ## MAPCAT Service APIs
 
 * [Search API](./services/search.md)
+* [Inverse Geocode API](./services/invgeocode.md)
 * [Height API](./services/height.md)
 

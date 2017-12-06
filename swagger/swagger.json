@@ -661,13 +661,13 @@
           "type": "integer",
           "default": 1,
           "example": 6,
-          "description": "(optional) Vehicle type used in routing [ 0: car, 5: bicycle, 6: foot ], when not defined 0 is used\n"
+          "description": "(optional) Vehicle type used in routing [ 0: CAR, 5: BICYCLE, 6: FOOT ], when not defined, CAR is used as the vehicle.\n"
         },
         "set": {
           "type": "integer",
           "default": 2,
           "example": 3,
-          "description": "(optional) Vehicle settings used in car routing, selects the profile that has the appropriate setting (motorway / ferry usage), if available, when not defined 2 is used.\n"
+          "description": "(optional) Vehicle settings used only with CAR vehicle, selects the profile that has the appropriate setting (forbidden motorway / ferry usage), when not defined, 3 is used as the setting.\n"
         }
       }
     },
@@ -708,7 +708,8 @@
                   },
                   "type": {
                     "type": "string",
-                    "default": "LineString"
+                    "default": "LineString",
+                    "example": "LineString"
                   }
                 }
               },
@@ -801,29 +802,29 @@
                   "profile": {
                     "type": "string",
                     "example": "$BASELINE",
-                    "description": "unique identifier(s) of the profile(s) used in generating this result"
+                    "description": "a unique identifier for the profile used in generating this route"
                   },
                   "summary": {
                     "type": "string",
                     "example": "Hunyadi János út, Clark Ádám tér",
-                    "description": "summary of most significant roads traversed in this result"
+                    "description": "summary of most significant roads traversed in this route"
                   },
                   "length": {
                     "type": "number",
                     "example": 13.2,
-                    "description": "length of the routing result, measured along the network only",
+                    "description": "the length of the route measured along the network",
                     "format": "double"
                   },
                   "time": {
                     "type": "number",
                     "example": 15.84,
-                    "description": "recalculated time of the routing result, using the meta speeds, if available",
+                    "description": "the recalculated duration of the route, in seconds",
                     "format": "double"
                   },
                   "weight": {
                     "type": "number",
                     "example": 19.2,
-                    "description": "original weight of the routing result",
+                    "description": "the original weight calculated for this route",
                     "format": "double"
                   }
                 }

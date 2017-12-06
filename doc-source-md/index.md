@@ -30,5 +30,6 @@ Both [Leaflet JS](http://leafletjs.com) and [OpenLayers](http://openlayers.org) 
 
 * [Search API](./services/search.md)
 * [Inverse Geocode API](./services/invgeocode.md)
+* [Routing API](./services/routing.md)
 * [Height API](./services/height.md)
 

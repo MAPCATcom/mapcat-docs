@@ -57,6 +57,10 @@ a:-webkit-any-link {
     color: #37b34a;
 }
 /* bootstrap overrides end */
+html {
+    min-height: 100%;
+    position: relative;
+}
 .main {
   padding: 0px 40px;
   background: rgba(255,255,255,0.4);
@@ -92,10 +96,37 @@ a:-webkit-any-link {
 .sidebar-header-4 { margin-left: 30px; }
 .sidebar-header-5 { margin-left: 40px; }
 
+/* footer */
+footer {
+    margin-top: 15px;
+    position: absolute;
+    width:100%;
+    bottom: 0;
+    color: #757575;
+    background-color: #111111;
+    padding: 15px 0;
+    font-size: 15px;
+    line-height: 25px;
+    font-weight: 400;
+}
+footer a {
+    color: #757575;
+}
+footer p:first-child a {
+    padding: 10px;
+}
+/* footer end */
+/* responsive */
 @media(max-width:767px){
    .affix {
-     position: unset;
-     width: auto;
-     top: 0;
+        position: unset;
+        width: auto;
+        top: 0;
+    }
+    footer {
+        width: unset;
+        position: relative;
+        margin-right: -15px;
     }
 }
+/* responsive end */

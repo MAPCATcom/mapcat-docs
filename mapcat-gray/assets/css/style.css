@@ -79,11 +79,8 @@ html {
   text-transform: none;
   line-height: 30px;
 }
-.sidebar-header-1 {
-  font-size: 18px;
-  font-weight: bold;
-  padding-top: 20px;
-  padding-bottom: 5px;
+.nav > li.sidebar-header-1 {
+  display: none;
 }
 
 .sidebar-header-2 { 

@@ -7,10 +7,6 @@ Custom-made, easy-to-integrate OpenStreetMap-based worldwide map API for public 
 [More about our services](https://pro.mapcat.com/services/)
 [See pricing](https://pro.mapcat.com/planpricing/)
 
-## About us
-
-[MAPCAT](https://mapcat.com) is an [OpenStreetMap](http://openstreetmap.org) world map service offering routing for cars, bicycles and pedestrians, plus real-time map editing and business services.
-
 ## Why to choose MAPCAT?
 
 Compare the MAPCAT services with that of the biggest competitors. [Click here to read more](development-comparison/index.md).

@@ -34,7 +34,7 @@
 | <a href="https://mapcat.com" target="_blank" rel="noopener">MAPCAT</a>                 | Yes | No         | No          | Yes, on web      | No                |
 | <a href="https://maps.google.com" target="_blank" rel="noopener">Google Maps</a>       | Yes | Yes        | No          | Limited, only reporting issues | Yes |
 | <a href="https://www.bing.com/maps" target="_blank" rel="noopener">Bing Maps</a>       | Yes | Yes        | No          | User contributions as additional data | Yes |
-| <a href="https://www.apple.com/ios/maps/" target="_blank" rel="noopener">Apple Maps</a>| No  | IOs only   | OS X only   | Limited, only reporting issues | No  |
+| <a href="https://www.apple.com/ios/maps/" target="_blank" rel="noopener">Apple Maps</a>| No  | iOS only   | OS X only   | Limited, only reporting issues | No  |
 | <a href="http://openstreetmap.org" target="_blank" rel="noopener">OpenStreetMap</a>    | Yes | 3rd party  | No          | Yes, on web      | Yes               |
 | <a href="https://mapbox.com" target="_blank" rel="noopener">Mapbox</a>                 | No  | No         | No          | No               | No                |
 

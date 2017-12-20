@@ -10,6 +10,9 @@ a:hover,
 a:focus {
     color: #37b34a;
 }
+.table {
+    width: unset
+}
 h1,
 h2,
 h3 {

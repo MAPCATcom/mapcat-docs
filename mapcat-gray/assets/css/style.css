@@ -53,6 +53,11 @@ p.logo {
     text-align: center;
     margin-bottom: 20px;
 }
+
+.homelink {
+    visibility: hidden;
+}
+
 a:-webkit-any-link {
     color: #37b34a;
 }

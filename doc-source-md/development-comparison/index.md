@@ -78,7 +78,7 @@
 | <a href="https://www.bing.com/maps" target="_blank" rel="noopener">Bing Maps</a>       | Yes | Yes | Yes |
 | <a href="https://www.apple.com/ios/maps/" target="_blank" rel="noopener">Apple Maps</a>| Yes | Yes | No? |
 | <a href="http://openstreetmap.org" target="_blank" rel="noopener">OpenStreetMap</a>    | Yes | No | No |
-| <a href="https://mapbox.com" target="_blank" rel="noopener">Mapbox</a>                 | Yes | Yes | No |
+| <a href="https://mapbox.com" target="_blank" rel="noopener">Mapbox</a>                 | Yes | Yes | Yes |
 | <a href="http://openlayers.org/" target="_blank" rel="noopener">OpenLayers</a>         | No  | No  | No |
 | <a href="http://leafletjs.com/" target="_blank" rel="noopener">Leaflet</a>             | No  | No  | No |
 

@@ -71,17 +71,16 @@
 
 ## Services provided via API
 
-|                                              | Routes: car | Ferry support for car routes | Routes: bike | Outdoor support for bike routes | Routes: public transport | Routes: walk |
-|----------------------------------------------|-----|-----|-----|-----|-----|-----|
-| <a href="https://mapcat.com" target="_blank" rel="noopener">MAPCAT</a>                 | Yes | Yes | Yes | Yes | No  | Yes |
-| <a href="https://maps.google.com" target="_blank" rel="noopener">Google Maps</a>       | Yes | Yes | Limited to some countries | No  | Yes | Yes |
-| <a href="https://www.bing.com/maps" target="_blank" rel="noopener">Bing Maps</a>       | Yes | ?   | No  | No  | Yes | Yes |
-| <a href="https://www.apple.com/ios/maps/" target="_blank" rel="noopener">Apple Maps</a>| Yes | Yes | No  | No  | Yes | Yes |
-| <a href="http://openstreetmap.org" target="_blank" rel="noopener">OpenStreetMap</a>    | No  | No  | Yes | No? | No  | Yes |
-| <a href="https://mapbox.com" target="_blank" rel="noopener">Mapbox</a>                 | Yes | Yes? | No? | No? | Yes? | Yes? |
-| <a href="http://openlayers.org/" target="_blank" rel="noopener">OpenLayers</a>         | No  | No  | No  | No  | No  | No  |
-| <a href="http://leafletjs.com/" target="_blank" rel="noopener">Leaflet</a>             | No  | No  | No  | No  | No  | No  |
-
+| | Geocoding | Inverse Geocoding | Routes: car | Routes: ferry support for cars | Routes: bike | Routes: outdoor support for bikes | Routes: public transport | Routes: walk |
+|-----|-----|-----|-----|-----|-----|-----|-----|-----|
+| <a href="https://mapcat.com" target="_blank" rel="noopener">MAPCAT</a>                 | Yes | Yes | Yes | Yes | Yes | Yes | No  | Yes |
+| <a href="https://maps.google.com" target="_blank" rel="noopener">Google Maps</a>       | Yes | Yes | Yes | Yes | Limited to some countries | No  | Yes | Yes |
+| <a href="https://www.bing.com/maps" target="_blank" rel="noopener">Bing Maps</a>       | Yes | Yes | Yes | ?   | No  | No  | Yes | Yes |
+| <a href="https://www.apple.com/ios/maps/" target="_blank" rel="noopener">Apple Maps</a>| Yes | Yes | Yes | Yes | No  | No  | Yes | Yes |
+| <a href="http://openstreetmap.org" target="_blank" rel="noopener">OpenStreetMap</a>    | Yes | No | No  | No  | Yes | No? | No  | Yes |
+| <a href="https://mapbox.com" target="_blank" rel="noopener">Mapbox</a>                 | Yes | Yes | Yes | Yes? | No? | No? | Yes? | Yes? |
+| <a href="http://openlayers.org/" target="_blank" rel="noopener">OpenLayers</a>         | No | No | No  | No  | No  | No  | No  | No  |
+| <a href="http://leafletjs.com/" target="_blank" rel="noopener">Leaflet</a>             | No | No | No  | No  | No  | No  | No  | No  |
 
 For further information see also <a="https://en.wikipedia.org/wiki/Comparison_of_web_map_services" target="_blank" rel="noopener">Comparison of web map services</a> on Wikipedia.
  

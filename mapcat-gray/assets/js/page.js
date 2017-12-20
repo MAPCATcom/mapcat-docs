@@ -12,4 +12,7 @@ $(window).on('resize', resize);
 $(document).ready(function() {
     resize();
     $('.main table').addClass('table');
+    if (window.location.pathname.split('/').length > 2) {
+        $('.homelink').css('visibility', 'visible');
+    }
 });

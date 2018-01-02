@@ -1,10 +1,10 @@
 # Using MAPCAT with OpenLayers
 
-You can use <a href="https://mapcat.com" target="_blank" rel="noopener">MAPCAT</a> services on your website with <a href="http://openlayers.org/" target="_blank" rel="noopener">OpenLayers</a> which offers you a JavaScript library that renders interactive maps from raster tiles using WebGL.
+You can use [MAPCAT](http://mapcat.com) services on your website with [OpenLayers](http://openlayers.org) which offers you a JavaScript library that renders interactive maps from raster tiles using WebGL.
 
 With OpenLayers you can use MAPCAT in your browser with javascript or you can easily integrate it in your own [Angular](#using-mapcat-in-angular-5-application-with-openlayers) application.
 
-The following example gives you a quick start how to use MAPCAT in a single page HTML with <a href="http://openlayers.org/" target="_blank" rel="noopener">OpenLayers</a>.
+The following example gives you a quick start how to use MAPCAT in a single page HTML with [OpenLayers](http://openlayers.org).
 
 The steps are the following:
 
@@ -14,7 +14,7 @@ The steps are the following:
 
 ## Get started
 
-First get your <a href="https://pro.mapcat.com/planpricing/" target="_blank" rel="noopener">MAPCAT access token</a>.
+First get your [MAPCAT access token](https://pro.mapcat.com/planpricing/).
 
 ## Step 1. Render a map
 
@@ -28,7 +28,7 @@ To use OpenLayers in your website, copy these lines into the ```<head>``` part o
 <script src="https://openlayers.org/en/v4.5.0/build/ol.js" type="text/javascript"></script>
 ```
 
-Include <a href="https://www.npmjs.com/package/@mapcat/mapview-init" target="_blank" rel="noopener">@mapcat/mapview-init</a> in ```<head>``` part too.
+Include [@mapcat/mapview-init](https://www.npmjs.com/package/@mapcat/mapview-init) in ```<head>``` part too.
 ```html
 <!-- MAPCAT mapview init -->
 <script type="text/javascript" src="mapcatview-min.js"></script>
@@ -75,7 +75,7 @@ Then you can embed MAPCAT in the ```<body>``` part of your page in a div that ha
 
 Substitute ```< YOUR MAPCAT ACCESS TOKEN >``` with your acceess token.
 
-For more complex use, refer to the documentation of <a href="http://openlayers.org/" target="_blank" rel="noopener">OpenLayers</a>
+For more complex use, refer to the documentation of [OpenLayers](http://openlayers.org)
 
 ## Step 2. Query directions via API
 
@@ -280,9 +280,9 @@ Your `index.html` file should look something similar
 ```
 
 ## Using MAPCAT in Angular 5 application with OpenLayers
-There is an easy way to use <a href="https://mapcat.com" target="_blank" rel="noopener">MAPCAT</a> in Angular 5 with <a href="http://openlayers.org/" target="_blank" rel="noopener">OpenLayers</a> library and <a href="https://github.com/fegyi001/mangol" target="_blank" rel="noopener">mangol</a> module.
+There is an easy way to use [MAPCAT](https://mapcat.com) in Angular 5 with [OpenLayers](http://openlayers.org) library and [mangol](https://github.com/fegyi001/mangol) module.
 
-To get started, check out our <a href="https://github.com/MAPCATcom/mapcat-angular-openlayers" target="_blank" rel="noopener">mapcat-angular-openlayers</a> example on GitHub.
+To get started, check out our [mapcat-angular-openlayers](https://github.com/MAPCATcom/mapcat-angular-openlayers) example on GitHub.
 
 <script>
 mapcatview.initRasterView(token, null, null, function(error, response) {

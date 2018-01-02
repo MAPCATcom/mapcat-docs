@@ -4,7 +4,7 @@ Custom-made, easy-to-integrate OpenStreetMap-based worldwide map API for public 
 - Extremly simple integration
 - Works with your current systems, easy to install or switch to
 
-[More about our services](https://pro.mapcat.com/services/)
+[More about our services](https://pro.mapcat.com/services/)  
 [See pricing](https://pro.mapcat.com/planpricing/)
 
 ## Why to choose MAPCAT?

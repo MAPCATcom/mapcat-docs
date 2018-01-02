@@ -4,8 +4,8 @@ Custom-made, easy-to-integrate OpenStreetMap-based worldwide map API for public 
 - Extremly simple integration
 - Works with your current systems, easy to install or switch to
 
-<a href="https://pro.mapcat.com/services/" target="_blank" rel="noopener">More about our services</a>  
-<a href="https://pro.mapcat.com/planpricing/" target="_blank" rel="noopener">See pricing</a>
+[More about our services](https://pro.mapcat.com/services/)
+[See pricing](https://pro.mapcat.com/planpricing/)
 
 ## Why to choose MAPCAT?
 
@@ -13,9 +13,9 @@ Compare the MAPCAT services with that of the biggest competitors. [Click here to
 
 ## Web development with MAPCAT
 
-Currently the easiest way to start rendering map tiles provided by <a href="https://mapcat.com" target="_blank" rel="noopener">MAPCAT</a> is by either using <a href="http://leafletjs.com/" target="_blank" rel="noopener">Leaflet</a> or <a href="http://openlayers.org/" target="_blank" rel="noopener">OpenLayers</a>.
+Currently the easiest way to start rendering map tiles provided by [MAPCAT](https://mapcat.com) is by either using [Leaflet JS](http://leafletjs.com) or [OpenLayers](http://openlayers.org).
 
-Both <a href="http://leafletjs.com/" target="_blank" rel="noopener">Leaflet</a> and <a href="http://openlayers.org/" target="_blank" rel="noopener">OpenLayers</a> are open source libraries for embedding interactive maps into webpages.
+Both [Leaflet JS](http://leafletjs.com) and [OpenLayers](http://openlayers.org) are open source libraries for embedding interactive maps into webpages.
 
 ## Get started with MAPCAT
 

@@ -104,7 +104,7 @@ To query the server, add the following script in the ```<body>``` part of your p
   };
 
   $.ajax({
-      url: "https://api-dev.mapcat.com/routing/route",
+      url: "https://api.mapcat.com/routing/route",
       beforeSend: function(xhrObj) {
           // Request headers
           xhrObj.setRequestHeader("Content-Type", "application/json");
@@ -234,7 +234,7 @@ Your `index.html` file should look something similar
           ]
         };
         $.ajax({
-          url: "https://api-dev.mapcat.com/routing/route",
+          url: "https://api.mapcat.com/routing/route",
           beforeSend: function(xhrObj) {
             xhrObj.setRequestHeader("Content-Type", "application/json");
             xhrObj.setRequestHeader("X-Api-Key", "< YOUR MAPCAT ACCESS TOKEN >");
@@ -326,7 +326,7 @@ mapcatview.initRasterView(token, null, null, function(error, response) {
     ]
   };
   $.ajax({
-    url: "https://api-dev.mapcat.com/routing/route",
+    url: "https://api.mapcat.com/routing/route",
     beforeSend: function(xhrObj) {
       xhrObj.setRequestHeader("Content-Type", "application/json");
       xhrObj.setRequestHeader("X-Api-Key", token);

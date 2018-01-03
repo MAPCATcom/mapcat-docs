@@ -15,4 +15,7 @@ $(document).ready(function() {
     if (window.location.pathname.split('/').length > 2) {
         $('.homelink').css('visibility', 'visible');
     }
+    $(document.links).filter(function() {
+        return this.hostname !== window.location.hostname;
+    }).attr('target', '_blank').attr('rel', 'noopener');
 });

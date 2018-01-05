@@ -25,8 +25,8 @@
             "attribution": "© <a href=\"https://en.wikipedia.org/wiki/Wikipedia:Copyrights\">Wikipedia</a>"
         }
     },
-    "sprite": "assets/sprite",
-    "glyphs": "https://fontstackcdn.mapcat.com/fontstack/{fontstack}/{range}.pbf",
+    "sprite": "https://cdn-static.mapcat.com/sprite",
+    "glyphs": "https://cdn-static.mapcat.com/fonts/{fontstack}/{range}.pbf",
     "layers": [
         {
             "id": "background",

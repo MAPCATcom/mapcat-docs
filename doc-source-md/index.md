@@ -29,3 +29,9 @@ Both [Leaflet JS](http://leafletjs.com) and [OpenLayers](http://openlayers.org) 
 * [Routing API](./services/routing.md)
 * [Height API](./services/height.md)
 
+## Vector tiles
+
+MAPCAT backend is suitable for serving both raster and vector tiles.  
+Our vector tiles conform to the [Mapbox Vector Tile Specification](https://www.mapbox.com/vector-tiles/specification/).  
+MAPCAT vector tile data schema is based on and extends the well-known [Open Map Tiles Schema](https://openmaptiles.org/schema/).  
+Here is a detailed specification of our [MAPCAT Vector Tile Schema](./vt-spec/vt-spec-01.md).

@@ -18,4 +18,10 @@ $(document).ready(function() {
     $(document.links).filter(function() {
         return this.hostname !== window.location.hostname;
     }).attr('target', '_blank').attr('rel', 'noopener');
+
+    $('.sidebar-header-2').children().each(function() {
+        if (this.innerText.indexOf('\\') !== -1) {
+            this.innerHTML = this.innerHTML.replace('\\', '');
+        }
+    })
 });

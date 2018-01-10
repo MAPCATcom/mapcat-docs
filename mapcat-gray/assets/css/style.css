@@ -34,16 +34,17 @@ li {
 textarea {
     font-family: 'Roboto',"Helvetica Neue",sans-serif;
 }
-.navbar {
+#sidebar-menu .navbar {
+    padding-top: 55px;
     padding-right: 30px;
 }
-.nav-list > li {
+#sidebar-menu .nav-list > li {
     line-height: 20px;
 }
-.nav-list > li > a {
+#sidebar-menu .nav-list > li > a {
     padding: unset;
 }
-.navbar-search .search-query {
+#sidebar-menu .navbar-search .search-query {
     font-family: 'Roboto',"Helvetica Neue",sans-serif;
 }
 .logo {
@@ -57,10 +58,6 @@ p.logo {
     margin-bottom: 20px;
 }
 
-.homelink {
-    visibility: hidden;
-}
-
 a:-webkit-any-link {
     color: #37b34a;
 }
@@ -71,6 +68,7 @@ html {
 }
 .main {
   padding: 0px 40px;
+  padding-top: 55px;
   background: rgba(255,255,255,0.4);
   -webkit-box-shadow: 0 0 20px #d2d2d2;
   box-shadow: 0 0 20px #d2d2d2;

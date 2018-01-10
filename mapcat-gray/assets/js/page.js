@@ -17,7 +17,7 @@ $(document).ready(function() {
     }).attr('target', '_blank').attr('rel', 'noopener');
 
     $('.sidebar-header-2').children().each(function() {
-        if (this.innerText.indexOf('\\') !== -1) {
+        while (this.innerText.indexOf('\\') !== -1) {
             this.innerHTML = this.innerHTML.replace('\\', '');
         }
     })

@@ -28,7 +28,7 @@ In order to better, faster service with less storage needs MAPCAT generalizes mu
 
 # Layers
 
-## aeroway
+## aeroway (base.aeroway)
 
 Aeroway polygons and lines based of OpenStreetMap [aeroways](https://wiki.openstreetmap.org/wiki/Aeroways). Airport buildings which are not related to these tags are contained in the building layer.
 
@@ -41,7 +41,7 @@ The original value of the [aeroway](https://wiki.openstreetmap.org/wiki/Key:aero
 | **apron** | Where planes park, refuel, load |
 | **hangar** | A large airport building with extensive floor areas for housing aircraft or spacecraft |
 
-## boundary
+## boundary (base.boundary)
 
 Administrative boundary lines as linestrings.There are no overlapping lines where multiple boundary areas meet.
 
@@ -51,7 +51,7 @@ Administrative boundary lines as linestrings.There are no overlapping lines wher
 | **disputed** | 0 – Not disputed <br>1 – Disputed | The disputed field should be used to apply a dashed or otherwise distinct style to disputed boundaries |
 | **maritime** | 0 – Not maritime <br> 1 – Maritime | National borders at sea of non-landlocked countries. |
 
-## building
+## building (base.building)
 
 All [OSM Buildings](https://wiki.openstreetmap.org/wiki/Buildings) are included and all tags are imported ( [building=\*](https://wiki.openstreetmap.org/wiki/Key:building)) except render\_min\_height and render\_height fields which are not in the scheme. Large buildings appear at zoom level 13, and all buildings are included in zoom level 14 and up. The type field lets you differentiate building parts from building outlines
 
@@ -59,7 +59,14 @@ All [OSM Buildings](https://wiki.openstreetmap.org/wiki/Buildings) are included 
 | --- | --- |
 | [**building=\***](https://wiki.openstreetmap.org/wiki/Key:building) | The building key is used to mark areas as a building. |
 
-## housenumber
+## building\_label (base.building\_label)
+
+| Field | Description |
+| --- | --- |
+| **name\_\*** | MAPCAT provides all the language variants from OSM |
+| **name** | The OSM [name](https://wiki.openstreetmap.org/wiki/Highways#Names_and_references) value of the buildings |
+
+## housenumber (base.housenumber)
 
 All objects where [addr:housenumber](https://wiki.openstreetmap.org/wiki/Key:addr) tag is filled are utilizied for labelling housenumbers on a map. It appears in _z16_ level.
 
@@ -67,7 +74,7 @@ All objects where [addr:housenumber](https://wiki.openstreetmap.org/wiki/Key:add
 | --- | --- |
 | **housenumber** | This layer contains points used to label the street number parts of specific addresses.  |
 
-## landcover
+## landcover (base.landcover)
 
 [Landcover](https://wiki.openstreetmap.org/wiki/Landcover) is used to describe the physical material at the surface of the earth.
 
@@ -82,7 +89,7 @@ All objects where [addr:housenumber](https://wiki.openstreetmap.org/wiki/Key:add
 | |scrub | Bushes, scrub, heaths |
 | |flat | Main wetland without greenery. |
 
-## landuse
+## landuse (base.landuse)
 
 Landuse is used to describe use of land by humans.
 
@@ -100,7 +107,7 @@ Landuse is used to describe use of land by humans.
 | |parking | Car park |
 | |playground | Playground for little children |
 
-## place
+## place (base.place)
 
 The place layer consists out of [countries](https://wiki.openstreetmap.org/wiki/Tag:place%3Dcountry), [states](https://wiki.openstreetmap.org/wiki/Tag:place%3Dstate) and [cities](https://wiki.openstreetmap.org/wiki/Key:place).
 
@@ -119,7 +126,7 @@ The place layer consists out of [countries](https://wiki.openstreetmap.org/wiki/
 | |neighbourhood | A neighbourhood is a smaller named, geographically localised place within a suburb of a larger city or within a town or village |
 | **rank** |   | Countries, states and the most important cities all have a rank to boost their importance on the map. The rank field for counries and states ranges from 1 to 6 while the rank field for cities ranges from 1 to 10 |
 
-## poi
+## poi (base.poi)
 
 [Points of interests](https://wiki.openstreetmap.org/wiki/Points_of_interest) containing a of a variety of OpenStreetMap tags. Mostly contains amenities, sport, shop and tourist POIs.
 
@@ -136,7 +143,7 @@ The place layer consists out of [countries](https://wiki.openstreetmap.org/wiki/
 | **wikidata** | [http://wiki.openstreetmap.org/wiki/Key:wikidata](https://www.google.com/url?q=http://wiki.openstreetmap.org/wiki/Key:wikidata&amp;sa=D&amp;ust=1515143071445000&amp;usg=AFQjCNGmFCWayYABBi_E5ltAW4FdEEj5ig) |
 | **maki** | Icon value |
 
-## transportation
+## transportation (base.transportation)
 
 Transportation contains roads and railways. This layer is directly derived from the OSM road hierarchy.
 
@@ -153,14 +160,14 @@ Transportation contains roads and railways. This layer is directly derived from 
 | |track | Roads mostly for agricultural and forestry use etc. |
 | |path | Foot paths, cycle paths, ski trails. |
 | |rail | Railways, including mainline, commuter rail, and rapid transit. |
-| |motorway\_link | nterchanges / on &amp; off ramps |
+| |motorway\_link | interchanges / on &amp; off ramps |
 | |link | Contains link roads |
 | |street | Standard unclassified, residential, road, and living\_street road types |
 | |street\_limited | Streets that may have limited or no access for motor vehicles. |
 | |living\_street | Residential streets where pedestrians have legal priority over cars |
 | |pedestrian | Includes pedestrian streets, plazas, and public transportation platforms. |
 | **type** | motorway | High-speed, grade-separated highways |
-| |motorway\_link | Interchanges / on &amp; off ramps |
+| |motorway\_link | interchanges / on &amp; off ramps |
 | |trunk | Important roads that are not motorways. |
 | |primary | A major highway linking large towns. |
 | |secondary | A highway linking large towns. |
@@ -182,36 +189,7 @@ Transportation contains roads and railways. This layer is directly derived from 
 | **ref** |   | The OSM [ref](https://wiki.openstreetmap.org/wiki/Key:ref) tag of the motorway or its network |
 | **ref\_length** |   | Length of the ref field. Useful for having a shield icon as background for labeling motorways. |
 
-## water
-
-Water polygons representing oceans and lakes. Covered watered areas are excluded. All water polygons from  [OpenStreetMapData](http://openstreetmapdata.com/) have the class ocean. Water bodies are classified as lake or river for water bodies with the  [waterway](https://wiki.openstreetmap.org/wiki/Key:waterway) tag.
-
-| Field | Value | Description |
-| --- | --- | --- |
-| **class** | lake | A body of relatively still fresh or salt water of considerable size, localized in a basin that is surrounded by land |
-| |River not included | MAPCAT treats river bodies as lakes. |
-
-## water\_name
-
-Lake center lines for labelling lake bodies.
-
-| Field | Description |
-| --- | --- |
-| **name\_\*** | MAPCAT provides all the language variants from OSM |
-| **name** | The OSM [name](https://wiki.openstreetmap.org/wiki/Highways#Names_and_references) value of the lake |
-| **class** | At the moment only lake since no ocean parts are labelled |
-
-## waterway
-
-OpenStreetMap  [waterways](https://wiki.openstreetmap.org/wiki/Waterways)
-
-| Field | Description |
-| --- | --- |
-| **name\_\*** | MAPCAT provides all the language variants from OSM |
-| **name** | The OSM [name](https://wiki.openstreetmap.org/wiki/Highways#Names_and_references) value of the waterways |
-| **class** | The original value of the  [waterway](https://wiki.openstreetmap.org/wiki/Key:waterway) tag. |
-
-## shape\_label
+## shape\_label (base.shape\_label)
 
 Layer for visualize the name of shape objects on the map
 
@@ -226,10 +204,50 @@ Layer for visualize the name of shape objects on the map
 | |6 - strait | A strait is a naturally formed, narrow, typically navigable waterway that connects two larger bodies of water |
 | |7 - cape | piece of elevated land sticking out into the sea or large lake |
 | |8 - mountain\_range | A mountain range or hill range is a series of mountains or hills ranged in a line and connected by high ground |
-| |9- peninsula | A natural headland or point on land |
+| |9 - peninsula | A natural headland or point on land |
 | |10 - island | An island or isle is any piece of sub-continental land that is surrounded by water |
 | **name** |   | The OSM [name](https://wiki.openstreetmap.org/wiki/Highways#Names_and_references) value of the shape |
 | **name\_\*** |   | MAPCAT provides all the language variants from OSM |
+
+## water (base.water)
+
+Water polygons representing oceans and lakes. Covered watered areas are excluded. All water polygons from  [OpenStreetMapData](http://openstreetmapdata.com/) have the class ocean. Water bodies are classified as lake or river for water bodies with the  [waterway](https://wiki.openstreetmap.org/wiki/Key:waterway) tag.
+
+| Field | Value | Description |
+| --- | --- | --- |
+| **class** | lake | A body of relatively still fresh or salt water of considerable size, localized in a basin that is surrounded by land |
+| |River not included | MAPCAT treats river bodies as lakes. |
+
+## water\_name (base.water\_name)
+
+Lake center lines for labelling lake bodies.
+
+| Field | Description |
+| --- | --- |
+| **name\_\*** | MAPCAT provides all the language variants from OSM |
+| **name** | The OSM [name](https://wiki.openstreetmap.org/wiki/Highways#Names_and_references) value of the lake |
+| **class** | At the moment only lake since no ocean parts are labelled |
+
+## waterway (base.waterway)
+
+OpenStreetMap  [waterways](https://wiki.openstreetmap.org/wiki/Waterways)
+
+| Field | Description |
+| --- | --- |
+| **name\_\*** | MAPCAT provides all the language variants from OSM |
+| **name** | The OSM [name](https://wiki.openstreetmap.org/wiki/Highways#Names_and_references) value of the waterways |
+| **class** | The original value of the  [waterway](https://wiki.openstreetmap.org/wiki/Key:waterway) tag. |
+
+## water (ocean.water)
+
+Water polygons representing oceans. 
+
+## bathymetry (ocean.bathymetry)
+
+| Field | Description |
+| --- | --- |
+| **depth** | Depth of the represented shape. |
+
 
 ## road (cycle.road)
 
@@ -255,12 +273,6 @@ Predefined network for cyclist
 | **ref** |   | Holds any reference codes or route numbers a road may have |
 | **ref\_length** |   | Length of ref |
 
-## building\_label
-
-| Field | Description |
-| --- | --- |
-| **name\_\*** | MAPCAT provides all the language variants from OSM |
-| **name** | The OSM [name](https://wiki.openstreetmap.org/wiki/Highways#Names_and_references) value of the buildings |
 
 # Changelog
 

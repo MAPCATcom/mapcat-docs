@@ -19,13 +19,21 @@ Both [Leaflet JS](http://leafletjs.com) and [OpenLayers](http://openlayers.org) 
 
 ## Get started with MAPCAT
 
+To integrate your application with MAPCAT services, you will need to subscribe for one of our plans (free or commercial). You can do this by contacting us, most conveniently through our [Pricing page](https://pro.mapcat.com/planpricing/).
+
+To access our services, an access token is required that connects API requests to your subscription. When you subscribe for a plan, we will provide you the MAPCAT access token you may use to integrate your application with MAPCAT services. The access token provides a unique identification of your subscription and includes a set of API-keys that allow you to access all the services that you are provided within your subscription.
+
+The basic services available in all plans are: map visualization (map tiles rendering), geocoding (search and reverse geocoding) and route planning. You will access these services through our [service API-s](./index.html#mapcat-service-apis), using for each the API-keys provided by us.
+
+You can render the map tiles provided by either using Leaflet JS or OpenLayers, our detailed technical descriptions will guide you in setting up your application:
+
 * [Start using MAPCAT with Leaflet](development-frameworks/leaflet.md)
 * [Start using MAPCAT with OpenLayers](development-frameworks/openlayers.md)
 
 ## MAPCAT Service APIs
 
 * [Search API](./services/search.md)
-* [Inverse Geocode API](./services/invgeocode.md)
+* [Reverse Geocoding API](./services/invgeocode.md)
 * [Routing API](./services/routing.md)
 * [Height API](./services/height.md)
 

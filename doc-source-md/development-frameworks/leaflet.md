@@ -39,7 +39,7 @@ Then you can embed a MAPCAT map in the ```<body>``` part of your page in a div t
 ```html
 <div id='map' style='width: 100%; height: 400px;'></div>
 <script>
-  mapcatview.initRasterView("< YOUR MAPCAT ACCESS TOKEN >", null, null, function(error, response) {
+  mapcatview.initRasterView(function(error, response) {
     if (error) {
       console.log(error);
     } else {
@@ -53,7 +53,7 @@ Then you can embed a MAPCAT map in the ```<body>``` part of your page in a div t
       }).addTo(map);
     }
   // continue here
-  });
+  }, "< YOUR MAPCAT ACCESS TOKEN >");
 </script>
 ```
 
@@ -157,7 +157,7 @@ Your `index.html` file should look something similar:
     <div id='map' style='width: 100%; height: 400px;'></div>
     <script>
 
-      mapcatview.initRasterView("< YOUR MAPCAT ACCESS TOKEN >", null, null, function(error, response) {
+      mapcatview.initRasterView(function(error, response) {
         if (error) {
           console.log(error);
         } else {
@@ -207,7 +207,7 @@ Your `index.html` file should look something similar:
           alert("error");
         });
 
-      });
+      }, "< YOUR MAPCAT ACCESS TOKEN >");
 
     </script>
 
@@ -226,7 +226,7 @@ An easy way to use [MAPCAT](https://mapcat.com) with [React](https://reactjs.org
 To get started, check out our [mapcat-react-leaflet](https://github.com/MAPCATcom/mapcat-react-leaflet) example on GitHub.
 
 <script>
-mapcatview.initRasterView(token, null, null, function(error, response) {
+mapcatview.initRasterView(function(error, response) {
   if (error) {
     console.log(error);
   } else {
@@ -271,5 +271,5 @@ mapcatview.initRasterView(token, null, null, function(error, response) {
   .fail(function() {
     alert("error");
   });
-});
+}, token);
 </script>

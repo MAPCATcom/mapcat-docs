@@ -40,7 +40,7 @@ Then you can embed MAPCAT in the ```<body>``` part of your page in a div that ha
 <div id='map' style='width: 100%; height: 400px;'></div>
 
 <script type="text/javascript">
-  mapcatview.initRasterView("< YOUR MAPCAT ACCESS TOKEN >", null, null, function(error, response) {
+  mapcatview.initRasterView(function(error, response) {
     if (error) {
       console.log(error);
     } else {
@@ -69,7 +69,7 @@ Then you can embed MAPCAT in the ```<body>``` part of your page in a div that ha
       });
     }
   // continue here
-  });
+  }, "< YOUR MAPCAT ACCESS TOKEN >");
 </script>
 ```
 
@@ -193,7 +193,7 @@ Your `index.html` file should look something similar
     <div id='map' style='width: 400px; height: 300px;'></div>
 
     <script>
-      mapcatview.initRasterView("< YOUR MAPCAT ACCESS TOKEN >", null, null, function(error, response) {
+      mapcatview.initRasterView(function(error, response) {
         if (error) {
           console.log(error);
         } else {
@@ -273,7 +273,7 @@ Your `index.html` file should look something similar
         .fail(function() {
           alert("error");
         });
-      });
+      }, "< YOUR MAPCAT ACCESS TOKEN >");
     </script>
   </body>
 </html>
@@ -285,7 +285,7 @@ There is an easy way to use [MAPCAT](https://mapcat.com) in Angular 5 with [Open
 To get started, check out our [mapcat-angular-openlayers](https://github.com/MAPCATcom/mapcat-angular-openlayers) example on GitHub.
 
 <script>
-mapcatview.initRasterView(token, null, null, function(error, response) {
+mapcatview.initRasterView(function(error, response) {
   if (error) {
     console.log(error);
   } else {
@@ -365,5 +365,5 @@ mapcatview.initRasterView(token, null, null, function(error, response) {
   .fail(function() {
     alert("error");
   });
-});
+}, token);
 </script>

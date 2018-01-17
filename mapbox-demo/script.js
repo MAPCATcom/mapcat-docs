@@ -25,7 +25,7 @@ function load(token) {
             initMap(response);
             $('#apikeyModal').modal('hide');
         }
-    }, token, {layer: { "base":"", "ocean":"" }}, );
+    }, token, {layer: { "base":"", "ocean":"" }} );
 }
 
 $(document).ready( function() {

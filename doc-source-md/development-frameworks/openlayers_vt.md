@@ -2,7 +2,7 @@
 
 You can use [MAPCAT](http://mapcat.com) services on your website with [OpenLayers](http://openlayers.org) which offers you a JavaScript library that renders interactive maps from vector tiles using WebGL. You can use [ol-mapbox-style](https://github.com/boundlessgeo/ol-mapbox-style/blob/master/README.md) JavaScript library to creat an OpenLayers map from [Mapbox](http://www.mapbox.com/) compatible stylesheet.
 
-With OpenLayers you can use MAPCAT in your browser with javascript or you can easily integrate it in your own [Angular](#using-mapcat-in-angular-5-application-with-openlayers) application.
+With OpenLayers you can use MAPCAT in your browser with JavaScript or you can easily integrate it in your own [Angular](#using-mapcat-in-angular-5-application-with-openlayers) application.
 
 The following example gives you a quick start how to use MAPCAT in a single page HTML with [OpenLayers](http://openlayers.org).
 

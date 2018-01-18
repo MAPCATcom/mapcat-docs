@@ -118,7 +118,7 @@ Change the parameter of the method in the above script to the following:
     for (index = 0, len = data.results[0].features.length; index < len; index++) {
       var i;
       var coordinates = [];
-      for (i=0; i<data.results[0].features[index].geometry.coordinates.length; i++) {
+      for (i = 0; i < data.results[0].features[index].geometry.coordinates.length; i++) {
         coordinates.push(ol.proj.fromLonLat(data.results[0].features[index].geometry.coordinates[i]));
       }
       features[index] = new ol.Feature({
@@ -209,7 +209,7 @@ Your `index.html` file should look something similar
           for (index = 0, len = data.results[0].features.length; index < len; index++) {
             var i;
             var coordinates = [];
-            for (i=0; i<data.results[0].features[index].geometry.coordinates.length; i++) {
+            for (i = 0; i < data.results[0].features[index].geometry.coordinates.length; i++) {
               coordinates.push(ol.proj.fromLonLat(data.results[0].features[index].geometry.coordinates[i]));
             }
             features[index] = new ol.Feature({
@@ -255,14 +255,14 @@ To get started, check out our [mapcat-angular-openlayers-vector](https://github.
     }
     var body = {
       "waypoints": [
-          {
-            "lat": 48.14,
-            "lon": 11.58
-          },
-          {
-            "lat": 48.14,
-            "lon": 11.60
-          }
+        {
+          "lat": 48.14,
+          "lon": 11.58
+        },
+        {
+          "lat": 48.14,
+          "lon": 11.60
+        }
       ]
     };
     $.ajax({
@@ -281,7 +281,7 @@ To get started, check out our [mapcat-angular-openlayers-vector](https://github.
       for (index = 0, len = data.results[0].features.length; index < len; index++) {
         var i;
         var coordinates = [];
-        for (i=0; i<data.results[0].features[index].geometry.coordinates.length; i++) {
+        for (i = 0; i < data.results[0].features[index].geometry.coordinates.length; i++) {
           coordinates.push(ol.proj.fromLonLat(data.results[0].features[index].geometry.coordinates[i]));
         }
         features[index] = new ol.Feature({

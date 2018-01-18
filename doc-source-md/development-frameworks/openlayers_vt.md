@@ -1,6 +1,6 @@
 # Using MAPCAT vector based map tiles with OpenLayers
 
-You can use [MAPCAT](http://mapcat.com) services on your website with [OpenLayers](http://openlayers.org) which offers you a JavaScript library that renders interactive maps from vector tiles using WebGL. You can use [ol-mapbox-style](https://github.com/boundlessgeo/ol-mapbox-style/blob/master/README.md) JavaScript library to creat an OpenLayers map from [Mapbox](http://www.mapbox.com/) compatible stylesheet.
+You can use [MAPCAT](http://mapcat.com) services on your website with [OpenLayers](http://openlayers.org) which offers you a JavaScript library that renders interactive maps from vector tiles using WebGL. You can use [ol-mapbox-style](https://github.com/boundlessgeo/ol-mapbox-style/blob/master/README.md) JavaScript library to create an OpenLayers map from [Mapbox](http://www.mapbox.com/) compatible stylesheet.
 
 With OpenLayers you can use MAPCAT in your browser with JavaScript or you can easily integrate it in your own [Angular](#using-mapcat-in-angular-5-application-with-openlayers) application.
 
@@ -48,7 +48,7 @@ Then you can embed MAPCAT in the ```<body>``` part of your page in a div that ha
       let map =  olms.apply('map', response);
     }
   // continue here
-  },"< YOUR MAPCAT ACCESS TOKEN >", {tileStyle: "openlayers"});
+  },"< YOUR MAPCAT ACCESS TOKEN >", null, {styleSheet: "openlayers"});
 </script>
 ```
 
@@ -234,7 +234,7 @@ Your `index.html` file should look something similar
         .fail(function() {
           alert("error");
         });
-      }, "< YOUR MAPCAT ACCESS TOKEN >", {tileStyle: "openlayers"});
+      }, "< YOUR MAPCAT ACCESS TOKEN >", null, {styleSheet: "openlayers"});
     </script>
   </body>
 </html>
@@ -306,5 +306,5 @@ To get started, check out our [mapcat-angular-openlayers-vector](https://github.
     .fail(function() {
       alert("error");
     });
-  }, token, {tileStyle: "openlayers"});
+  }, token, null, {styleSheet: "openlayers"});
 </script>

@@ -72,8 +72,9 @@ To query the server, add the following script in the ```<body>``` part of your p
   var body = {
     "waypoints": [
         {
-          "lat": 48.135,
-          "lon": 11.60
+        {
+          "lat": 48.14,
+          "lon": 11.58
         },
         {
           "lat": 48.14,
@@ -182,14 +183,14 @@ Your `index.html` file should look something similar
         }
         var body = {
           "waypoints": [
-              {
-                "lat": 48.14,
-                "lon": 11.59
-              },
-              {
-                "lat": 48.14,
-                "lon": 11.60
-              }
+            {
+              "lat": 48.14,
+              "lon": 11.58
+            },
+            {
+              "lat": 48.14,
+              "lon": 11.60
+            }
           ]
         };
         $.ajax({
@@ -300,7 +301,6 @@ To get started, check out our [mapcat-angular-openlayers-vector](https://github.
         }),
         zIndex: 100
       });
-      console.log("map: " + map);
       map.addLayer(vector);
     })
     .fail(function() {

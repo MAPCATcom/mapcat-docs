@@ -52,7 +52,7 @@ Then you can embed MAPCAT in the ```<body>``` part of your page in a div that ha
 </script>
 ```
 
-Substitute ```< YOUR MAPCAT ACCESS TOKEN >``` with your acceess token.
+Substitute ```< YOUR MAPCAT ACCESS TOKEN >``` with your access token.
 
 For more complex use, refer to the documentation of [OpenLayers](http://openlayers.org)
 
@@ -103,7 +103,7 @@ To query the server, add the following script in the ```<body>``` part of your p
   });
 ```
 
-Substitute ```< YOUR MAPCAT ACCESS TOKEN >``` with your acceess token.
+Substitute ```< YOUR MAPCAT ACCESS TOKEN >``` with your access token.
 
 For more complex use, refer to the documentation of the [MAPCAT API](../index.md#mapcat-service-apis)
 

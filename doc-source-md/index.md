@@ -20,7 +20,8 @@ Both [Leaflet JS](http://leafletjs.com) and [OpenLayers](http://openlayers.org) 
 ## Get started with MAPCAT
 
 * [Start using MAPCAT with Leaflet](development-frameworks/leaflet.md)
-* [Start using MAPCAT with OpenLayers](development-frameworks/openlayers.md)
+* [Start using MAPCAT raster based map tiles with OpenLayers](development-frameworks/openlayers.md)
+* [Start using MAPCAT vector based map tiles with OpenLayers](development-frameworks/openlayers_vt.md)
 
 ## MAPCAT Service APIs
 

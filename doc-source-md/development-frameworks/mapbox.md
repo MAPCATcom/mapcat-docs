@@ -1,7 +1,7 @@
 # Using MAPCAT vector based map tiles with Mapbox GL JS
 
 You can use [MAPCAT](http://mapcat.com) services on your website with our [Mapbox GL JS](https://www.npmjs.com/package/@mapcat/mapbox-gl) fork which offers you a JavaScript library that renders interactive maps from vector tiles using WebGL. This fork is able to use multilanguage (i18n) support over [Mapbox GL JS](https://www.mapbox.com). 
-We intend to periodically update this fork from the original Mapbox GL JS repository, so if you don't want to use our multilanguage feature you can use original [Mapbox GL JS](https://www.mapbox.com).
+We intend to periodically update this fork from the original Mapbox GL JS repository. If you don't want to use our multilanguage feature, you can use the original [Mapbox GL JS](https://www.mapbox.com).
 
 The following example gives you a quick start how to use MAPCAT in a single page HTML with our [Mapbox GL JS](https://www.npmjs.com/package/@mapcat/mapbox-gl) fork.
 
@@ -17,7 +17,7 @@ First get your [MAPCAT access token](https://pro.mapcat.com/planpricing/).
 
 ## Step 1. Render a map
 
-To use Mapbox GL JS fork in your website copy the following lines into the ```<head>``` part of your HTML page.  
+In order to use our Mapbox GL JS fork in your website copy the following lines into the ```<head>``` part of your HTML page.  
 Use the original `mapbox-gl.css` and our forked `mapbox-gl.js` files.
 
 ```html
@@ -25,7 +25,7 @@ Use the original `mapbox-gl.css` and our forked `mapbox-gl.js` files.
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mapbox-gl/0.43.0/mapbox-gl.css" type="text/css">
 
 <!-- Compiled and minified JavaScript -->
-<script type="text/javascript" src=""></script>
+<script type="text/javascript" src="http://cdn-static.mapcat.com/npm/@mapcat/mapbox-gl@0.0.1/dist/mapbox-gl.js"></script>
 ```
 
 Include [@mapcat/mapview-init](https://www.npmjs.com/package/@mapcat/mapview-init) in ```<head>``` part too.
@@ -42,7 +42,7 @@ Then you can embed MAPCAT in the ```<body>``` part of your page in a div that ha
 
 After that, initialize map with [@mapcat/mapview-init](https://www.npmjs.com/package/@mapcat/mapview-init).  
 You can set the language of the map with ```setLanguage()``` method.
-Its parameter is the ISO 639-1 language code representation of the desired language, it defaults to English (*"en"*).  
+Its parameter is the [ISO 639-1](https://en.wikipedia.org/wiki/ISO_639-1) language code representation of the desired language, it defaults to English (*"en"*).  
 You can easily create a language selector with *jQuery* see [full code](#putting-it-together) of this example.
 
 ```html

@@ -25,7 +25,7 @@ Use the original `mapbox-gl.css` and our forked `mapbox-gl.js` files.
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mapbox-gl/0.43.0/mapbox-gl.css" type="text/css">
 
 <!-- Compiled and minified JavaScript -->
-<script type="text/javascript" src="http://cdn-static.mapcat.com/npm/@mapcat/mapbox-gl@0.0.1/dist/mapbox-gl.js"></script>
+<script type="text/javascript" src="https://cdn-static.mapcat.com/npm/@mapcat/mapbox-gl@0.0.1/dist/mapbox-gl.js"></script>
 ```
 
 Include [@mapcat/mapview-init](https://www.npmjs.com/package/@mapcat/mapview-init) in ```<head>``` part too.
@@ -74,7 +74,7 @@ We're going to use jQuery to access the MAPCAT API, so copy these lines into the
 
 ```html
 <!-- jQuery -->
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 ```
 
 To query the server, add the following script in the ```<body>``` part of your page, below the previous one, to the comment saying "continue here".
@@ -173,10 +173,10 @@ Your `index.html` file should look something similar
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mapbox-gl/0.43.0/mapbox-gl.css" type="text/css">
 
     <!-- Compiled and minified JavaScript -->
-    <script type="text/javascript" src="http://cdn-static.mapcat.com/npm/@mapcat/mapbox-gl@0.0.1/dist/mapbox-gl.js"></script>
+    <script type="text/javascript" src="https://cdn-static.mapcat.com/npm/@mapcat/mapbox-gl@0.0.1/dist/mapbox-gl.js"></script>
 
     <!-- jQuery -->
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 
     <!-- MAPCAT mapview init -->
     <script type="text/javascript" src="mapcatview-min.js"></script>

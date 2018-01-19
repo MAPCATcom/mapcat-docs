@@ -30,6 +30,7 @@ You can render the map tiles provided by either using Leaflet JS or OpenLayers, 
 * [Start using MAPCAT with Leaflet](development-frameworks/leaflet.md)
 * [Start using MAPCAT raster based map tiles with OpenLayers](development-frameworks/openlayers.md)
 * [Start using MAPCAT vector based map tiles with OpenLayers](development-frameworks/openlayers_vt.md)
+* [Start using MAPCAT with Mapbox GL JS](development-frameworks/mapbox.md)
 
 ## MAPCAT Service APIs
 

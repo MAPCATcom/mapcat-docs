@@ -71,7 +71,7 @@
 
 ## Services provided via API
 
-| | Geocoding | Inverse Geocoding | Height Service |
+| | Geocoding | Reverse Geocoding | Height Service |
 |-----|-----|-----|-----|--|--|--|
 | [MAPCAT](https://mapcat.com)                 | Yes | Yes | Yes |
 | [Google Maps](https://maps.google.com)       | Yes | Yes | Yes |

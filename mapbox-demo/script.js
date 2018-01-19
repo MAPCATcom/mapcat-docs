@@ -11,7 +11,7 @@ function initMap(style) {
 }
 
 function load(token) {
-    mapcatview.initVectorView(token, {layer: { "base":"", "ocean":"" }}, function(error, response) {
+    mapcatview.initVectorView(function(error, response) {
         if (error) {
             map = undefined;
             $('#map').empty();
@@ -25,7 +25,7 @@ function load(token) {
             initMap(response);
             $('#apikeyModal').modal('hide');
         }
-    });
+    }, token, {layer: { "base":"", "ocean":"" }} );
 }
 
 $(document).ready( function() {

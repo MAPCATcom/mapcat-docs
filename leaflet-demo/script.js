@@ -12,7 +12,7 @@ function init() {
 }
 
 function load(token) {
-    mapcatview.initRasterView(token, null, null, function(error, response) {
+    mapcatview.initRasterView(function(error, response) {
         if (error) {
             map = undefined;
             $('#map').empty();
@@ -31,7 +31,7 @@ function load(token) {
                 maxZoom: 18
             }).addTo(map);
         }
-    });
+    }, token);
 }
 
 $(document).ready( function() {

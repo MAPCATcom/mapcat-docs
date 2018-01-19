@@ -28,7 +28,8 @@ The basic services available in all plans are: map visualization (map tiles rend
 You can render the map tiles provided by either using Leaflet JS or OpenLayers, our detailed technical descriptions will guide you in setting up your application:
 
 * [Start using MAPCAT with Leaflet](development-frameworks/leaflet.md)
-* [Start using MAPCAT with OpenLayers](development-frameworks/openlayers.md)
+* [Start using MAPCAT raster based map tiles with OpenLayers](development-frameworks/openlayers.md)
+* [Start using MAPCAT vector based map tiles with OpenLayers](development-frameworks/openlayers_vt.md)
 
 ## MAPCAT Service APIs
 

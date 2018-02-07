@@ -13,7 +13,7 @@ The steps are the following:
 
 ## Get started
 
-First get your [MAPCAT access token](https://pro.mapcat.com/planpricing/).
+First get your [MAPCAT access token](https://www.mapcat.com/planpricing/).
 
 ## Step 1. Render a map
 

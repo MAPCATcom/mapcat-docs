@@ -7,7 +7,7 @@ You can visualize [Mapcat](https://mapcat.com) maps on Android devices using the
 The Mapcat Android SDK offers you a browser-independent, native solution for rendering Mapcat maps.
 
 ## Access token
-In order to use the test app or create one using our SDK, you have to get a [MAPCAT access token](https://pro.mapcat.com/planpricing/).
+In order to use the test app or create one using our SDK, you have to get a [MAPCAT access token](https://www.mapcat.com/planpricing/).
 
 ## Building the SDK from source
 [Here](https://github.com/MAPCATcom/mapbox-gl-native/tree/mapcat-master/platform/android) is a quick guide on **how to build** and deploy the Mapcat Android TestApp to your Android device.

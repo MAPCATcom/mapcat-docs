@@ -6,8 +6,8 @@ You can visualize [Mapcat](https://mapcat.com) maps on Android devices using the
 * or if you just want to check out our **pre-built** version of the application, you can download it from [here](https://cdn-static.mapcat.com/apk/MapcatAndroidTestApp/latest/MapcatAndroidTestApp.apk).
 The Mapcat Android SDK offers you a browser-independent, native solution for rendering Mapcat maps.
 
-## Access token
-In order to use the test app or create one using our SDK, you have to get a [MAPCAT access token](https://www.mapcat.com/planpricing/).
+## API keys
+In order to use the test app or create one using our SDK, you have to get your [MAPCAT API keys](https://www.mapcat.com/planpricing/).
 
 ## Building the SDK from source
 [Here](https://github.com/MAPCATcom/mapbox-gl-native/tree/mapcat-master/platform/android) is a quick guide on **how to build** and deploy the Mapcat Android TestApp to your Android device.
@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Mapcat.getInstance(this, "< YOUR MAPCAT ACCESS TOKEN >");
+        Mapcat.getInstance(this, "< Your MAPCAT Visualization API key >");
         setContentView(R.layout.activity_main);
         mapView = (MapView) findViewById(R.id.mapcatView);
         mapView.initMapcatMap(new LayerOptions(false, false));

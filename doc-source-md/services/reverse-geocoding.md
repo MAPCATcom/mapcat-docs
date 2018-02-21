@@ -15,7 +15,7 @@ var reqListener = function(e) {
 };
 req.addEventListener('load', reqListener);
 req.open('GET', 'https://api.mapcat.com/location/invgeocode?lat=46.062330862&lng=11.122249671', true);
-req.setRequestHeader('X-Api-Key', '<YOUR MAPCAT ACCESS TOKEN>');
+req.setRequestHeader('X-Api-Key', '< Your MAPCAT Reverse Geocode API key >');
 req.send(null);
 ```
 
@@ -31,7 +31,7 @@ req.send(null);
 
 ## Response
 The response is a json object. It contains `meta` and `result` fields.
-The _meta_ field has `version`, `status_code` and `message` values. Field _version_ represents the version of the Reverse Geocoding API engine, the _status\_code_ is equal to the http status code of the response, and the _message_ string field contains a detailed error message if any.
+The _meta_ field has `version`, `status_code` and `message` values. Field _version_ represents the version of the Reverse Geocoding API engine, the *status_code* is equal to the http status code of the response, and the _message_ string field contains a detailed error message if any.
 
 When there was no error during the reverse geocode request, field _result_ is specified. It is an object having the following fields:
 * `address` is an object. It contains the full address at the result as a formed text field, as well as the address parts of the found address in a categorized way (e.g.: country, state, city, district...). For a full list of address parts, look up our [swagger documentation](../swagger/#/Search_APIs/get_location_invgeocode).

@@ -9,12 +9,12 @@ The following example gives you a quick start how to use MAPCAT in a single page
 The steps are the following:
 
 1. How to render vector based map tiles fetched from the MAPCAT API
-2. How to query directions from the MAPCAT API
+2. How to query routing from the MAPCAT API
 3. How to render the vector based route on the top of the map
 
 ## Get started
 
-First get your [MAPCAT access token](https://www.mapcat.com/planpricing/).
+First get your [MAPCAT API keys](https://www.mapcat.com/planpricing/).
 
 ## Step 1. Render a map
 
@@ -44,19 +44,19 @@ Then you can embed MAPCAT in the ```<body>``` part of your page in a div that ha
   mapcatview.initVectorView(function(error, response) {
     if (error) {
       console.log(error);
-    } else {
-      let map =  olms.apply('map', response);
+      return;
     }
-  // continue here
-  },"< YOUR MAPCAT ACCESS TOKEN >", null, {styleSheet: "openlayers"});
+    var map =  olms.apply('map', response);
+    // continue here
+  }, "< Your MAPCAT Visualization API key >", null, {styleSheet: "openlayers"});
 </script>
 ```
 
-Substitute ```< YOUR MAPCAT ACCESS TOKEN >``` with your access token.
+Substitute ```< Your MAPCAT Visualization API key >``` with your Visualization API key.
 
 For more complex use, refer to the documentation of [OpenLayers](http://openlayers.org)
 
-## Step 2. Query directions via API
+## Step 2. Query routing via API
 
 We're going to use jQuery to access the MAPCAT API, so copy these lines into the ```<head>``` part of your HTML page.
 
@@ -88,7 +88,7 @@ To query the server, add the following script in the ```<body>``` part of your p
       beforeSend: function(xhrObj) {
           // Request headers
           xhrObj.setRequestHeader("Content-Type", "application/json");
-          xhrObj.setRequestHeader("X-Api-Key", "< YOUR MAPCAT ACCESS TOKEN >");
+          xhrObj.setRequestHeader("X-Api-Key", "< Your MAPCAT Routing API key >");
       },
       type: "POST",
       dataType: 'json',
@@ -103,9 +103,9 @@ To query the server, add the following script in the ```<body>``` part of your p
   });
 ```
 
-Substitute ```< YOUR MAPCAT ACCESS TOKEN >``` with your access token.
+Substitute ```< Your MAPCAT Routing API key >``` with your Routing API key.
 
-For more complex use, refer to the documentation of the [MAPCAT API](../index.md#mapcat-service-apis)
+For more complex use, refer to the documentation of the [MAPCAT APIs](../index.md#mapcat-service-apis)
 
 ## Step 3. Render the route on the map
 
@@ -178,9 +178,9 @@ Your `index.html` file should look something similar
       mapcatview.initVectorView(function(error, response) {
         if (error) {
           console.log(error);
-        } else {
-          var map =  olms.apply('map', response);
+          return;
         }
+        var map =  olms.apply('map', response);
         var body = {
           "waypoints": [
             {
@@ -197,7 +197,7 @@ Your `index.html` file should look something similar
           url: "https://api.mapcat.com/routing/route",
           beforeSend: function(xhrObj) {
             xhrObj.setRequestHeader("Content-Type", "application/json");
-            xhrObj.setRequestHeader("X-Api-Key", "< YOUR MAPCAT ACCESS TOKEN >");
+            xhrObj.setRequestHeader("X-Api-Key", "< Your MAPCAT Routing API key >");
           },
           type: "POST",
           dataType: 'json',
@@ -234,7 +234,7 @@ Your `index.html` file should look something similar
         .fail(function() {
           alert("error");
         });
-      }, "< YOUR MAPCAT ACCESS TOKEN >", null, {styleSheet: "openlayers"});
+      }, "< Your MAPCAT Visualization API key >", null, {styleSheet: "openlayers"});
     </script>
   </body>
 </html>
@@ -250,9 +250,9 @@ To get started, check out our [mapcat-angular-openlayers-vector](https://github.
     var map;
     if (error) {
       console.log(error);
-    } else {
-      map =  olms.apply('map', response);
+      return;
     }
+    map =  olms.apply('map', response);
     var body = {
       "waypoints": [
         {
@@ -269,7 +269,7 @@ To get started, check out our [mapcat-angular-openlayers-vector](https://github.
       url: "https://api.mapcat.com/routing/route",
       beforeSend: function(xhrObj) {
         xhrObj.setRequestHeader("Content-Type", "application/json");
-        xhrObj.setRequestHeader("X-Api-Key", token);
+        xhrObj.setRequestHeader("X-Api-Key", apiKey);
       },
       type: "POST",
       dataType: 'json',
@@ -306,5 +306,5 @@ To get started, check out our [mapcat-angular-openlayers-vector](https://github.
     .fail(function() {
       alert("error");
     });
-  }, token, null, {styleSheet: "openlayers"});
+  }, apiKey, null, {styleSheet: "openlayers"});
 </script>

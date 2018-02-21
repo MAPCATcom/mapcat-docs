@@ -16,7 +16,7 @@ var reqListener = function(e) {
 };
 req.addEventListener('load', reqListener);
 req.open('POST', 'https://api.mapcat.com/routing/route', true);
-req.setRequestHeader('X-Api-Key', '<YOUR MAPCAT ACCESS TOKEN>');
+req.setRequestHeader('X-Api-Key', '< Your MAPCAT Routing API key >');
 req.send('{"waypoints": [{"lat": 47.498247,"lon": 19.039803},{"lat": 47.498262,"lon": 19.039679}],"vtp": 6,"set": 3}');
 ```
 

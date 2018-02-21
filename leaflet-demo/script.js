@@ -11,7 +11,7 @@ function init() {
     map.zoomControl.setPosition('topright');
 }
 
-function load(token) {
+function load(apiKey) {
     mapcatview.initRasterView(function(error, response) {
         if (error) {
             map = undefined;
@@ -31,7 +31,7 @@ function load(token) {
                 maxZoom: 18
             }).addTo(map);
         }
-    }, token);
+    }, apiKey);
 }
 
 $(document).ready( function() {
@@ -43,7 +43,7 @@ $(document).ready( function() {
 
     $('#apikeyModal').on('hidden.bs.modal', function () {
         if (map === undefined) {
-            $('#message').html('You need a MAPCAT access token to show the example map.');
+            $('#message').html('You need a MAPCAT Visualization API key to show the example map.');
             $('#modalButton').show();
         } else {
             $('#modalButton').hide();      

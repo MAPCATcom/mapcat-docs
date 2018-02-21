@@ -14,7 +14,7 @@ var reqListener = function(e) {
 };
 req.addEventListener('load', reqListener);
 req.open('GET', 'https://api.mapcat.com/location/search?query=Manhattan', true);
-req.setRequestHeader('X-Api-Key', '<YOUR MAPCAT ACCESS TOKEN>');
+req.setRequestHeader('X-Api-Key', '< Your MAPCAT Search API key >');
 req.send(null);
 ```
 
@@ -38,7 +38,7 @@ req.send(null);
 ## Response
 The search response is a json object. It consists of two parts: `meta` and `result`.
 
-In case of error, only _meta_ is specified, and result is null. _Meta_ has 3 fields: `status_code`, `message` and `version`. Parameter _status\_code_ represents the http status code, _message_ is a detailed error message, and _version_ is the version of the search engine.
+In case of error, only _meta_ is specified, and result is null. _Meta_ has 3 fields: `status_code`, `message` and `version`. Parameter *status_code* represents the http status code, _message_ is a detailed error message, and _version_ is the version of the search engine.
 
 When there was no error during the search request, field _result_ is specified. It is an array, containing the search results. They are ordered starting with the most relevant hit. The elements of the array are objects having the following fields:
 * `type` is a string field representing the type of the search item. It can be

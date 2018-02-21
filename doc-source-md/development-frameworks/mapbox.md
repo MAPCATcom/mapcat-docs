@@ -8,12 +8,12 @@ The following example gives you a quick start how to use MAPCAT in a single page
 The steps are the following:
 
 1. How to render vector based map tiles fetched from the MAPCAT API
-2. How to query directions from the MAPCAT API
+2. How to query routing from the MAPCAT API
 3. How to render the vector based route on the top of the map
 
 ## Get started
 
-First get your [MAPCAT access token](https://www.mapcat.com/planpricing/).
+First get your [MAPCAT API keys](https://www.mapcat.com/planpricing/).
 
 ## Step 1. Render a map
 
@@ -61,14 +61,14 @@ You can easily create a language selector with *jQuery* see [full code](#putting
     });
     map.setLanguage('en');
     // continue here
-  }, "< YOUR MAPCAT ACCESS TOKEN >");
+  }, "< Your MAPCAT Visualization API key >");
 </script>
 ```
-Substitute ```< YOUR MAPCAT ACCESS TOKEN >``` with your access token.
+Substitute ```< Your MAPCAT Visualization API key >``` with your Visualization API key.
 
-For more complex use, refer to the documentation of [Mapbox GL JS](https://www.mapbox.com).
+For more complex use of Mapbox GL JS, refer to the [documentation](https://www.mapbox.com).
 
-## Step 2. Query directions via API
+## Step 2. Query routing via API
 
 We're going to use jQuery to access the MAPCAT API, so copy these lines into the ```<head>``` part of your HTML page.
 
@@ -98,7 +98,7 @@ $.ajax({
   beforeSend: function(xhrObj) {
     // Request headers
     xhrObj.setRequestHeader("Content-Type", "application/json");
-    xhrObj.setRequestHeader("X-Api-Key", "< YOUR MAPCAT ACCESS TOKEN >");
+    xhrObj.setRequestHeader("X-Api-Key", "< Your MAPCAT Routing API key >");
   },
   type: "POST",
   dataType: 'json',
@@ -112,7 +112,7 @@ $.ajax({
   alert("error");
 });
 ```
-Substitute ```< YOUR MAPCAT ACCESS TOKEN >``` with your access token.
+Substitute ```< Your MAPCAT Routing API key >``` with your Routing API key.
 
 For more complex use, refer to the documentation of the [MAPCAT APIs](../index.md#mapcat-service-apis).
 
@@ -227,7 +227,7 @@ Your `index.html` file should look something similar
           beforeSend: function(xhrObj) {
             // Request headers
             xhrObj.setRequestHeader("Content-Type", "application/json");
-            xhrObj.setRequestHeader("X-Api-Key", "< YOUR MAPCAT ACCESS TOKEN >");
+            xhrObj.setRequestHeader("X-Api-Key", "< Your MAPCAT Routing API key >");
           },
           type: "POST",
           dataType: 'json',
@@ -260,7 +260,7 @@ Your `index.html` file should look something similar
         .fail(function() {
             alert("error");
         });
-      }, "< YOUR MAPCAT ACCESS TOKEN >");
+      }, "< Your MAPCAT Visualization API key>");
 
       $('#languageForm input').on('change', function () {
         if (map) {
@@ -305,7 +305,7 @@ Your `index.html` file should look something similar
       beforeSend: function(xhrObj) {
         // Request headers
         xhrObj.setRequestHeader("Content-Type", "application/json");
-        xhrObj.setRequestHeader("X-Api-Key", token);
+        xhrObj.setRequestHeader("X-Api-Key", apiKey);
       },
       type: "POST",
       dataType: 'json',
@@ -338,7 +338,7 @@ Your `index.html` file should look something similar
     .fail(function() {
         alert("error");
     });
-  }, token);
+  }, apiKey);
 
   $('#languageForm input').on('change', function () {
     if (map) {

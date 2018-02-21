@@ -9,12 +9,12 @@ The following example gives you a quick start how to use MAPCAT in a single page
 The steps are the following:
 
 1. How to render raster based map tiles fetched from the MAPCAT API
-2. How to query directions from the MAPCAT API
+2. How to query routing from the MAPCAT API
 3. How to render the vector based route on the top of the map
 
 ## Get started
 
-First get your [MAPCAT access token](https://www.mapcat.com/planpricing/).
+First get your [MAPCAT API keys](https://www.mapcat.com/planpricing/).
 
 ## Step 1. Render a map
 
@@ -43,41 +43,40 @@ Then you can embed MAPCAT in the ```<body>``` part of your page in a div that ha
   mapcatview.initRasterView(function(error, response) {
     if (error) {
       console.log(error);
-    } else {
-      var map = new ol.Map({
-        target: 'map',
-        layers: [
-          new ol.layer.Tile({
-            source: new ol.source.XYZ({
-              url: response,
-              projection: 'EPSG:3857',
-              attributions: [
-                new ol.Attribution({
-                  html: 'Map data &copy; ' +
-                        '<a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
-                        '<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
-                        'Imagery &copy; <a href="http://mapcat.com">MAPCAT</a>'
-                })
-              ]
-            })
-          })
-        ],
-        view: new ol.View({
-          center: ol.proj.fromLonLat([-0.0595, 51.5095]),
-          zoom: 13
-        })
-      });
+      return;
     }
-  // continue here
-  }, "< YOUR MAPCAT ACCESS TOKEN >");
+    var map = new ol.Map({
+      target: 'map',
+      layers: [
+        new ol.layer.Tile({
+          source: new ol.source.XYZ({
+            url: response,
+            projection: 'EPSG:3857',
+            attributions: [
+              new ol.Attribution({
+                html: 'Map data &copy; ' +
+                      '<a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
+                      '<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+                      'Imagery &copy; <a href="http://mapcat.com">MAPCAT</a>'
+              })
+            ]
+          })
+        })
+      ],
+      view: new ol.View({
+        center: ol.proj.fromLonLat([-0.0595, 51.5095]),
+        zoom: 13
+      })
+    });
+    // continue here
+  }, "< Your MAPCAT Visualization API key >");
 </script>
 ```
-
-Substitute ```< YOUR MAPCAT ACCESS TOKEN >``` with your access token.
+Substitute ```< Your MAPCAT Visualization API key >``` with your Visualization API key.
 
 For more complex use, refer to the documentation of [OpenLayers](http://openlayers.org)
 
-## Step 2. Query directions via API
+## Step 2. Query routing via API
 
 We're going to use jQuery to access the MAPCAT API, so copy these lines into the ```<head>``` part of your HTML page.
 
@@ -108,7 +107,7 @@ To query the server, add the following script in the ```<body>``` part of your p
       beforeSend: function(xhrObj) {
           // Request headers
           xhrObj.setRequestHeader("Content-Type", "application/json");
-          xhrObj.setRequestHeader("X-Api-Key", "< YOUR MAPCAT ACCESS TOKEN >");
+          xhrObj.setRequestHeader("X-Api-Key", "< Your MAPCAT Routing API key >");
       },
       type: "POST",
       dataType: 'json',
@@ -123,7 +122,7 @@ To query the server, add the following script in the ```<body>``` part of your p
   });
 ```
 
-Substitute ```< YOUR MAPCAT ACCESS TOKEN >``` with your access token.
+Substitute ```< Your MAPCAT Routing API key >``` with your Routing API key.
 
 For more complex use, refer to the documentation of the [MAPCAT API](../index.md#mapcat-service-apis)
 
@@ -196,31 +195,31 @@ Your `index.html` file should look something similar
       mapcatview.initRasterView(function(error, response) {
         if (error) {
           console.log(error);
-        } else {
-          var map = new ol.Map({
-            target: 'map',
-            layers: [
-              new ol.layer.Tile({
-                source: new ol.source.XYZ({
-                  url: response,
-                  projection: 'EPSG:3857',
-                    attributions: [
-                      new ol.Attribution({
-                        html: 'Map data &copy; ' +
-                              '<a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
-                              '<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
-                              'Imagery &copy; <a href="http://mapcat.com">MAPCAT</a>'
-                      })
-                    ]
-                })
-              })
-            ],
-            view: new ol.View({
-              center: ol.proj.fromLonLat([-0.0595, 51.5095]),
-              zoom: 13
-            })
-          });
+          return;
         }
+        var map = new ol.Map({
+          target: 'map',
+          layers: [
+            new ol.layer.Tile({
+              source: new ol.source.XYZ({
+                url: response,
+                projection: 'EPSG:3857',
+                  attributions: [
+                    new ol.Attribution({
+                      html: 'Map data &copy; ' +
+                            '<a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
+                            '<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+                            'Imagery &copy; <a href="http://mapcat.com">MAPCAT</a>'
+                    })
+                  ]
+              })
+            })
+          ],
+          view: new ol.View({
+            center: ol.proj.fromLonLat([-0.0595, 51.5095]),
+            zoom: 13
+          })
+        });
         var body = {
           "waypoints": [
               {
@@ -237,7 +236,7 @@ Your `index.html` file should look something similar
           url: "https://api.mapcat.com/routing/route",
           beforeSend: function(xhrObj) {
             xhrObj.setRequestHeader("Content-Type", "application/json");
-            xhrObj.setRequestHeader("X-Api-Key", "< YOUR MAPCAT ACCESS TOKEN >");
+            xhrObj.setRequestHeader("X-Api-Key", "< Your MAPCAT Routing API key >");
           },
           type: "POST",
           dataType: 'json',
@@ -273,7 +272,7 @@ Your `index.html` file should look something similar
         .fail(function() {
           alert("error");
         });
-      }, "< YOUR MAPCAT ACCESS TOKEN >");
+      }, "< Your MAPCAT Visualization API key >");
     </script>
   </body>
 </html>
@@ -288,31 +287,31 @@ To get started, check out our [mapcat-angular-openlayers](https://github.com/MAP
 mapcatview.initRasterView(function(error, response) {
   if (error) {
     console.log(error);
-  } else {
-    var map = new ol.Map({
-      target: 'map',
-      layers: [
-        new ol.layer.Tile({
-          source: new ol.source.XYZ({
-            url: response,
-            projection: 'EPSG:3857',
-            attributions: [
-              new ol.Attribution({
-                html: 'Map data &copy; ' +
-                      '<a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
-                      '<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
-                      'Imagery &copy; <a href="http://mapcat.com">MAPCAT</a>'
-              })
-            ]
-          })
-        })
-      ],
-      view: new ol.View({
-        center: ol.proj.fromLonLat([-0.0595, 51.5095]),
-        zoom: 13
-      })
-    });
+    return;
   }
+  var map = new ol.Map({
+    target: 'map',
+    layers: [
+      new ol.layer.Tile({
+        source: new ol.source.XYZ({
+          url: response,
+          projection: 'EPSG:3857',
+          attributions: [
+            new ol.Attribution({
+              html: 'Map data &copy; ' +
+                    '<a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
+                    '<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+                    'Imagery &copy; <a href="http://mapcat.com">MAPCAT</a>'
+            })
+          ]
+        })
+      })
+    ],
+    view: new ol.View({
+      center: ol.proj.fromLonLat([-0.0595, 51.5095]),
+      zoom: 13
+    })
+  });
   var body = {
     "waypoints": [
         {
@@ -329,7 +328,7 @@ mapcatview.initRasterView(function(error, response) {
     url: "https://api.mapcat.com/routing/route",
     beforeSend: function(xhrObj) {
       xhrObj.setRequestHeader("Content-Type", "application/json");
-      xhrObj.setRequestHeader("X-Api-Key", token);
+      xhrObj.setRequestHeader("X-Api-Key", apiKey);
     },
     type: "POST",
     dataType: 'json',
@@ -365,5 +364,5 @@ mapcatview.initRasterView(function(error, response) {
   .fail(function() {
     alert("error");
   });
-}, token);
+}, apiKey);
 </script>

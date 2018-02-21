@@ -10,7 +10,7 @@ function initMap(style) {
     });
 }
 
-function load(token) {
+function load(apiKey) {
     mapcatview.initVectorView(function(error, response) {
         if (error) {
             map = undefined;
@@ -25,7 +25,7 @@ function load(token) {
             initMap(response);
             $('#apikeyModal').modal('hide');
         }
-    }, token, {layer: { "base":"", "ocean":"" }} );
+    }, apiKey, {layer: { "base":"", "ocean":"" }} );
 }
 
 $(document).ready( function() {
@@ -37,7 +37,7 @@ $(document).ready( function() {
 
     $('#apikeyModal').on('hidden.bs.modal', function () {
         if (map === undefined) {
-            $('#message').html('You need a MAPCAT access token to show the example map.');
+            $('#message').html('You need a MAPCAT Visualization API key to show the example map.');
             $('#modalButton').show();
         } else {
             $('#modalButton').hide();

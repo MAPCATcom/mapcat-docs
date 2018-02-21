@@ -4,7 +4,7 @@ Custom-made, easy-to-integrate OpenStreetMap-based worldwide map API for public 
 - Extremly simple integration
 - Works with your current systems, easy to install or switch to
 
-[More about our services](https://www.mapcat.com/services/)
+[More about our services](https://www.mapcat.com/services/)  
 [See pricing](https://www.mapcat.com/planpricing/)
 
 ## Why to choose MAPCAT?
@@ -21,9 +21,9 @@ Both [Leaflet JS](http://leafletjs.com) and [OpenLayers](http://openlayers.org) 
 
 To integrate your application with MAPCAT services, you will need to subscribe for one of our plans (free or commercial). You can do this by contacting us, most conveniently through our [Pricing page](https://www.mapcat.com/planpricing/).
 
-To access our services, unique keys are required that connect API requests to your subscription. When you subscribe for a plan, we will provide you the MAPCAT access tokens you may use to integrate your application with MAPCAT services. The access tokens are API keys that provide unique identification of your subscription and allow you to access all the services that you are provided within your subscription.
+To access our services, unique keys are required that connect API requests to your subscription. When you subscribe for a plan, we will provide you the MAPCAT API keys you may use to integrate your application with MAPCAT services. The API keys provide unique identification of your subscription and allow you to access all the services that you are provided within your subscription.
 
-The basic services available in all plans are: map visualization (map tiles rendering), geocoding (search and reverse geocoding) and route planning. You will access these services through our [service API-s](./index.html#mapcat-service-apis), using for each the API-keys provided by us.
+The basic services available in all plans are: map visualization (map tiles rendering), geocoding (search and reverse geocoding) and route planning. You will access these services through our [service API-s](./index.html#mapcat-service-apis), using for each the API keys provided by us.
 
 You can render the map tiles provided by either using Leaflet JS or OpenLayers, our detailed technical descriptions will guide you in setting up your application:
 

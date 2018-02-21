@@ -9,12 +9,12 @@ The following example gives you a quick start how to use MAPCAT in a single page
 The steps are the following:
 
 1. How to render raster based map tiles fetched from the MAPCAT API
-2. How to query directions from the MAPCAT API
+2. How to query routing from the MAPCAT API
 3. How to render the vector based route on the top of the map
 
 ## Get started
 
-First get your [MAPCAT access token](https://www.mapcat.com/planpricing/).
+First get your [MAPCAT API keys](https://www.mapcat.com/planpricing/).
 
 ## Step 1. Render a map
 
@@ -42,24 +42,23 @@ Then you can embed a MAPCAT map in the ```<body>``` part of your page in a div t
   mapcatview.initRasterView(function(error, response) {
     if (error) {
       console.log(error);
-    } else {
-      var map = L.map('map').setView([51.5095, -0.0595], 13);
-      L.tileLayer(response, {
-        attribution: 'Map data &copy; ' +
-                     '<a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
-                     '<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
-                     'Imagery &copy; <a href="http://mapcat.com">MAPCAT</a>',
-        maxZoom: 18
-      }).addTo(map);
+      return;
     }
-  // continue here
-  }, "< YOUR MAPCAT ACCESS TOKEN >");
+    var map = L.map('map').setView([51.5095, -0.0595], 13);
+    L.tileLayer(response, {
+      attribution: 'Map data &copy; ' +
+                    '<a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
+                    '<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+                    'Imagery &copy; <a href="http://mapcat.com">MAPCAT</a>',
+      maxZoom: 18
+    }).addTo(map);
+    // continue here
+  }, "< Your MAPCAT Visualization API key >");
 </script>
 ```
+Substitute ```< Your MAPCAT Visualization API key >``` with your Visualization API key.
 
-For more complex use, refer to the documentation of [Leaflet JS](http://leafletjs.com)
-
-## Step 2. Query directions via API
+## Step 2. Query routing via API
 
 We're going to use jQuery to access the MAPCAT API, so copy these lines into the ```<head>``` part of your HTML page.
 
@@ -71,7 +70,6 @@ We're going to use jQuery to access the MAPCAT API, so copy these lines into the
 To query the server, add the following script in the ```<body>``` part of your page, below the previous one, to the comment saying "continue here".
 
 ```javascript
-
   var body = {
     "waypoints": [
         {
@@ -90,7 +88,7 @@ To query the server, add the following script in the ```<body>``` part of your p
       beforeSend: function(xhrObj) {
           // Request headers
           xhrObj.setRequestHeader("Content-Type", "application/json");
-          xhrObj.setRequestHeader("X-Api-Key", "< YOUR MAPCAT ACCESS TOKEN >");
+          xhrObj.setRequestHeader("X-Api-Key", "< Your MAPCAT Routing API key >");
       },
       type: "POST",
       dataType: 'json',
@@ -105,9 +103,9 @@ To query the server, add the following script in the ```<body>``` part of your p
   });
 ```
 
-Substitute ```< YOUR MAPCAT ACCESS TOKEN >``` with your access token.
+Substitute ```< Your MAPCAT Routing API key >``` with your Routing API key.
 
-For more complex use, refer to the documentation of the [MAPCAT API](../index.md#mapcat-service-apis)
+For more complex use, refer to the documentation of the [MAPCAT APIs](../index.md#mapcat-service-apis).
 
 ## Step 3. Render the route on the map
 
@@ -124,7 +122,7 @@ Change the parameter of the method in the above script to the following:
   })
 ```
 
-For more complex use, refer to the documentation of [Leaflet JS](http://leafletjs.com)
+For more complex use of Leaflet JS, refer to the [documentation](http://leafletjs.com).
 
 ## Putting it together
 
@@ -155,21 +153,21 @@ Your `index.html` file should look something similar:
   <body style="margin: 0; background-color: #efefef;">
     
     <div id='map' style='width: 100%; height: 400px;'></div>
-    <script>
 
+    <script>
       mapcatview.initRasterView(function(error, response) {
         if (error) {
           console.log(error);
-        } else {
-          var map = L.map('map').setView([51.5095, -0.0595], 13);
-          L.tileLayer(response, {
-            attribution: 'Map data &copy; ' +
-                         '<a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
-                         '<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
-                         'Imagery &copy; <a href="http://mapcat.com">MAPCAT</a>',
-            maxZoom: 18
-          }).addTo(map);
+          return;
         }
+        var map = L.map('map').setView([51.5095, -0.0595], 13);
+        L.tileLayer(response, {
+          attribution: 'Map data &copy; ' +
+                        '<a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
+                        '<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+                        'Imagery &copy; <a href="http://mapcat.com">MAPCAT</a>',
+          maxZoom: 18
+        }).addTo(map);
 
         var body = {
           "waypoints": [
@@ -189,7 +187,7 @@ Your `index.html` file should look something similar:
           beforeSend: function(xhrObj) {
             // Request headers
             xhrObj.setRequestHeader("Content-Type", "application/json");
-            xhrObj.setRequestHeader("X-Api-Key", "< YOUR MAPCAT ACCESS TOKEN >");
+            xhrObj.setRequestHeader("X-Api-Key", "< Your MAPCAT Routing API key >");
           },
           type: "POST",
           // Request body
@@ -207,8 +205,7 @@ Your `index.html` file should look something similar:
           alert("error");
         });
 
-      }, "< YOUR MAPCAT ACCESS TOKEN >");
-
+      }, "< Your MAPCAT Visualization API key >");
     </script>
 
   </body>
@@ -229,16 +226,16 @@ To get started, check out our [mapcat-react-leaflet](https://github.com/MAPCATco
 mapcatview.initRasterView(function(error, response) {
   if (error) {
     console.log(error);
-  } else {
-    var map = L.map('map').setView([51.5095, -0.0595], 13);
-    L.tileLayer(response, {
-      attribution: 'Map data &copy; ' +
-                   '<a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
-                   '<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
-                   'Imagery &copy; <a href="http://mapcat.com">MAPCAT</a>',
-      maxZoom: 18
-    }).addTo(map);
+    return;
   }
+  var map = L.map('map').setView([51.5095, -0.0595], 13);
+  L.tileLayer(response, {
+    attribution: 'Map data &copy; ' +
+                  '<a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
+                  '<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+                  'Imagery &copy; <a href="http://mapcat.com">MAPCAT</a>',
+    maxZoom: 18
+  }).addTo(map);
   var body = {
     "waypoints": [
         {
@@ -255,7 +252,7 @@ mapcatview.initRasterView(function(error, response) {
     url: "https://api.mapcat.com/routing/route",
     beforeSend: function(xhrObj) {
       xhrObj.setRequestHeader("Content-Type", "application/json");
-      xhrObj.setRequestHeader("X-Api-Key", token);
+      xhrObj.setRequestHeader("X-Api-Key", apiKey);
     },
     type: "POST",
     data: JSON.stringify(body)
@@ -271,5 +268,5 @@ mapcatview.initRasterView(function(error, response) {
   .fail(function() {
     alert("error");
   });
-}, token);
+}, apiKey);
 </script>

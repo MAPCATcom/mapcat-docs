@@ -35,6 +35,7 @@ You can render the map tiles provided by either using Leaflet JS or OpenLayers, 
 
 ## MAPCAT Service APIs
 
+* [Visualization API](./services/visualization.md)
 * [Search API](./services/search.md)
 * [Reverse Geocoding API](./services/reverse-geocoding.md)
 * [Routing API](./services/routing.md)

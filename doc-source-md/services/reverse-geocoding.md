@@ -15,7 +15,7 @@ var reqListener = function(e) {
 };
 req.addEventListener('load', reqListener);
 req.open('GET', 'https://api.mapcat.com/location/invgeocode?lat=46.062330862&lng=11.122249671', true);
-req.setRequestHeader('X-Api-Key', '< Your MAPCAT Reverse Geocode API key >');
+req.setRequestHeader('X-Api-Key', '< Your MAPCAT Reverse Geocoding API key >');
 req.send(null);
 ```
 

@@ -30,7 +30,7 @@ repositories {
 }
  
 dependencies {
-    implementation 'com.mapcat.mapcatsdk:mapcat-android-sdk:1.0.1'
+    implementation 'com.mapcat.mapcatsdk:mapcat-android-sdk:1.0.4'
     implementation 'com.mapbox.mapboxsdk:mapbox-android-services:2.2.9'
 }
 ```

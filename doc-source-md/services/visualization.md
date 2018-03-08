@@ -2,7 +2,9 @@
 
 MAPCAT Visualization API provides you raster and vector tiles. You can find further information about our vector tile specification and schema [here](../index.md#vector-tiles).  
 In order to use this API you need our Mapview-init ([@mapcat/mapview-init](https://www.npmjs.com/package/@mapcat/mapview-init)) javascript library.  
-You can checkout our @mapcat/mapview-init project on [GitHub](https://github.com/MAPCATcom/mapcat-mapview-init) where you can find detailed description and more examples of using the library.
+You can checkout our @mapcat/mapview-init project on [GitHub](https://github.com/MAPCATcom/mapcat-mapview-init) where you can find detailed description and more examples of using the library.  
+
+To access this API, you will need to use your **Visualization API key**.
 
 ## Examples
 Here is a simple javascript example below showing how to use our *@mapcat/mapview-init* from browser if you want to get raster tiles:
@@ -48,3 +50,4 @@ You get `response` in callback function.
 - The second parameter
     - in case of using ***initRasterView*** function call is the response data holding your templated map view url (*string*)
     - in case of using ***initVectorView*** function call is the response data holding the vector tile style sheet (*object*)
+

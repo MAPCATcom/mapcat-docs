@@ -6,6 +6,8 @@ MAPCAT Height API is used to query elevation values at specific geo-coordinates.
 
 You can find a detailed description of the request parameters and the response scheme of the API point in our [swagger documentation](../swagger/#/Height_APIs/post_relief_heights).  
 
+You can access this API with your Height API key **soon**.  
+
 ## Example
 Here is a simple javascript example below showing how to use our Height API from browser:
 

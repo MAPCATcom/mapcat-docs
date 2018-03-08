@@ -5,6 +5,8 @@ MAPCAT Routing API is used to plan routes between two and five waypoints.
 
 You can find a detailed description of the request parameters and the response scheme of the API point in our [swagger documentation](../swagger/#/Routing_APIs/post_routing_route).
 
+To access this API, you will need to use your **Routing API key**.
+
 ## Example
 Here is a simple javascript example below showing how to use our Routing API from browser:
 

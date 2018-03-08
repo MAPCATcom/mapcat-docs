@@ -4,6 +4,8 @@ Mapcat Reverse Geocoding API is used to retrieve information about the address a
 
 You can find a detailed description of the request parameters and the response scheme of the API point in our [swagger documentation](../swagger/#/Search_APIs/get_location_invgeocode).  
 
+To access this API, you will need to use your **Search API key**.  
+
 ## Example
 Here is a simple javascript example below showing how to use our Search API from browser:
 
@@ -15,7 +17,7 @@ var reqListener = function(e) {
 };
 req.addEventListener('load', reqListener);
 req.open('GET', 'https://api.mapcat.com/location/invgeocode?lat=46.062330862&lng=11.122249671', true);
-req.setRequestHeader('X-Api-Key', '< Your MAPCAT Reverse Geocoding API key >');
+req.setRequestHeader('X-Api-Key', '< Your MAPCAT Search API key >');
 req.send(null);
 ```
 

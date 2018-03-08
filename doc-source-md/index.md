@@ -35,11 +35,11 @@ You can render the map tiles provided by either using Leaflet JS or OpenLayers, 
 
 ## MAPCAT Service APIs
 
-* [Visualization API](./services/visualization.md)
-* [Search API](./services/search.md)
-* [Reverse Geocoding API](./services/reverse-geocoding.md)
-* [Routing API](./services/routing.md)
-* [Height API](./services/height.md)
+* [Visualization API](./services/visualization.md) (access through Visualization API key)
+* [Search API](./services/search.md) (access through Search API key)
+* [Reverse Geocoding API](./services/reverse-geocoding.md) (access through Search API key)
+* [Routing API](./services/routing.md) (access through Routing API key)
+* [Height API](./services/height.md) (soon...)
 
 ## Vector tiles
 

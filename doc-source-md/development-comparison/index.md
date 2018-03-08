@@ -76,7 +76,7 @@
 | [MAPCAT](https://mapcat.com)                 | Yes | Yes | Yes |
 | [Google Maps](https://maps.google.com)       | Yes | Yes | Yes |
 | [Bing Maps](https://www.bing.com/maps)       | Yes | Yes | Yes |
-| [Apple Maps](https://www.apple.com/ios/maps/)| Yes | Yes | No? |
+| [Apple Maps](https://www.apple.com/ios/maps/)| Yes | Yes | No  |
 | [OpenStreetMap](http://openstreetmap.org)    | Yes | No | No |
 | [Mapbox](https://mapbox.com)                 | Yes | Yes | Yes |
 | [OpenLayers](http://openlayers.org/)         | No  | No  | No |
@@ -85,11 +85,11 @@
 |  | Routes: car | Routes: ferry support for cars | Routes: bike | Routes: outdoor support for bikes | Routes: public transport | Routes: walk |
 |-----|-----|-----|-----|-----|-----|-----|-----|-----|
 | [MAPCAT](https://mapcat.com)                 | Yes | Yes | Yes | Yes | No  | Yes |
-| [Google Maps](https://maps.google.com)       | Yes | Yes | Limited to some countries | No  | Yes | Yes |
-| [Bing Maps](https://www.bing.com/maps)       | Yes | ?   | No  | No  | Yes | Yes |
+| [Google Maps](https://maps.google.com)       | Yes | Yes | Yes partially | No  | Yes | Yes |
+| [Bing Maps](https://www.bing.com/maps)       | Yes | Yes | No  | No  | Yes | Yes |
 | [Apple Maps](https://www.apple.com/ios/maps/)| Yes | Yes | No  | No  | Yes | Yes |
-| [OpenStreetMap](http://openstreetmap.org)    | No  | No  | Yes | No? | No  | Yes |
-| [Mapbox](https://mapbox.com)                 | Yes | Yes? | No? | No? | Yes? | Yes? |
+| [OpenStreetMap](http://openstreetmap.org)    | No  | No  | Yes | Yes | No  | Yes |
+| [Mapbox](https://mapbox.com)                 | Yes | Yes | Yes | Yes | No  | Yes |
 | [OpenLayers](http://openlayers.org/)         | No  | No  | No  | No  | No  | No  |
 | [Leaflet](http://leafletjs.com/)             | No  | No  | No  | No  | No  | No  |
 

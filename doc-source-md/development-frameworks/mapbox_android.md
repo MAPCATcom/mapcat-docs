@@ -133,3 +133,19 @@ After successful startup, you should see something similar on the display of you
 
 ![alt text](android_screen_01.png "Screenshot")
 
+## Mapcat map with Tangram ES
+
+You can visualize [Mapcat](https://mapcat.com) maps on Android devices also using our [Tangram ES fork](https://github.com/MAPCATcom/tangram-es).
+Tangram ES is a C++ library for rendering 2D and 3D maps from vector data using OpenGL ES. It is a counterpart to [Tangram](https://github.com/tangrams/tangram) that targets mobile and embedded devices.
+
+There are the following ways to check out how it works:
+
+* go to our [GitHub repository](https://github.com/MAPCATcom/tangram-es), clone the project and follow the [instructions](https://github.com/MAPCATcom/tangram-es/tree/mapcat-master/platforms/android)
+
+* if you just want to check out our **pre-built** version of the Tangram demo application, you can download it from [here](https://cdn-static.mapcat.com/apk/MapcatAndroidTangramTestApp/latest/MapcatAndroidTangramTestApp.apk)
+
+### Building & Running the App
+Click **Run -> Run 'app'** in the menu to build and run your application.
+After successful startup, you should see something similar on the display of your device / emulator:
+
+![alt text](android_screen_02.png "Screenshot")

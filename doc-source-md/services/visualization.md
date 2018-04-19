@@ -42,7 +42,7 @@ Layers are used to toggle specific subsets of data rendered on the raster and ve
 Parameter ***lang*** is the [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) language code representation of the desired language, it defaults to "en". To disable label rendering set lang to `null` or `""`.  
 Parameter ***scale*** must be 1 or 2. By default, it is 1, meaning that the required raster tile size is 256 × 256 pixel. If you want to get tiles for retina displays (512 × 512 pixel tiles), you can use value 2.
 - `vectorOptions`: *object* (optional) - Options to change style sheet format  
-Customizable which vector style sheet format returned, possible values: "mapbox", "openlayers". This defaults to: "mapbox".
+Parameter ***styleSheet*** customizes which vector style sheet format is returned, possible values: "mapbox", "openlayers", "tangram". This defaults to: "mapbox".
 
 ## Response
 You get `response` in callback function.

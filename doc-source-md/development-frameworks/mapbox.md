@@ -268,6 +268,7 @@ Your `index.html` file should look something similar
         } else {
           console.log("Unable to set language.");
         }
+      });
     </script>
   </body>
 ```

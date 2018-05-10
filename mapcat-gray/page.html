@@ -120,6 +120,48 @@
   <footer role="contentinfo">
     {{~> footer}}
   </footer>
+
+  <script type="text/javascript">
+    function getCookie(cname) {
+        var name = cname + "=";
+        var decodedCookie = decodeURIComponent(document.cookie);
+        var ca = decodedCookie.split(';');
+        for(var i = 0; i <ca.length; i++) {
+            var c = ca[i];
+            while (c.charAt(0) == ' ') {
+                c = c.substring(1);
+            }
+            if (c.indexOf(name) == 0) {
+                return c.substring(name.length, c.length);
+            }
+        }
+        return "";
+    }
+    $(document).ready(function () {
+
+        var showWarning = getCookie("cookie-message");
+        if (getCookie("cookie-message") == ""){
+                setTimeout(function () {
+                $("#cookieConsent").fadeIn(200);
+            }, 4000);
+        }
+
+        $("#closeCookieConsent, .cookieConsentOK").click(function () {
+            var now = new Date();
+            var time = now.getTime();
+            var expireTime = time + 3600 * 1000 * 24 * 365;
+            now.setTime(expireTime);
+            document.cookie = 'cookie-message=false;expires='+now.toGMTString()+';path=/';
+            $("#cookieConsent").fadeOut(200);
+        });
+    }); 
+  </script>
+  <div id="cookieConsent">
+      <div id="closeCookieConsent">x</div>
+      This website uses cookies to enhance your experience of the website. If you continue using this site, we assume that your accept this policy. Read the Privacy policy
+      <a href="https://blog.mapcat.com/privacy-policy/" target="_blank">(Read more)</a>.
+      <a class="cookieConsentOK">I agree</a>
+  </div>
   <script type="text/javascript" src="{{asset 'js/page.js'}}"></script>
 </body>
 </html>

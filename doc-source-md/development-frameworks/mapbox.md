@@ -54,7 +54,7 @@ You can easily create a language selector with *jQuery* see [full code](#putting
     }
     var styleSheet = response;
     var map = new mapboxgl.Map({
-      container: 'mapContainer',
+      container: 'map',
       style: styleSheet,
       center: [-0.12, 51.51],
       zoom: 13
@@ -159,7 +159,7 @@ Switch map language:
   <label for="l3">German</label>
 </form>
 
-<div id='mapContainer' style='width: 100%; height: 400px; margin-bottom: 16px'></div>
+<div id='map' style='width: 100%; height: 400px; margin-bottom: 16px'></div>
 
 Your `index.html` file should look something similar
 
@@ -192,7 +192,7 @@ Your `index.html` file should look something similar
       <label for="l3">German</label>
     </form>
 
-    <div id='mapContainer' style='width: 100%; height: 400px;'></div>
+    <div id='map' style='width: 100%; height: 400px;'></div>
 
     <script type="text/javascript">
       var map;
@@ -203,7 +203,7 @@ Your `index.html` file should look something similar
         }
         var styleSheet = response;
         map = new mapboxgl.Map({
-          container: 'mapContainer',
+          container: 'map',
           style: styleSheet,
           center: [-0.12, 51.51],
           zoom: 13
@@ -282,7 +282,7 @@ Your `index.html` file should look something similar
     }
     var styleSheet = response;
     map = new mapboxgl.Map({
-      container: 'mapContainer',
+      container: 'map',
       style: styleSheet,
       center: [-0.12, 51.51],
       zoom: 13
